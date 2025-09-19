@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Global Autism Hub</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Autism Hub</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🌍 Global Autism Hub</h1>
-    <p>Trusted, accessible autism information and resources worldwide</p>
-  </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Autism</a>
-    <a href="resources.html">Resources</a>
-    <a href="research.html">Research</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<header>
+  <h1 id="site-title">🌍 Global Autism Hub</h1>
+  <p id="site-tagline">Trusted, accessible autism information and resources worldwide</p>
+</header>
 
-  <main>
-    <h2>Welcome</h2>
-    <p>
-      Our mission is to provide comprehensive, multilingual, and accessible 
-      information about autism, support for families, and the latest research 
-      — making it available to everyone, everywhere.
-    </p>
+<div id="language-switcher">
+  <span>Language: </span>
+  <a href="#" data-lang="en">English</a>|
+  <a href="#" data-lang="hi">Hindi</a>|
+  <a href="#" data-lang="ja">Japanese</a>|
+  <a href="#" data-lang="zh">Chinese</a>|
+  <a href="#" data-lang="ar">Arabic</a>|
+  <a href="#" data-lang="vi">Vietnamese</a>|
+  <a href="#" data-lang="ur">Urdu</a>|
+  <a href="#" data-lang="es">Spanish</a>
+</div>
 
-    <h2>Features</h2>
-    <ul>
-      <li>Autism information: symptoms, diagnosis, support strategies</li>
-      <li>Multilingual support for global access</li>
-      <li>Accessibility compliance (WCAG 2.1 AA)</li>
-      <li>Responsive design for mobile and desktop</li>
-      <li>Resource directory of global organizations</li>
-    </ul>
-  </main>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Autism</a>
+  <a href="resources.html">Resources</a>
+  <a href="research.html">Research</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <footer>
-    <p>&copy; 2025 Global Autism Hub. All rights reserved.</p>
-  </footer>
+<main>
+  <h2 id="welcome-title">Welcome</h2>
+  <p id="welcome-text">Our mission is to provide comprehensive, multilingual, and accessible information about autism, support for families, and the latest research worldwide.</p>
+
+  <h2 id="accordion-title">Frequently Asked Questions</h2>
+  <button class="accordion">What is Autism?</button>
+  <div class="panel"><p>Autism Spectrum Disorder (ASD) is a lifelong neurodevelopmental condition affecting communication, behavior, and social interactions.</p></div>
+  <button class="accordion">How can therapies help?</button>
+  <div class="panel"><p>Therapies like speech therapy, occupational therapy, and ABA can improve communication, social skills, and daily living.</p></div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Global Autism Hub. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
