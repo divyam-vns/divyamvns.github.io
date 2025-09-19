@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Educational Resources - Global Autism Hub</title>
+<title>Education - Global Autism Hub</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
   <h1 id="site-title">🌍 Global Autism Hub</h1>
-  <p id="site-tagline">Trusted, accessible autism information and resources worldwide</p>
+  <p id="site-tagline">Trusted autism information worldwide</p>
 </header>
 
-<!-- Language Switcher -->
 <div id="language-switcher">
   <span>Language: </span>
   <a href="#" data-lang="en">English</a>|
@@ -26,7 +25,6 @@
   <a href="#" data-lang="es">Spanish</a>
 </div>
 
-<!-- Navbar -->
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About Autism</a>
@@ -39,7 +37,6 @@
 <main>
   <h2 id="welcome-title">Educational Resources</h2>
 
-  <!-- Filter Buttons -->
   <div class="filter-btns">
     <button data-filter="all">All</button>
     <button data-filter="iep">IEP Info</button>
@@ -47,10 +44,8 @@
     <button data-filter="worksheets">Worksheets</button>
   </div>
 
-  <!-- Educational Items -->
   <div id="edu-items">
 
-    <!-- IEP Info -->
     <div class="resource-item" data-category="iep">
       <h3 class="title">What is an IEP?</h3>
       <p class="text">An Individualized Education Program (IEP) is a personalized plan for students with special needs to provide tailored educational support.</p>
@@ -61,7 +56,6 @@
       <p class="text">IEPs ensure measurable goals, accommodations, and resources for academic and social success for students with autism.</p>
     </div>
 
-    <!-- Free Resources -->
     <div class="resource-item" data-category="resources">
       <h3 class="title">Free Educational Resources</h3>
       <ul>
@@ -70,95 +64,20 @@
       </ul>
     </div>
 
-    <!-- Worksheets (auto-generated) -->
     <div class="resource-item" data-category="worksheets">
       <h3 class="title">Uploaded Worksheets</h3>
       <ul id="uploadedFiles">
-        <!-- Download links populated from resources.json -->
+        <!-- PDFs auto-loaded from resources.json -->
       </ul>
     </div>
 
   </div>
-
 </main>
 
 <footer>
-  <p>&copy; 2025 Global Autism Hub. All rights reserved.</p>
+  <p>&copy; 2025 Global Autism Hub</p>
 </footer>
 
 <script src="script.js"></script>
-<script>
-// --- Multilingual translations ---
-const eduTranslations = {
-  en: {
-    welcomeTitle: "Educational Resources",
-    iep1Title: "What is an IEP?",
-    iep1Text: "An Individualized Education Program (IEP) is a personalized plan for students with special needs to provide tailored educational support.",
-    iep2Title: "Why IEP is Important",
-    iep2Text: "IEPs ensure measurable goals, accommodations, and resources for academic and social success for students with autism.",
-    resourcesTitle: "Free Educational Resources",
-    worksheetsTitle: "Uploaded Worksheets"
-  },
-  hi: {
-    welcomeTitle:"शैक्षिक संसाधन",
-    iep1Title:"IEP क्या है?",
-    iep1Text:"व्यक्तिगत शैक्षिक कार्यक्रम (IEP) विशेष जरूरतों वाले छात्रों के लिए एक व्यक्तिगत योजना है जो विशेष शैक्षिक समर्थन प्रदान करता है।",
-    iep2Title:"IEP क्यों महत्वपूर्ण है",
-    iep2Text:"IEP सुनिश्चित करता है कि छात्रों को मापने योग्य लक्ष्य, आवश्यक सुविधाएं और शैक्षिक एवं सामाजिक सफलता के लिए संसाधन मिलें।",
-    resourcesTitle:"मुफ़्त शैक्षिक संसाधन",
-    worksheetsTitle:"अपलोड की गई वर्कशीट्स"
-  }
-  // Add ja, zh, ar, vi, ur, es
-};
-
-// --- Language Switcher ---
-const langLinksEdu = document.querySelectorAll('#language-switcher a');
-langLinksEdu.forEach(link=>{
-  link.addEventListener('click', e=>{
-    e.preventDefault();
-    const lang = link.getAttribute('data-lang');
-    const t = eduTranslations[lang] || eduTranslations['en'];
-    document.getElementById('welcome-title').textContent = t.welcomeTitle;
-
-    const items = document.querySelectorAll('#edu-items .resource-item');
-    items[0].querySelector('.title').textContent = t.iep1Title;
-    items[0].querySelector('.text').textContent = t.iep1Text;
-    items[1].querySelector('.title').textContent = t.iep2Title;
-    items[1].querySelector('.text').textContent = t.iep2Text;
-    items[2].querySelector('.title').textContent = t.resourcesTitle;
-    items[3].querySelector('.title').textContent = t.worksheetsTitle;
-  });
-});
-
-// --- Resource Filtering ---
-const filterBtns = document.querySelectorAll('.filter-btns button');
-const resourcesItems = document.querySelectorAll('#edu-items .resource-item');
-filterBtns.forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const category = btn.getAttribute('data-filter');
-    resourcesItems.forEach(res=>{
-      res.style.display = (category==='all'||res.getAttribute('data-category')===category)?'block':'none';
-    });
-  });
-});
-
-// --- Auto-generate downloadable worksheets from JSON ---
-fetch('resources/resources.json')
-  .then(response => response.json())
-  .then(files => {
-    const ul = document.getElementById('uploadedFiles');
-    files.forEach(file => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = 'resources/' + file;
-      a.download = file;
-      a.textContent = file;
-      li.appendChild(a);
-      ul.appendChild(li);
-    });
-  })
-  .catch(err => console.error("Failed to load resources.json:", err));
-</script>
-
 </body>
 </html>
