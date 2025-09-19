@@ -164,3 +164,21 @@ uploadedFilesList.forEach(file => {
 
 </body>
 </html>
+<script>
+// Auto-generate download links from JSON
+fetch('resources/resources.json')
+  .then(response => response.json())
+  .then(files => {
+    const ul = document.getElementById('uploadedFiles');
+    files.forEach(file => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = 'resources/' + file;
+      a.download = file;
+      a.textContent = file;
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  })
+  .catch(err => console.error("Failed to load resource list:", err));
+</script>
