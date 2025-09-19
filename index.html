@@ -3,19 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Global Autism Hub</title>
+<title>Global Autism Hub - Autism Information & Resources</title>
+<meta name="description" content="Global Autism Hub provides trusted autism information, educational resources, worksheets, IEP guidance, therapy tools, and global support.">
+<meta name="keywords" content="autism, autism support, autism resources, autism education, IEP, autism worksheets, special education, autism therapies">
+<meta name="author" content="Divyam VNS">
+<meta name="robots" content="index, follow">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Global Autism Hub",
+  "url": "https://divyam-vns.github.io/divyamvns.github.io/",
+  "description": "Comprehensive autism information, educational resources, research, and support worldwide."
+}
+</script>
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1 id="site-title">🌍 Global Autism Hub</h1>
-  <p id="site-tagline">Trusted, accessible autism information and resources worldwide</p>
+  <h1>🌍 Global Autism Hub</h1>
+  <p>Your trusted autism information and resource hub worldwide.</p>
 </header>
 
-<!-- Language Switcher -->
 <div id="language-switcher">
-  <span>Language: </span>
+  Language:
   <a href="#" data-lang="en">English</a>|
   <a href="#" data-lang="hi">Hindi</a>|
   <a href="#" data-lang="ja">Japanese</a>|
@@ -26,7 +41,6 @@
   <a href="#" data-lang="es">Spanish</a>
 </div>
 
-<!-- Navbar -->
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About Autism</a>
@@ -36,100 +50,38 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<!-- Hero Section -->
-<section id="hero" style="text-align:center; padding:2rem; background-color:#48cae4; color:#fff;">
-  <h2>Welcome to the Global Autism Hub</h2>
-  <p>Explore comprehensive information, educational resources, and support worldwide.</p>
-  <a href="education.html" style="padding:0.5rem 1rem; background:#023e8a; color:#fff; text-decoration:none; border-radius:4px;">Explore Educational Resources</a>
-</section>
-
 <main>
-  <!-- Featured Resources -->
+  <section id="hero">
+    <h2>Comprehensive Autism Information & Resources</h2>
+    <p>Explore autism guides, educational worksheets, IEP information, therapy tools, and global support.</p>
+    <a href="education.html">Explore Educational Resources</a>
+  </section>
+
   <section id="featured">
     <h2>Featured Resources</h2>
-    <div class="resource-item" style="background:#e0fbfc; padding:1rem; margin:1rem 0; border-radius:5px;">
+    <div class="resource-item">
       <h3>What is an IEP?</h3>
-      <p>Learn about Individualized Education Programs for children with autism.</p>
+      <p>Learn about Individualized Education Programs and their importance for children with autism.</p>
       <a href="resources/What_is_an_IEP.pdf" download>Download PDF</a>
     </div>
-    <div class="resource-item" style="background:#e0fbfc; padding:1rem; margin:1rem 0; border-radius:5px;">
-      <h3>Speech Therapy Resources</h3>
-      <p>Free speech and communication worksheets for early learners.</p>
+    <div class="resource-item">
+      <h3>Speech Therapy Worksheets</h3>
+      <p>Free practice materials for improving communication skills.</p>
       <a href="resources/Speech_Therapy.pdf" download>Download PDF</a>
     </div>
   </section>
 
-  <!-- Quick Search -->
   <section id="search-section">
-    <h2>Search Resources</h2>
-    <input type="text" id="searchInput" placeholder="Type a keyword..." style="padding:0.5rem; width:100%; max-width:400px; margin-bottom:1rem;">
+    <h2>Search Autism Resources</h2>
+    <input type="text" id="searchInput" placeholder="Type a keyword...">
     <ul id="searchResults"></ul>
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Global Autism Hub</p>
+  <p>&copy; 2025 Global Autism Hub | Autism support and educational resources worldwide</p>
 </footer>
 
 <script src="script.js"></script>
-<script>
-// --- Multilingual translations ---
-const homeTranslations = {
-  en: {
-    heroTitle: "Welcome to the Global Autism Hub",
-    heroText: "Explore comprehensive information, educational resources, and support worldwide.",
-    featuredTitle: "Featured Resources",
-    searchTitle: "Search Resources"
-  },
-  hi: {
-    heroTitle: "ग्लोबल ऑटिज़्म हब में आपका स्वागत है",
-    heroText: "व्यापक जानकारी, शैक्षिक संसाधन और समर्थन खोजें।",
-    featuredTitle: "विशेष संसाधन",
-    searchTitle: "संसाधनों में खोजें"
-  }
-  // Add other languages: ja, zh, ar, vi, ur, es
-};
-
-// --- Language Switcher ---
-const langLinks = document.querySelectorAll('#language-switcher a');
-langLinks.forEach(link=>{
-  link.addEventListener('click', e=>{
-    e.preventDefault();
-    const lang = link.getAttribute('data-lang');
-    const t = homeTranslations[lang] || homeTranslations['en'];
-
-    document.querySelector('#hero h2').textContent = t.heroTitle;
-    document.querySelector('#hero p').textContent = t.heroText;
-    document.querySelector('#featured h2').textContent = t.featuredTitle;
-    document.querySelector('#search-section h2').textContent = t.searchTitle;
-  });
-});
-
-// --- Quick search functionality ---
-const searchInput = document.getElementById('searchInput');
-const searchResults = document.getElementById('searchResults');
-const pdfFiles = [
-  "Functional_Language_Practice.pdf",
-  "GrossMotorImitationPhotoFlashcardsReceptiveLanguage.pdf",
-  "Preprimersightwordsentenceswithpictures.pdf",
-  "Speech_Therapy.pdf",
-  "What_is_an_IEP.pdf",
-  "communication_teaching_material.pdf"
-];
-
-searchInput.addEventListener('input', ()=>{
-  const query = searchInput.value.toLowerCase();
-  searchResults.innerHTML = '';
-  pdfFiles.filter(f=>f.toLowerCase().includes(query)).forEach(file=>{
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = 'resources/' + file;
-    a.download = file;
-    a.textContent = file;
-    li.appendChild(a);
-    searchResults.appendChild(li);
-  });
-});
-</script>
 </body>
 </html>
