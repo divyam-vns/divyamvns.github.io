@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research - Global Autism Hub</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research - Global Autism Hub</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Autism Research</h1>
-  </header>
 
-  <nav>
+<header>
+  <h1 id="site-title">🌍 Global Autism Hub</h1>
+</header>
+
+<div id="language-switcher">
+  <span>Language: </span>
+  <a href="#" data-lang="en">English</a>|
+  <a href="#" data-lang="hi">Hindi</a>|
+  <a href="#" data-lang="ja">Japanese</a>|
+  <a href="#" data-lang="zh">Chinese</a>|
+  <a href="#" data-lang="ar">Arabic</a>|
+  <a href="#" data-lang="vi">Vietnamese</a>|
+  <a href="#" data-lang="ur">Urdu</a>|
+  <a href="#" data-lang="es">Spanish</a>
+</div>
+
+<nav>
   <a href="index.html">Home</a>
   <a href="about.html">About Autism</a>
   <a href="resources.html">Resources</a>
-  <a href="education.html">Education</a> <!-- New link -->
+  <a href="education.html">Education</a>
   <a href="research.html">Research</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-  <main>
-    <h2>Latest Insights</h2>
-    <p>
-      Research into autism is ongoing around the world, focusing on causes, 
-      early diagnosis, interventions, and support strategies that improve 
-      quality of life.
-    </p>
+<main>
+  <h2 id="research-title">Latest Autism Research</h2>
 
-    <h2>Trusted Sources</h2>
-    <ul>
-      <li><a href="https://www.autismsciencefoundation.org" target="_blank">Autism Science Foundation</a></li>
-      <li><a href="https://www.cdc.gov/ncbddd/autism/index.html" target="_blank">CDC Autism Research</a></li>
-      <li><a href="https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd" target="_blank">NIMH – Autism Spectrum Disorders</a></li>
-    </ul>
-  </main>
+  <div class="resource-item">
+    <h3>Early Intervention Benefits</h3>
+    <p>Research shows early intervention improves communication, social, and cognitive skills for children with autism.</p>
+    <a href="https://www.autismspeaks.org/early-intervention" target="_blank">Read more</a>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Global Autism Hub. All rights reserved.</p>
-  </footer>
+  <div class="resource-item">
+    <h3>Inclusive Education Studies</h3>
+    <p>Studies highlight how inclusive classrooms support both neurodiverse and neurotypical students.</p>
+    <a href="https://www.autism.org.uk/professionals/education" target="_blank">Read more</a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Global Autism Hub</p>
+</footer>
+
+<script>
+// Multilingual
+const researchTranslations = { en:{researchTitle:"Latest Autism Research"}, hi:{researchTitle:"नवीनतम ऑटिज़्म शोध"} };
+const langLinksResrch = document.querySelectorAll('#language-switcher a');
+langLinksResrch.forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    const lang = link.getAttribute('data-lang');
+    const t = researchTranslations[lang] || researchTranslations['en'];
+    document.getElementById('research-title').textContent = t.researchTitle;
+  });
+});
+</script>
+
 </body>
 </html>
+
