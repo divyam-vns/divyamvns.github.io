@@ -1,45 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resources - Global Autism Hub</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources - Global Autism Hub</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Autism Resources</h1>
-  </header>
 
-  <nav>
+<header>
+  <h1 id="site-title">🌍 Global Autism Hub</h1>
+</header>
+
+<div id="language-switcher">
+  <span>Language: </span>
+  <a href="#" data-lang="en">English</a>|
+  <a href="#" data-lang="hi">Hindi</a>|
+  <a href="#" data-lang="ja">Japanese</a>|
+  <a href="#" data-lang="zh">Chinese</a>|
+  <a href="#" data-lang="ar">Arabic</a>|
+  <a href="#" data-lang="vi">Vietnamese</a>|
+  <a href="#" data-lang="ur">Urdu</a>|
+  <a href="#" data-lang="es">Spanish</a>
+</div>
+
+<nav>
   <a href="index.html">Home</a>
   <a href="about.html">About Autism</a>
   <a href="resources.html">Resources</a>
-  <a href="education.html">Education</a> <!-- New link -->
+  <a href="education.html">Education</a>
   <a href="research.html">Research</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-  <main>
-    <h2>Support Organizations</h2>
-    <ul>
-      <li><a href="https://www.autismspeaks.org" target="_blank">Autism Speaks</a></li>
-      <li><a href="https://www.globalautismproject.org" target="_blank">Global Autism Project</a></li>
-      <li><a href="https://www.autismaroundtheglobe.org" target="_blank">Autism Around the Globe</a></li>
-      <li><a href="https://www.aglobalvoice.org" target="_blank">A Global Voice for Autism</a></li>
-    </ul>
+<main>
+  <h2 id="resources-title">Support & Resources Directory</h2>
 
-    <h2>Categories</h2>
+  <div class="resource-item">
+    <h3>Global Autism Organizations</h3>
     <ul>
-      <li>Healthcare & Diagnosis</li>
-      <li>Therapy & Education</li>
-      <li>Parent Support</li>
-      <li>Global Research</li>
+      <li><a href="https://www.autismspeaks.org/" target="_blank">Autism Speaks</a></li>
+      <li><a href="https://www.autism.org.uk/" target="_blank">National Autistic Society (UK)</a></li>
+      <li><a href="https://www.asiancenterforautism.org/" target="_blank">Asian Center for Autism</a></li>
     </ul>
-  </main>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Global Autism Hub. All rights reserved.</p>
-  </footer>
+  <div class="resource-item">
+    <h3>Educational & Therapy Support</h3>
+    <ul>
+      <li><a href="resources/Functional_Language_Practice.pdf" download>Functional Language Practice PDF</a></li>
+      <li><a href="resources/Speech_Therapy.pdf" download>Speech Therapy PDF</a></li>
+      <li><a href="resources/Preprimersightwordsentenceswithpictures.pdf" download>Pre-primer Sight Words Worksheets PDF</a></li>
+    </ul>
+  </div>
+
+  <div class="resource-item">
+    <h3>Local Support Services</h3>
+    <p>Check local hospitals, special education centers, and autism support groups in your region for hands-on assistance.</p>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Global Autism Hub</p>
+</footer>
+
+<script>
+// Multilingual support
+const resourcesTranslations = {
+  en: { resourcesTitle: "Support & Resources Directory" },
+  hi: { resourcesTitle: "सहायता और संसाधन निर्देशिका" }
+};
+const langLinksRes = document.querySelectorAll('#language-switcher a');
+langLinksRes.forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    const lang = link.getAttribute('data-lang');
+    const t = resourcesTranslations[lang] || resourcesTranslations['en'];
+    document.getElementById('resources-title').textContent = t.resourcesTitle;
+  });
+});
+</script>
+
 </body>
 </html>
