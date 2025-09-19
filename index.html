@@ -13,6 +13,7 @@
   <p id="site-tagline">Trusted, accessible autism information and resources worldwide</p>
 </header>
 
+<!-- Language Switcher -->
 <div id="language-switcher">
   <span>Language: </span>
   <a href="#" data-lang="en">English</a>|
@@ -25,30 +26,110 @@
   <a href="#" data-lang="es">Spanish</a>
 </div>
 
+<!-- Navbar -->
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About Autism</a>
   <a href="resources.html">Resources</a>
-  <a href="education.html">Education</a> <!-- New link -->
+  <a href="education.html">Education</a>
   <a href="research.html">Research</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-<main>
-  <h2 id="welcome-title">Welcome</h2>
-  <p id="welcome-text">Our mission is to provide comprehensive, multilingual, and accessible information about autism, support for families, and the latest research worldwide.</p>
+<!-- Hero Section -->
+<section id="hero" style="text-align:center; padding:2rem; background-color:#48cae4; color:#fff;">
+  <h2>Welcome to the Global Autism Hub</h2>
+  <p>Explore comprehensive information, educational resources, and support worldwide.</p>
+  <a href="education.html" style="padding:0.5rem 1rem; background:#023e8a; color:#fff; text-decoration:none; border-radius:4px;">Explore Educational Resources</a>
+</section>
 
-  <h2 id="accordion-title">Frequently Asked Questions</h2>
-  <button class="accordion">What is Autism?</button>
-  <div class="panel"><p>Autism Spectrum Disorder (ASD) is a lifelong neurodevelopmental condition affecting communication, behavior, and social interactions.</p></div>
-  <button class="accordion">How can therapies help?</button>
-  <div class="panel"><p>Therapies like speech therapy, occupational therapy, and ABA can improve communication, social skills, and daily living.</p></div>
+<main>
+  <!-- Featured Resources -->
+  <section id="featured">
+    <h2>Featured Resources</h2>
+    <div class="resource-item" style="background:#e0fbfc; padding:1rem; margin:1rem 0; border-radius:5px;">
+      <h3>What is an IEP?</h3>
+      <p>Learn about Individualized Education Programs for children with autism.</p>
+      <a href="resources/What_is_an_IEP.pdf" download>Download PDF</a>
+    </div>
+    <div class="resource-item" style="background:#e0fbfc; padding:1rem; margin:1rem 0; border-radius:5px;">
+      <h3>Speech Therapy Resources</h3>
+      <p>Free speech and communication worksheets for early learners.</p>
+      <a href="resources/Speech_Therapy.pdf" download>Download PDF</a>
+    </div>
+  </section>
+
+  <!-- Quick Search -->
+  <section id="search-section">
+    <h2>Search Resources</h2>
+    <input type="text" id="searchInput" placeholder="Type a keyword..." style="padding:0.5rem; width:100%; max-width:400px; margin-bottom:1rem;">
+    <ul id="searchResults"></ul>
+  </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Global Autism Hub. All rights reserved.</p>
+  <p>&copy; 2025 Global Autism Hub</p>
 </footer>
 
 <script src="script.js"></script>
+<script>
+// --- Multilingual translations ---
+const homeTranslations = {
+  en: {
+    heroTitle: "Welcome to the Global Autism Hub",
+    heroText: "Explore comprehensive information, educational resources, and support worldwide.",
+    featuredTitle: "Featured Resources",
+    searchTitle: "Search Resources"
+  },
+  hi: {
+    heroTitle: "ग्लोबल ऑटिज़्म हब में आपका स्वागत है",
+    heroText: "व्यापक जानकारी, शैक्षिक संसाधन और समर्थन खोजें।",
+    featuredTitle: "विशेष संसाधन",
+    searchTitle: "संसाधनों में खोजें"
+  }
+  // Add other languages: ja, zh, ar, vi, ur, es
+};
+
+// --- Language Switcher ---
+const langLinks = document.querySelectorAll('#language-switcher a');
+langLinks.forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    const lang = link.getAttribute('data-lang');
+    const t = homeTranslations[lang] || homeTranslations['en'];
+
+    document.querySelector('#hero h2').textContent = t.heroTitle;
+    document.querySelector('#hero p').textContent = t.heroText;
+    document.querySelector('#featured h2').textContent = t.featuredTitle;
+    document.querySelector('#search-section h2').textContent = t.searchTitle;
+  });
+});
+
+// --- Quick search functionality ---
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const pdfFiles = [
+  "Functional_Language_Practice.pdf",
+  "GrossMotorImitationPhotoFlashcardsReceptiveLanguage.pdf",
+  "Preprimersightwordsentenceswithpictures.pdf",
+  "Speech_Therapy.pdf",
+  "What_is_an_IEP.pdf",
+  "communication_teaching_material.pdf"
+];
+
+searchInput.addEventListener('input', ()=>{
+  const query = searchInput.value.toLowerCase();
+  searchResults.innerHTML = '';
+  pdfFiles.filter(f=>f.toLowerCase().includes(query)).forEach(file=>{
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = 'resources/' + file;
+    a.download = file;
+    a.textContent = file;
+    li.appendChild(a);
+    searchResults.appendChild(li);
+  });
+});
+</script>
 </body>
 </html>
