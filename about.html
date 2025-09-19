@@ -4,16 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Autism - Global Autism Hub</title>
+<meta name="description" content="Learn about autism spectrum disorder (ASD), its symptoms, diagnosis, and support options for individuals and families worldwide.">
+<meta name="keywords" content="autism, autism spectrum disorder, ASD, autism symptoms, autism diagnosis, autism support, autism information">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1 id="site-title">🌍 Global Autism Hub</h1>
+  <h1>🌍 Global Autism Hub</h1>
 </header>
 
 <div id="language-switcher">
-  <span>Language: </span>
+  Language:
   <a href="#" data-lang="en">English</a>|
   <a href="#" data-lang="hi">Hindi</a>|
   <a href="#" data-lang="ja">Japanese</a>|
@@ -34,56 +36,34 @@
 </nav>
 
 <main>
-  <h2 id="about-title">About Autism</h2>
+  <h2>About Autism</h2>
 
-  <div class="resource-item">
+  <section>
     <h3>What is Autism?</h3>
-    <p>Autism spectrum disorder (ASD) is a developmental condition that affects communication, social interactions, and behavior. It is a lifelong condition that manifests differently in every individual.</p>
-  </div>
+    <p>Autism spectrum disorder (ASD) is a developmental condition affecting communication, social interaction, and behavior. It manifests differently in each individual.</p>
+  </section>
 
-  <div class="resource-item">
+  <section>
     <h3>Signs and Symptoms</h3>
     <ul>
-      <li>Difficulty with communication</li>
+      <li>Difficulty communicating</li>
       <li>Challenges in social interaction</li>
       <li>Repetitive behaviors or routines</li>
       <li>Sensory sensitivities</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="resource-item">
+  <section>
     <h3>Diagnosis and Early Intervention</h3>
-    <p>Early identification of autism is key. Interventions and therapies can significantly improve social, educational, and daily life skills.</p>
-  </div>
+    <p>Early detection improves social, educational, and daily life outcomes. Interventions and therapies can significantly help children with autism.</p>
+    <a href="education.html">View educational resources and IEP guides</a>
+  </section>
 </main>
 
 <footer>
   <p>&copy; 2025 Global Autism Hub</p>
 </footer>
 
-<script>
-// --- Multilingual translations ---
-const aboutTranslations = {
-  en: {
-    aboutTitle: "About Autism"
-  },
-  hi: {
-    aboutTitle: "ऑटिज़्म के बारे में"
-  }
-  // Add ja, zh, ar, vi, ur, es
-};
-
-// Language switcher
-const langLinksAbout = document.querySelectorAll('#language-switcher a');
-langLinksAbout.forEach(link=>{
-  link.addEventListener('click', e=>{
-    e.preventDefault();
-    const lang = link.getAttribute('data-lang');
-    const t = aboutTranslations[lang] || aboutTranslations['en'];
-    document.getElementById('about-title').textContent = t.aboutTitle;
-  });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
