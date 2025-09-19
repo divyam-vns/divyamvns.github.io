@@ -1,50 +1,75 @@
-// Multilingual translations (starter)
-const translations = {
-  en: { siteTitle:"🌍 Global Autism Hub", siteTagline:"Trusted, accessible autism information and resources worldwide", welcomeTitle:"Welcome", welcomeText:"Our mission is to provide comprehensive, multilingual, and accessible information about autism, support for families, and the latest research worldwide.", accordionTitle:"Frequently Asked Questions", resourcesTitle:"Resources Directory" },
-  hi: { siteTitle:"🌍 ग्लोबल ऑटिज़्म हब", siteTagline:"विश्वसनीय, सुलभ ऑटिज़्म जानकारी और संसाधन", welcomeTitle:"स्वागत है", welcomeText:"हमारा मिशन ऑटिज़्म के बारे में व्यापक, बहुभाषी और सुलभ जानकारी, परिवारों के लिए समर्थन और नवीनतम अनुसंधान प्रदान करना है।", accordionTitle:"अक्सर पूछे जाने वाले प्रश्न", resourcesTitle:"संसाधन निर्देशिका" },
-  es: { siteTitle:"🌍 Centro Global de Autismo", siteTagline:"Información y recursos confiables y accesibles sobre autismo en todo el mundo", welcomeTitle:"Bienvenido", welcomeText:"Nuestra misión es brindar información integral, multilingüe y accesible sobre el autismo, apoyo para familias y la investigación más reciente en todo el mundo.", accordionTitle:"Preguntas Frecuentes", resourcesTitle:"Directorio de Recursos" }
-  // add other languages: ja, zh, ar, vi, ur
+// --- Multilingual support ---
+const eduTranslations = {
+  en: {
+    welcomeTitle: "Educational Resources",
+    iep1Title: "What is an IEP?",
+    iep1Text: "An Individualized Education Program (IEP) is a personalized plan for students with special needs to provide tailored educational support.",
+    iep2Title: "Why IEP is Important",
+    iep2Text: "IEPs ensure measurable goals, accommodations, and resources for academic and social success for students with autism.",
+    resourcesTitle: "Free Educational Resources",
+    worksheetsTitle: "Uploaded Worksheets"
+  },
+  hi: {
+    welcomeTitle:"शैक्षिक संसाधन",
+    iep1Title:"IEP क्या है?",
+    iep1Text:"व्यक्तिगत शैक्षिक कार्यक्रम (IEP) विशेष जरूरतों वाले छात्रों के लिए एक व्यक्तिगत योजना है जो विशेष शैक्षिक समर्थन प्रदान करता है।",
+    iep2Title:"IEP क्यों महत्वपूर्ण है",
+    iep2Text:"IEP सुनिश्चित करता है कि छात्रों को मापने योग्य लक्ष्य, आवश्यक सुविधाएं और शैक्षिक एवं सामाजिक सफलता के लिए संसाधन मिलें।",
+    resourcesTitle:"मुफ़्त शैक्षिक संसाधन",
+    worksheetsTitle:"अपलोड की गई वर्कशीट्स"
+  }
+  // Add other languages: ja, zh, ar, vi, ur, es
 };
 
-// Language switcher
-const langLinks = document.querySelectorAll('#language-switcher a');
-langLinks.forEach(link=>{
-  link.addEventListener('click', (e)=>{
+// --- Language Switcher ---
+const langLinksEdu = document.querySelectorAll('#language-switcher a');
+langLinksEdu.forEach(link=>{
+  link.addEventListener('click', e=>{
     e.preventDefault();
     const lang = link.getAttribute('data-lang');
-    const t = translations[lang];
-    document.getElementById('site-title').textContent = t.siteTitle;
-    document.getElementById('site-tagline').textContent = t.siteTagline;
-    const wTitle = document.getElementById('welcome-title');
-    if(wTitle) wTitle.textContent = t.welcomeTitle;
-    const wText = document.getElementById('welcome-text');
-    if(wText) wText.textContent = t.welcomeText;
-    const accTitle = document.getElementById('accordion-title');
-    if(accTitle) accTitle.textContent = t.accordionTitle;
-    const resTitle = document.getElementById('resources-title');
-    if(resTitle) resTitle.textContent = t.resourcesTitle;
+    const t = eduTranslations[lang] || eduTranslations['en'];
+    document.getElementById('welcome-title').textContent = t.welcomeTitle;
+
+    const items = document.querySelectorAll('.resource-item');
+    if(items[0]) {
+      items[0].querySelector('.title').textContent = t.iep1Title;
+      items[0].querySelector('.text').textContent = t.iep1Text;
+    }
+    if(items[1]) {
+      items[1].querySelector('.title').textContent = t.iep2Title;
+      items[1].querySelector('.text').textContent = t.iep2Text;
+    }
+    if(items[2]) items[2].querySelector('.title').textContent = t.resourcesTitle;
+    if(items[3]) items[3].querySelector('.title').textContent = t.worksheetsTitle;
   });
 });
 
-// Accordion
-var acc = document.getElementsByClassName("accordion");
-for(let i=0;i<acc.length;i++){
-  acc[i].addEventListener("click", function(){
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
-  });
-}
-
-// Resource filtering
+// --- Filter Buttons ---
 const filterBtns = document.querySelectorAll('.filter-btns button');
-const resources = document.querySelectorAll('.resource-item');
+const resourcesItems = document.querySelectorAll('.resource-item');
 filterBtns.forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const category = btn.getAttribute('data-filter');
-    resources.forEach(res=>{
-      if(category==='all'||res.getAttribute('data-category')===category){res.style.display='block';}
-      else{res.style.display='none';}
+    resourcesItems.forEach(res=>{
+      res.style.display = (category==='all'||res.getAttribute('data-category')===category)?'block':'none';
     });
   });
 });
+
+// --- Auto-generate downloadable worksheets from JSON ---
+fetch('resources/resources.json')
+  .then(response => response.json())
+  .then(files => {
+    const ul = document.getElementById('uploadedFiles');
+    if(!ul) return;
+    files.forEach(file => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = 'resources/' + file;
+      a.download = file;
+      a.textContent = file;
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  })
+  .catch(err => console.error("Failed to load resources.json:", err));
