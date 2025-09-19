@@ -3,26 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resources - Global Autism Hub</title>
+<title>Autism Support & Therapy Resources - Global Autism Hub</title>
+<meta name="description" content="Find global autism support and therapy resources. Downloadable PDFs, educational materials, and links to autism organizations worldwide.">
+<meta name="keywords" content="autism resources, autism support, autism therapy, autism PDFs, educational resources">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1 id="site-title">🌍 Global Autism Hub</h1>
+  <h1>🌍 Global Autism Hub</h1>
 </header>
-
-<div id="language-switcher">
-  <span>Language: </span>
-  <a href="#" data-lang="en">English</a>|
-  <a href="#" data-lang="hi">Hindi</a>|
-  <a href="#" data-lang="ja">Japanese</a>|
-  <a href="#" data-lang="zh">Chinese</a>|
-  <a href="#" data-lang="ar">Arabic</a>|
-  <a href="#" data-lang="vi">Vietnamese</a>|
-  <a href="#" data-lang="ur">Urdu</a>|
-  <a href="#" data-lang="es">Spanish</a>
-</div>
 
 <nav>
   <a href="index.html">Home</a>
@@ -34,29 +24,20 @@
 </nav>
 
 <main>
-  <h2 id="resources-title">Support & Resources Directory</h2>
+  <h2>Support & Resources Directory</h2>
+  <p>Downloadable worksheets, PDFs, and links to global autism organizations.</p>
 
   <div class="resource-item">
     <h3>Global Autism Organizations</h3>
     <ul>
       <li><a href="https://www.autismspeaks.org/" target="_blank">Autism Speaks</a></li>
       <li><a href="https://www.autism.org.uk/" target="_blank">National Autistic Society (UK)</a></li>
-      <li><a href="https://www.asiancenterforautism.org/" target="_blank">Asian Center for Autism</a></li>
     </ul>
   </div>
 
   <div class="resource-item">
-    <h3>Educational & Therapy Support</h3>
-    <ul>
-      <li><a href="resources/Functional_Language_Practice.pdf" download>Functional Language Practice PDF</a></li>
-      <li><a href="resources/Speech_Therapy.pdf" download>Speech Therapy PDF</a></li>
-      <li><a href="resources/Preprimersightwordsentenceswithpictures.pdf" download>Pre-primer Sight Words Worksheets PDF</a></li>
-    </ul>
-  </div>
-
-  <div class="resource-item">
-    <h3>Local Support Services</h3>
-    <p>Check local hospitals, special education centers, and autism support groups in your region for hands-on assistance.</p>
+    <h3>Downloadable Worksheets</h3>
+    <ul id="uploadedFiles"></ul>
   </div>
 </main>
 
@@ -64,22 +45,6 @@
   <p>&copy; 2025 Global Autism Hub</p>
 </footer>
 
-<script>
-// Multilingual support
-const resourcesTranslations = {
-  en: { resourcesTitle: "Support & Resources Directory" },
-  hi: { resourcesTitle: "सहायता और संसाधन निर्देशिका" }
-};
-const langLinksRes = document.querySelectorAll('#language-switcher a');
-langLinksRes.forEach(link=>{
-  link.addEventListener('click', e=>{
-    e.preventDefault();
-    const lang = link.getAttribute('data-lang');
-    const t = resourcesTranslations[lang] || resourcesTranslations['en'];
-    document.getElementById('resources-title').textContent = t.resourcesTitle;
-  });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
