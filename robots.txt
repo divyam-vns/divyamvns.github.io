@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://divyam-vns.github.io/divyamvns.github.io/sitemap.xml
