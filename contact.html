@@ -3,26 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - Global Autism Hub</title>
+<title>Contact & Support - Global Autism Hub</title>
+<meta name="description" content="Contact Global Autism Hub for autism support, resource submissions, or inquiries. Connect with autism organizations and the global community.">
+<meta name="keywords" content="autism contact, autism support, submit autism resources, autism help">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1 id="site-title">🌍 Global Autism Hub</h1>
+  <h1>🌍 Global Autism Hub</h1>
 </header>
-
-<div id="language-switcher">
-  <span>Language: </span>
-  <a href="#" data-lang="en">English</a>|
-  <a href="#" data-lang="hi">Hindi</a>|
-  <a href="#" data-lang="ja">Japanese</a>|
-  <a href="#" data-lang="zh">Chinese</a>|
-  <a href="#" data-lang="ar">Arabic</a>|
-  <a href="#" data-lang="vi">Vietnamese</a>|
-  <a href="#" data-lang="ur">Urdu</a>|
-  <a href="#" data-lang="es">Spanish</a>
-</div>
 
 <nav>
   <a href="index.html">Home</a>
@@ -34,46 +24,37 @@
 </nav>
 
 <main>
-  <h2 id="contact-title">Contact & Support</h2>
+  <h2>Contact & Support</h2>
 
-  <div class="resource-item">
-    <h3>Email Support</h3>
-    <p>Reach out to us at <a href="mailto:support@globalautismhub.org">support@globalautismhub.org</a> for questions or resource submissions.</p>
-  </div>
-
-  <div class="resource-item">
-    <h3>Join Our Community</h3>
-    <p>Follow us on social media and connect with autism support groups worldwide.</p>
+  <section>
+    <h3>Get in Touch</h3>
+    <p>Email: <a href="mailto:support@globalautismhub.org">support@globalautismhub.org</a></p>
+    <p>Follow us on social media for updates:</p>
     <ul>
-      <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-      <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
-      <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+      <li><a href="#" target="_blank">Facebook</a></li>
+      <li><a href="#" target="_blank">Twitter</a></li>
+      <li><a href="#" target="_blank">LinkedIn</a></li>
     </ul>
-  </div>
+  </section>
 
-  <div class="resource-item">
+  <section>
     <h3>Submit Resources</h3>
-    <p>You can email PDFs or links to be featured on the site.</p>
-  </div>
+    <p>If you have autism-related worksheets, guides, or research links, you can submit them for review to be added to our resource hub.</p>
+  </section>
+
+  <section>
+    <h3>FAQ / Help</h3>
+    <ul>
+      <li>How can I download educational worksheets? → Go to <a href="education.html">Education Page</a></li>
+      <li>Where can I find autism support organizations? → Check <a href="resources.html">Resources Page</a></li>
+    </ul>
+  </section>
 </main>
 
 <footer>
   <p>&copy; 2025 Global Autism Hub</p>
 </footer>
 
-<script>
-// Multilingual
-const contactTranslations = { en:{contactTitle:"Contact & Support"}, hi:{contactTitle:"संपर्क और सहायता"} };
-const langLinksContact = document.querySelectorAll('#language-switcher a');
-langLinksContact.forEach(link=>{
-  link.addEventListener('click', e=>{
-    e.preventDefault();
-    const lang = link.getAttribute('data-lang');
-    const t = contactTranslations[lang] || contactTranslations['en'];
-    document.getElementById('contact-title').textContent = t.contactTitle;
-  });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
