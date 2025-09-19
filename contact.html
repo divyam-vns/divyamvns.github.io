@@ -1,33 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Global Autism Hub</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Global Autism Hub</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Contact Us</h1>
-  </header>
 
-  <nav>
+<header>
+  <h1 id="site-title">🌍 Global Autism Hub</h1>
+</header>
+
+<div id="language-switcher">
+  <span>Language: </span>
+  <a href="#" data-lang="en">English</a>|
+  <a href="#" data-lang="hi">Hindi</a>|
+  <a href="#" data-lang="ja">Japanese</a>|
+  <a href="#" data-lang="zh">Chinese</a>|
+  <a href="#" data-lang="ar">Arabic</a>|
+  <a href="#" data-lang="vi">Vietnamese</a>|
+  <a href="#" data-lang="ur">Urdu</a>|
+  <a href="#" data-lang="es">Spanish</a>
+</div>
+
+<nav>
   <a href="index.html">Home</a>
   <a href="about.html">About Autism</a>
   <a href="resources.html">Resources</a>
-  <a href="education.html">Education</a> <!-- New link -->
+  <a href="education.html">Education</a>
   <a href="research.html">Research</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-  <main>
-    <h2>Get in Touch</h2>
-    <p>If you would like to contribute resources, share your story, or ask questions, please contact us:</p>
-    <p>Email: <a href="mailto:globalautismhub@example.com">globalautismhub@example.com</a></p>
-  </main>
+<main>
+  <h2 id="contact-title">Contact & Support</h2>
 
-  <footer>
-    <p>&copy; 2025 Global Autism Hub. All rights reserved.</p>
-  </footer>
+  <div class="resource-item">
+    <h3>Email Support</h3>
+    <p>Reach out to us at <a href="mailto:support@globalautismhub.org">support@globalautismhub.org</a> for questions or resource submissions.</p>
+  </div>
+
+  <div class="resource-item">
+    <h3>Join Our Community</h3>
+    <p>Follow us on social media and connect with autism support groups worldwide.</p>
+    <ul>
+      <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+      <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+      <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="resource-item">
+    <h3>Submit Resources</h3>
+    <p>You can email PDFs or links to be featured on the site.</p>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Global Autism Hub</p>
+</footer>
+
+<script>
+// Multilingual
+const contactTranslations = { en:{contactTitle:"Contact & Support"}, hi:{contactTitle:"संपर्क और सहायता"} };
+const langLinksContact = document.querySelectorAll('#language-switcher a');
+langLinksContact.forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    const lang = link.getAttribute('data-lang');
+    const t = contactTranslations[lang] || contactTranslations['en'];
+    document.getElementById('contact-title').textContent = t.contactTitle;
+  });
+});
+</script>
+
 </body>
 </html>
