@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educational Resources - Global Autism Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1 id="site-title">🌍 Global Autism Hub</h1>
+  <p id="site-tagline">Trusted, accessible autism information and resources worldwide</p>
+</header>
+
+<div id="language-switcher">
+  <span>Language: </span>
+  <a href="#" data-lang="en">English</a>|
+  <a href="#" data-lang="hi">Hindi</a>|
+  <a href="#" data-lang="ja">Japanese</a>|
+  <a href="#" data-lang="zh">Chinese</a>|
+  <a href="#" data-lang="ar">Arabic</a>|
+  <a href="#" data-lang="vi">Vietnamese</a>|
+  <a href="#" data-lang="ur">Urdu</a>|
+  <a href="#" data-lang="es">Spanish</a>
+</div>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Autism</a>
+  <a href="resources.html">Resources</a>
+  <a href="education.html">Education</a>
+  <a href="research.html">Research</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <h2 id="welcome-title">Educational Resources</h2>
+
+  <h3>What is an IEP?</h3>
+  <p>
+    An Individualized Education Program (IEP) is a personalized plan developed for students with special needs 
+    to ensure they receive tailored educational support.
+  </p>
+
+  <h3>Why IEP is Important</h3>
+  <p>
+    IEPs help set measurable goals, provide necessary accommodations, and ensure students with autism receive 
+    the resources they need to succeed academically and socially.
+  </p>
+
+  <h3>Free Educational Resources</h3>
+  <ul id="edu-links">
+    <li><a href="https://www.understood.org/articles/en/iep-basics-for-parents" target="_blank">IEP Basics – Understood.org</a></li>
+    <li><a href="https://www.autismspeaks.org/tool-kits/transition-tool-kit" target="_blank">Autism Speaks – Educational Toolkits</a></li>
+    <li><a href="https://www.asha.org/public/speech/development/Free-Resources-for-Speech-and-Language/" target="_blank">Speech & Language Free Resources – ASHA</a></li>
+    <li><a href="https://www.education.com/worksheets/autism/" target="_blank">Free Autism Worksheets – Education.com</a></li>
+  </ul>
+
+  <h3>Upload Your Worksheets</h3>
+  <p>Share educational worksheets with the community (PDF only, max 5MB):</p>
+  <input type="file" id="fileInput" accept=".pdf">
+  <button onclick="uploadFile()">Upload</button>
+  <p id="uploadMessage"></p>
+
+  <h3>Uploaded Worksheets</h3>
+  <ul id="uploadedFiles">
+    <!-- Uploaded files will appear here -->
+  </ul>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Global Autism Hub. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// Language switcher (reuse from script.js)
+const langLinks = document.querySelectorAll('#language-switcher a');
+langLinks.forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    const lang = link.getAttribute('data-lang');
+    const t = translations[lang];
+    document.getElementById('site-title').textContent = t.siteTitle;
+    document.getElementById('site-tagline').textContent = t.siteTagline;
+    const wTitle = document.getElementById('welcome-title');
+    if(wTitle) wTitle.textContent = t.welcomeTitle;
+  });
+});
+
+// Simple file upload (client-side only)
+const uploadedFiles = [];
+function uploadFile() {
+  const input = document.getElementById('fileInput');
+  const file = input.files[0];
+  const message = document.getElementById('uploadMessage');
+  if(!file){ message.textContent = "Please select a file first."; return; }
+  if(file.size > 5*1024*1024){ message.textContent = "File too large. Max 5MB."; return; }
+  uploadedFiles.push(file.name);
+  const ul = document.getElementById('uploadedFiles');
+  const li = document.createElement('li');
+  li.textContent = file.name;
+  ul.appendChild(li);
+  message.textContent = "File uploaded (client-side only).";
+  input.value = ""; // clear input
+}
+</script>
+
+</body>
+</html>
