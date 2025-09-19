@@ -13,6 +13,7 @@
   <p id="site-tagline">Trusted, accessible autism information and resources worldwide</p>
 </header>
 
+<!-- Language Switcher -->
 <div id="language-switcher">
   <span>Language: </span>
   <a href="#" data-lang="en">English</a>|
@@ -25,11 +26,12 @@
   <a href="#" data-lang="es">Spanish</a>
 </div>
 
+<!-- Navbar -->
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About Autism</a>
   <a href="resources.html">Resources</a>
-  <a href="education.html">Education</a> <!-- New link -->
+  <a href="education.html">Education</a>
   <a href="research.html">Research</a>
   <a href="contact.html">Contact</a>
 </nav>
@@ -37,6 +39,7 @@
 <main>
   <h2 id="welcome-title">Educational Resources</h2>
 
+  <!-- Filter Buttons -->
   <div class="filter-btns">
     <button data-filter="all">All</button>
     <button data-filter="iep">IEP Info</button>
@@ -44,39 +47,40 @@
     <button data-filter="worksheets">Worksheets</button>
   </div>
 
+  <!-- Educational Items -->
   <div id="edu-items">
+
     <!-- IEP Info -->
     <div class="resource-item" data-category="iep">
-      <h3>What is an IEP?</h3>
-      <p>An Individualized Education Program (IEP) is a personalized plan for students with special needs to provide tailored educational support.</p>
+      <h3 class="title">What is an IEP?</h3>
+      <p class="text">An Individualized Education Program (IEP) is a personalized plan for students with special needs to provide tailored educational support.</p>
     </div>
+
     <div class="resource-item" data-category="iep">
-      <h3>Why IEP is Important</h3>
-      <p>IEPs ensure measurable goals, accommodations, and resources for academic and social success for students with autism.</p>
+      <h3 class="title">Why IEP is Important</h3>
+      <p class="text">IEPs ensure measurable goals, accommodations, and resources for academic and social success for students with autism.</p>
     </div>
 
     <!-- Free Resources -->
     <div class="resource-item" data-category="resources">
-      <h3>Free Educational Resources</h3>
+      <h3 class="title">Free Educational Resources</h3>
       <ul>
-        <li><a href="https://www.understood.org/articles/en/iep-basics-for-parents" target="_blank">IEP Basics – Understood.org</a></li>
-        <li><a href="https://www.autismspeaks.org/tool-kits/transition-tool-kit" target="_blank">Autism Speaks – Toolkits</a></li>
-        <li><a href="https://www.asha.org/public/speech/development/Free-Resources-for-Speech-and-Language/" target="_blank">Speech & Language – ASHA</a></li>
-        <li><a href="https://www.education.com/worksheets/autism/" target="_blank">Free Autism Worksheets – Education.com</a></li>
+        <li><a href="resources/iep-guide.pdf" download>IEP Guide (PDF)</a></li>
+        <li><a href="resources/free-worksheets.pdf" download>Free Autism Worksheets (PDF)</a></li>
+        <li><a href="resources/speech-therapy.pdf" download>Speech & Language Resource (PDF)</a></li>
       </ul>
     </div>
 
-    <!-- Worksheets Upload (client-side) -->
+    <!-- Uploaded Worksheets -->
     <div class="resource-item" data-category="worksheets">
-      <h3>Upload Your Worksheets</h3>
-      <p>Share educational worksheets (PDF only, max 5MB):</p>
-      <input type="file" id="fileInput" accept=".pdf">
-      <button onclick="uploadFile()">Upload</button>
-      <p id="uploadMessage"></p>
-      <h4>Uploaded Worksheets</h4>
-      <ul id="uploadedFiles"></ul>
+      <h3 class="title">Uploaded Worksheets</h3>
+      <ul id="uploadedFiles">
+        <!-- Automatically listed downloadable worksheets -->
+      </ul>
     </div>
+
   </div>
+
 </main>
 
 <footer>
@@ -85,7 +89,7 @@
 
 <script src="script.js"></script>
 <script>
-// Multilingual translations for Education Page
+// --- Multilingual translations ---
 const eduTranslations = {
   en: {
     welcomeTitle: "Educational Resources",
@@ -94,8 +98,7 @@ const eduTranslations = {
     iep2Title: "Why IEP is Important",
     iep2Text: "IEPs ensure measurable goals, accommodations, and resources for academic and social success for students with autism.",
     resourcesTitle: "Free Educational Resources",
-    worksheetsTitle: "Upload Your Worksheets",
-    uploadMessage: "File uploaded (client-side only)."
+    worksheetsTitle: "Uploaded Worksheets"
   },
   hi: {
     welcomeTitle:"शैक्षिक संसाधन",
@@ -104,13 +107,12 @@ const eduTranslations = {
     iep2Title:"IEP क्यों महत्वपूर्ण है",
     iep2Text:"IEP सुनिश्चित करता है कि छात्रों को मापने योग्य लक्ष्य, आवश्यक सुविधाएं और शैक्षिक एवं सामाजिक सफलता के लिए संसाधन मिलें।",
     resourcesTitle:"मुफ़्त शैक्षिक संसाधन",
-    worksheetsTitle:"अपनी वर्कशीट अपलोड करें",
-    uploadMessage:"फ़ाइल अपलोड हो गई है (केवल क्लाइंट-साइड)।"
+    worksheetsTitle:"अपलोड की गई वर्कशीट्स"
   },
-  // Add similar translations for ja, zh, ar, vi, ur, es
+  // Add ja, zh, ar, vi, ur, es
 };
 
-// Language switcher for Education Page
+// --- Language Switcher ---
 const langLinksEdu = document.querySelectorAll('#language-switcher a');
 langLinksEdu.forEach(link=>{
   link.addEventListener('click', e=>{
@@ -118,34 +120,18 @@ langLinksEdu.forEach(link=>{
     const lang = link.getAttribute('data-lang');
     const t = eduTranslations[lang] || eduTranslations['en'];
     document.getElementById('welcome-title').textContent = t.welcomeTitle;
-    const eduItems = document.querySelectorAll('#edu-items .resource-item');
-    eduItems[0].querySelector('h3').textContent = t.iep1Title;
-    eduItems[0].querySelector('p').textContent = t.iep1Text;
-    eduItems[1].querySelector('h3').textContent = t.iep2Title;
-    eduItems[1].querySelector('p').textContent = t.iep2Text;
-    eduItems[2].querySelector('h3').textContent = t.resourcesTitle;
-    eduItems[3].querySelector('h3').textContent = t.worksheetsTitle;
+
+    const items = document.querySelectorAll('#edu-items .resource-item');
+    items[0].querySelector('.title').textContent = t.iep1Title;
+    items[0].querySelector('.text').textContent = t.iep1Text;
+    items[1].querySelector('.title').textContent = t.iep2Title;
+    items[1].querySelector('.text').textContent = t.iep2Text;
+    items[2].querySelector('.title').textContent = t.resourcesTitle;
+    items[3].querySelector('.title').textContent = t.worksheetsTitle;
   });
 });
 
-// Client-side file upload for worksheets
-const uploadedFiles = [];
-function uploadFile(){
-  const input = document.getElementById('fileInput');
-  const file = input.files[0];
-  const message = document.getElementById('uploadMessage');
-  if(!file){ message.textContent = "Please select a file first."; return; }
-  if(file.size > 5*1024*1024){ message.textContent = "File too large. Max 5MB."; return; }
-  uploadedFiles.push(file.name);
-  const ul = document.getElementById('uploadedFiles');
-  const li = document.createElement('li');
-  li.textContent = file.name;
-  ul.appendChild(li);
-  message.textContent = "File uploaded (client-side only).";
-  input.value="";
-}
-
-// Resource Filtering
+// --- Resource Filtering ---
 const filterBtns = document.querySelectorAll('.filter-btns button');
 const resources = document.querySelectorAll('#edu-items .resource-item');
 filterBtns.forEach(btn=>{
@@ -155,6 +141,24 @@ filterBtns.forEach(btn=>{
       res.style.display = (category==='all'||res.getAttribute('data-category')===category)?'block':'none';
     });
   });
+});
+
+// --- Auto-list downloadable worksheets ---
+const uploadedFilesList = [
+  "resources/worksheet1.pdf",
+  "resources/worksheet2.pdf",
+  "resources/worksheet3.pdf"
+];
+
+const ul = document.getElementById('uploadedFiles');
+uploadedFilesList.forEach(file => {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+  a.href = file;
+  a.download = file.split('/').pop();
+  a.textContent = file.split('/').pop();
+  li.appendChild(a);
+  ul.appendChild(li);
 });
 </script>
 
