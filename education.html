@@ -71,13 +71,13 @@
       </ul>
     </div>
 
-    <!-- Uploaded Worksheets -->
+    <!-- Worksheets (auto-generated) -->
     <div class="resource-item" data-category="worksheets">
-  <h3 class="title">Uploaded Worksheets</h3>
-  <ul id="uploadedFiles">
-    <!-- Download links will be auto-generated -->
-  </ul>
-</div>
+      <h3 class="title">Uploaded Worksheets</h3>
+      <ul id="uploadedFiles">
+        <!-- Download links will be populated from resources.json -->
+      </ul>
+    </div>
 
   </div>
 
@@ -108,7 +108,7 @@ const eduTranslations = {
     iep2Text:"IEP सुनिश्चित करता है कि छात्रों को मापने योग्य लक्ष्य, आवश्यक सुविधाएं और शैक्षिक एवं सामाजिक सफलता के लिए संसाधन मिलें।",
     resourcesTitle:"मुफ़्त शैक्षिक संसाधन",
     worksheetsTitle:"अपलोड की गई वर्कशीट्स"
-  },
+  }
   // Add ja, zh, ar, vi, ur, es
 };
 
@@ -133,39 +133,17 @@ langLinksEdu.forEach(link=>{
 
 // --- Resource Filtering ---
 const filterBtns = document.querySelectorAll('.filter-btns button');
-const resources = document.querySelectorAll('#edu-items .resource-item');
+const resourcesItems = document.querySelectorAll('#edu-items .resource-item');
 filterBtns.forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const category = btn.getAttribute('data-filter');
-    resources.forEach(res=>{
+    resourcesItems.forEach(res=>{
       res.style.display = (category==='all'||res.getAttribute('data-category')===category)?'block':'none';
     });
   });
 });
 
-// --- Auto-list downloadable worksheets ---
-const uploadedFilesList = [
-  "resources/worksheet1.pdf",
-  "resources/worksheet2.pdf",
-  "resources/worksheet3.pdf"
-];
-
-const ul = document.getElementById('uploadedFiles');
-uploadedFilesList.forEach(file => {
-  const li = document.createElement('li');
-  const a = document.createElement('a');
-  a.href = file;
-  a.download = file.split('/').pop();
-  a.textContent = file.split('/').pop();
-  li.appendChild(a);
-  ul.appendChild(li);
-});
-</script>
-
-</body>
-</html>
-<script>
-// Auto-generate download links from JSON
+// --- Auto-generate downloadable worksheets from JSON ---
 fetch('resources/resources.json')
   .then(response => response.json())
   .then(files => {
@@ -180,5 +158,8 @@ fetch('resources/resources.json')
       ul.appendChild(li);
     });
   })
-  .catch(err => console.error("Failed to load resource list:", err));
+  .catch(err => console.error("Failed to load resources.json:", err));
 </script>
+
+</body>
+</html>
