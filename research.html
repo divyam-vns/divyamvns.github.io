@@ -3,26 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research - Global Autism Hub</title>
+<title>Latest Autism Research & Studies - Global Autism Hub</title>
+<meta name="description" content="Explore the latest autism research, studies, and articles on early intervention, inclusive education, and therapy approaches for children with autism.">
+<meta name="keywords" content="autism research, autism studies, early intervention, inclusive education, autism therapy research">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1 id="site-title">🌍 Global Autism Hub</h1>
+  <h1>🌍 Global Autism Hub</h1>
 </header>
-
-<div id="language-switcher">
-  <span>Language: </span>
-  <a href="#" data-lang="en">English</a>|
-  <a href="#" data-lang="hi">Hindi</a>|
-  <a href="#" data-lang="ja">Japanese</a>|
-  <a href="#" data-lang="zh">Chinese</a>|
-  <a href="#" data-lang="ar">Arabic</a>|
-  <a href="#" data-lang="vi">Vietnamese</a>|
-  <a href="#" data-lang="ur">Urdu</a>|
-  <a href="#" data-lang="es">Spanish</a>
-</div>
 
 <nav>
   <a href="index.html">Home</a>
@@ -34,39 +24,37 @@
 </nav>
 
 <main>
-  <h2 id="research-title">Latest Autism Research</h2>
+  <h2>Latest Autism Research & Studies</h2>
 
-  <div class="resource-item">
+  <section>
     <h3>Early Intervention Benefits</h3>
-    <p>Research shows early intervention improves communication, social, and cognitive skills for children with autism.</p>
-    <a href="https://www.autismspeaks.org/early-intervention" target="_blank">Read more</a>
-  </div>
+    <p>Research shows that early intervention programs improve social, communication, and cognitive skills in children with autism.</p>
+    <a href="https://www.autismspeaks.org/tool-kit/early-intervention" target="_blank">Learn More</a>
+  </section>
 
-  <div class="resource-item">
-    <h3>Inclusive Education Studies</h3>
-    <p>Studies highlight how inclusive classrooms support both neurodiverse and neurotypical students.</p>
-    <a href="https://www.autism.org.uk/professionals/education" target="_blank">Read more</a>
-  </div>
+  <section>
+    <h3>Inclusive Education Strategies</h3>
+    <p>Studies suggest that inclusive classrooms and individualized education programs (IEPs) enhance learning and social integration for students with autism.</p>
+  </section>
+
+  <section>
+    <h3>Therapy Approaches</h3>
+    <p>Applied Behavior Analysis (ABA), speech therapy, occupational therapy, and social skills programs are evidence-based methods that support children with autism.</p>
+  </section>
+
+  <section>
+    <h3>Research Resources</h3>
+    <ul>
+      <li><a href="https://www.autism.org.uk/advice-and-guidance" target="_blank">National Autistic Society Research</a></li>
+      <li><a href="https://www.cdc.gov/ncbddd/autism/research.html" target="_blank">CDC Autism Research</a></li>
+    </ul>
+  </section>
 </main>
 
 <footer>
   <p>&copy; 2025 Global Autism Hub</p>
 </footer>
 
-<script>
-// Multilingual
-const researchTranslations = { en:{researchTitle:"Latest Autism Research"}, hi:{researchTitle:"नवीनतम ऑटिज़्म शोध"} };
-const langLinksResrch = document.querySelectorAll('#language-switcher a');
-langLinksResrch.forEach(link=>{
-  link.addEventListener('click', e=>{
-    e.preventDefault();
-    const lang = link.getAttribute('data-lang');
-    const t = researchTranslations[lang] || researchTranslations['en'];
-    document.getElementById('research-title').textContent = t.researchTitle;
-  });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
-
