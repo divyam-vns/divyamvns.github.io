@@ -1,87 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Global Autism Hub - Autism Information & Resources</title>
-<meta name="description" content="Global Autism Hub provides trusted autism information, educational resources, worksheets, IEP guidance, therapy tools, and global support.">
-<meta name="keywords" content="autism, autism support, autism resources, autism education, IEP, autism worksheets, special education, autism therapies">
-<meta name="author" content="Divyam VNS">
-<meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Autism Hub — Autism Information & Resources</title>
+  <meta name="description" content="Your trusted global autism information and resource hub. Education, IEP guides, therapy tools, and worldwide support.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Search bar ── */
+    .search-wrap {
+      max-width: 560px;
+      margin: 0 auto 1rem;
+      position: relative;
+    }
+    .search-wrap input {
+      width: 100%;
+      padding: 14px 50px 14px 18px;
+      border-radius: 50px;
+      border: none;
+      font-size: 15px;
+      outline: none;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+    }
+    .search-wrap button {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--blue);
+      border: none;
+      color: white;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .search-results {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border2);
+      margin-top: 8px;
+      overflow: hidden;
+      display: none;
+    }
+    .search-results.open { display: block; }
+    .search-item {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+    .search-item:last-child { border-bottom: none; }
+    .search-item:hover { background: var(--blue-light); }
+    .search-item-title { font-weight: 600; font-size: 14px; color: var(--text); }
+    .search-item-desc { font-size: 12px; color: var(--text2); margin-top: 2px; }
+    .search-empty { padding: 14px 18px; color: var(--text3); font-size: 14px; }
 
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Global Autism Hub",
-  "url": "https://divyam-vns.github.io/divyamvns.github.io/",
-  "description": "Comprehensive autism information, educational resources, research, and support worldwide."
-}
-</script>
-<meta name="google-site-verification" content="_ILVauP-2PLUNN923yd5mcFWlzbNPiIN-SBK_aORFaw" />
-<link rel="stylesheet" href="style.css">
+    /* ── Stats ── */
+    .stat-num { transition: none; }
+
+    /* ── Quiz ── */
+    .quiz-section {
+      background: var(--blue);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .quiz-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .quiz-section p { opacity: 0.85; font-size: 14px; margin-bottom: 1.25rem; }
+    .quiz-progress { height: 4px; background: rgba(255,255,255,0.25); border-radius: 2px; margin-bottom: 1.25rem; }
+    .quiz-progress-fill { height: 100%; background: white; border-radius: 2px; transition: width 0.4s; }
+    .quiz-q { font-size: 16px; font-weight: 500; margin-bottom: 1rem; }
+    .quiz-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .quiz-opt {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      text-align: left;
+      transition: all 0.15s;
+    }
+    .quiz-opt:hover { background: rgba(255,255,255,0.22); }
+    .quiz-opt.correct { background: #16a34a; border-color: #16a34a; }
+    .quiz-opt.wrong   { background: #dc2626; border-color: #dc2626; }
+    .quiz-feedback { margin-top: 12px; font-size: 13px; opacity: 0.9; min-height: 18px; }
+    .quiz-score {
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .quiz-score .big { font-family: 'DM Serif Display', serif; font-size: 3rem; }
+
+    @media (max-width: 500px) {
+      .quiz-opts { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>🌍 Global Autism Hub</h1>
-  <p>Your trusted autism information and resource hub worldwide.</p>
-</header>
-
-<div id="language-switcher">
-  Language:
-  <a href="#" data-lang="en">English</a>|
-  <a href="#" data-lang="hi">Hindi</a>|
-  <a href="#" data-lang="ja">Japanese</a>|
-  <a href="#" data-lang="zh">Chinese</a>|
-  <a href="#" data-lang="ar">Arabic</a>|
-  <a href="#" data-lang="vi">Vietnamese</a>|
-  <a href="#" data-lang="ur">Urdu</a>|
-  <a href="#" data-lang="es">Spanish</a>
-</div>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About Autism</a>
-  <a href="resources.html">Resources</a>
-  <a href="education.html">Education</a>
-  <a href="research.html">Research</a>
-  <a href="contact.html">Contact</a>
+<!-- ── NAV ── -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span>🌍</span> Global Autism Hub</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Autism</a>
+      <a href="resources.html">Resources</a>
+      <a href="education.html">Education</a>
+      <a href="research.html">Research</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div style="background:#f0f4fa;border-top:1px solid var(--border);padding:5px 1.5rem;">
+    <div style="max-width:1100px;margin:0 auto;" class="nav-lang">
+      <a href="#">English</a><a href="#">हिंदी</a><a href="#">日本語</a>
+      <a href="#">中文</a><a href="#">العربية</a><a href="#">Tiếng Việt</a>
+      <a href="#">اردو</a><a href="#">Español</a>
+    </div>
+  </div>
 </nav>
 
-<main>
-  <section id="hero">
-    <h2>Comprehensive Autism Information & Resources</h2>
-    <p>Explore autism guides, educational worksheets, IEP information, therapy tools, and global support.</p>
-    <a href="education.html">Explore Educational Resources</a>
-  </section>
+<!-- ── HERO ── -->
+<section class="hero">
+  <h1>Understanding &amp; Supporting<br>Autism Worldwide</h1>
+  <p>Your trusted hub for autism education, therapy tools, IEP guides, and global support resources.</p>
 
-  <section id="featured">
-    <h2>Featured Resources</h2>
-    <div class="resource-item">
+  <div class="search-wrap">
+    <input type="text" id="heroSearch" placeholder="Search resources, e.g. IEP, speech therapy, sensory..." oninput="doSearch(this.value)" autocomplete="off">
+    <button aria-label="Search">&#9906;</button>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <div class="hero-btns">
+    <a href="education.html" class="btn btn-white">Explore Resources</a>
+    <a href="about.html" class="btn btn-outline">Learn About Autism</a>
+  </div>
+</section>
+
+<!-- ── STATS STRIP ── -->
+<div class="page-wrap" style="padding-top:2rem;padding-bottom:0">
+  <div class="stats-strip">
+    <div class="stat-box">
+      <div class="stat-num" id="stat1">0</div>
+      <div class="stat-label">1 in <strong>36</strong> children diagnosed (CDC 2023)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" id="stat2">0<span style="font-size:1.4rem">M+</span></div>
+      <div class="stat-label">people on the spectrum worldwide</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" id="stat3">0<span style="font-size:1.4rem">%</span></div>
+      <div class="stat-label">better outcomes with early intervention</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" id="stat4">0</div>
+      <div class="stat-label">languages supported on this site</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FEATURED RESOURCES ── -->
+<div class="page-wrap">
+  <div class="section-heading"><h2>Featured Resources</h2></div>
+  <div class="card-grid">
+    <div class="resource-card">
+      <span class="badge badge-blue" style="margin-bottom:10px">IEP Guide</span>
       <h3>What is an IEP?</h3>
-      <p>Learn about Individualized Education Programs and their importance for children with autism.</p>
-      <a href="resources/What_is_an_IEP.pdf" download>Download PDF</a>
+      <p>Learn about Individualized Education Programs and their importance for children with autism in the US school system.</p>
+      <a href="resources/What_is_an_IEP.pdf" class="btn btn-blue btn-sm">Download PDF</a>
     </div>
-    <div class="resource-item">
+    <div class="resource-card">
+      <span class="badge badge-teal" style="margin-bottom:10px">Therapy</span>
       <h3>Speech Therapy Worksheets</h3>
-      <p>Free practice materials for improving communication skills.</p>
-      <a href="resources/Speech_Therapy.pdf" download>Download PDF</a>
+      <p>Free practice materials for improving communication skills, designed for children and therapists.</p>
+      <a href="resources/Speech_Therapy.pdf" class="btn btn-teal btn-sm">Download PDF</a>
     </div>
-  </section>
+    <div class="resource-card">
+      <span class="badge badge-gold" style="margin-bottom:10px">Early Signs</span>
+      <h3>Developmental Milestones</h3>
+      <p>A visual guide to early autism signs by age — designed to help parents identify when to seek evaluation.</p>
+      <a href="about.html#timeline" class="btn btn-sm" style="background:var(--gold);color:white">View Timeline</a>
+    </div>
+  </div>
 
-  <section id="search-section">
-    <h2>Search Autism Resources</h2>
-    <input type="text" id="searchInput" placeholder="Type a keyword...">
-    <ul id="searchResults"></ul>
-  </section>
-</main>
+  <!-- ── QUIZ ── -->
+  <div class="quiz-section" id="quizSection">
+    <h2>Test Your Autism Awareness</h2>
+    <p>4 quick questions — learn something new about autism today.</p>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="qProg" style="width:0%"></div></div>
+    <div id="quizBody"></div>
+  </div>
+</div>
 
-<footer>
-  <p>&copy; 2025 Global Autism Hub | Autism support and educational resources worldwide</p>
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <p>© 2025 Global Autism Hub · Autism support and educational resources worldwide</p>
+  <p style="margin-top:6px;font-size:12px">
+    <a href="https://www.autismspeaks.org" target="_blank">Autism Speaks</a> ·
+    <a href="https://autisticadvocacy.org" target="_blank">ASAN</a> ·
+    <a href="https://www.autism.org.uk" target="_blank">National Autistic Society</a>
+  </p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+/* ── HAMBURGER NAV ── */
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+/* ── SEARCH ── */
+var searchData = [
+  { title: "What is an IEP?", desc: "Individualized Education Programs for children with autism.", url: "education.html", tags: "IEP school education plan" },
+  { title: "Speech Therapy Worksheets", desc: "Free printable communication worksheets.", url: "resources/Speech_Therapy.pdf", tags: "speech therapy communication language" },
+  { title: "Sensory Processing Guide", desc: "Understanding sensory sensitivities.", url: "resources.html", tags: "sensory processing sensitivity sound light" },
+  { title: "Social Skills Activities", desc: "Structured social skills practice sheets.", url: "education.html", tags: "social skills interaction peers friends" },
+  { title: "Autism in the Classroom", desc: "Strategies for teachers to support autistic students.", url: "education.html", tags: "classroom teacher school support strategies" },
+  { title: "Early Signs Checklist", desc: "Developmental milestones and early autism warning signs.", url: "about.html", tags: "early signs diagnosis milestones baby toddler" },
+  { title: "Transition to Adulthood", desc: "Resources for teens planning for post-school life.", url: "resources.html", tags: "transition adulthood employment independence teen" },
+  { title: "About Autism Spectrum", desc: "What is ASD, symptoms, and diagnosis.", url: "about.html", tags: "what is autism ASD spectrum diagnosis" },
+  { title: "Research & Studies", desc: "Latest autism research and clinical findings.", url: "research.html", tags: "research study clinical science genetics" },
+];
+
+function doSearch(val) {
+  var box = document.getElementById('searchResults');
+  if (!val.trim()) { box.classList.remove('open'); return; }
+  var q = val.toLowerCase();
+  var hits = searchData.filter(function(d) {
+    return (d.title + d.desc + d.tags).toLowerCase().indexOf(q) > -1;
+  });
+  if (!hits.length) {
+    box.innerHTML = '<div class="search-empty">No results for "' + val + '"</div>';
+  } else {
+    box.innerHTML = hits.map(function(d) {
+      return '<a href="' + d.url + '" class="search-item" style="display:block;text-decoration:none">'
+        + '<div class="search-item-title">' + d.title + '</div>'
+        + '<div class="search-item-desc">' + d.desc + '</div>'
+        + '</a>';
+    }).join('');
+  }
+  box.classList.add('open');
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.search-wrap')) {
+    document.getElementById('searchResults').classList.remove('open');
+  }
+});
+
+/* ── ANIMATED STATS ── */
+function animateStat(id, target, suffix) {
+  var el = document.getElementById(id);
+  var start = 0;
+  var dur = 1600;
+  var startTime = null;
+  function step(ts) {
+    if (!startTime) startTime = ts;
+    var p = Math.min((ts - startTime) / dur, 1);
+    var ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(ease * target) + (suffix || '');
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+var statsAnimated = false;
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting && !statsAnimated) {
+      statsAnimated = true;
+      animateStat('stat1', 36, '');
+      animateStat('stat2', 78, 'M+');
+      animateStat('stat3', 47, '%');
+      animateStat('stat4', 8, '');
+    }
+  });
+}, { threshold: 0.3 });
+observer.observe(document.querySelector('.stats-strip'));
+
+/* ── QUIZ ── */
+var questions = [
+  {
+    q: "Approximately how many children in the US are diagnosed with autism?",
+    opts: ["1 in 10", "1 in 36", "1 in 100", "1 in 500"],
+    ans: 1,
+    exp: "CDC (2023): 1 in 36 children in the US is diagnosed with ASD."
+  },
+  {
+    q: "At what age can autism be reliably diagnosed by trained clinicians?",
+    opts: ["Only after age 5", "Only in adulthood", "As early as 18–24 months", "Only in school settings"],
+    ans: 2,
+    exp: "Trained clinicians can reliably diagnose autism as early as 18–24 months."
+  },
+  {
+    q: "Which of the following is NOT a characteristic associated with autism?",
+    opts: ["Sensory sensitivities", "Repetitive behaviors", "Lower intelligence", "Differences in social communication"],
+    ans: 2,
+    exp: "Intelligence varies widely across the autism spectrum — many autistic people are highly intelligent."
+  },
+  {
+    q: "What does the 'double empathy problem' describe?",
+    opts: ["Autistic people lack empathy", "Both autistic and non-autistic people can misread each other", "Autism is caused by lack of empathy in parents", "Autistic people feel emotions twice as strongly"],
+    ans: 1,
+    exp: "Dr. Damian Milton's 'double empathy problem': communication difficulties arise from mutual misunderstanding between neurotypes, not a one-sided deficit."
+  }
+];
+
+var qi = 0, score = 0, answered = false;
+
+function renderQuiz() {
+  var body = document.getElementById('quizBody');
+  if (qi >= questions.length) {
+    body.innerHTML = '<div class="quiz-score">'
+      + '<div class="big">' + score + '/' + questions.length + '</div>'
+      + '<p style="opacity:0.85;margin:8px 0 16px">' + (score === questions.length ? 'Perfect score!' : score >= 2 ? 'Well done!' : 'Keep learning!') + '</p>'
+      + '<button onclick="restartQuiz()" class="btn btn-white btn-sm">Try Again</button>'
+      + '</div>';
+    document.getElementById('qProg').style.width = '100%';
+    return;
+  }
+  var d = questions[qi];
+  document.getElementById('qProg').style.width = Math.round(qi / questions.length * 100) + '%';
+  body.innerHTML = '<div class="quiz-q">Q' + (qi+1) + '. ' + d.q + '</div>'
+    + '<div class="quiz-opts" id="qOpts">'
+    + d.opts.map(function(o, i) {
+        return '<button class="quiz-opt" onclick="answer(' + i + ')">' + o + '</button>';
+      }).join('')
+    + '</div><div class="quiz-feedback" id="qFeedback"></div>';
+  answered = false;
+}
+
+function answer(i) {
+  if (answered) return;
+  answered = true;
+  var d = questions[qi];
+  var btns = document.querySelectorAll('.quiz-opt');
+  btns[d.ans].classList.add('correct');
+  if (i === d.ans) {
+    score++;
+    document.getElementById('qFeedback').textContent = '✓ Correct! ' + d.exp;
+  } else {
+    btns[i].classList.add('wrong');
+    document.getElementById('qFeedback').textContent = '✗ ' + d.exp;
+  }
+  setTimeout(function() { qi++; renderQuiz(); }, 2400);
+}
+
+function restartQuiz() { qi = 0; score = 0; renderQuiz(); }
+renderQuiz();
+</script>
 </body>
 </html>
