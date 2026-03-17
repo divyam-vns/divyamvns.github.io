@@ -123,114 +123,107 @@ function toggleNav() {
 }
 
 var resources = [
+ 
+  /* ── COMMUNICATION ─────────────────────────────────── */
   {
-    title: "What is an IEP?",
-    desc: "A complete guide to Individualized Education Programs — what they include, parent rights, and how to request one.",
-    cat: "iep", age: "school",
-    tags: ["IEP", "school", "rights"],
-    icon: "📋", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
-    badge: "badge-blue", badgeText: "IEP Guide",
-    file: "resources/What_is_an_IEP.pdf"
-  },
-  {
-    title: "Speech Therapy Worksheets",
-    desc: "Free printable worksheets for improving communication, vocabulary, and expressive language skills.",
+    title: "My Communication Journal",
+    desc: "Helps children express needs, feelings, and wants. Includes communication style checklist, favourite word log, and a weekly goal.",
     cat: "communication", age: "early",
-    tags: ["speech", "language", "printable"],
-    icon: "💬", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
-    badge: "badge-teal", badgeText: "Communication",
-    file: "resources/Speech_Therapy.pdf"
+    tags: ["communication", "expression", "journal", "feelings"],
+    icon: "💬", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
+    badge: "badge-blue", badgeText: "Communication",
+    file: "resources/Communication_My_Communication_Journal.pdf"
   },
   {
-    title: "Sensory Play Activities",
-    desc: "Structured sensory play ideas to support sensory integration and fine motor development in young children.",
-    cat: "motor", age: "early",
-    tags: ["sensory", "motor", "play", "tactile"],
-    icon: "🖐️", iconBg: "#fdf2e0", iconColor: "#c47d15",
-    badge: "badge-gold", badgeText: "Motor Skills",
-    file: "#"
-  },
-  {
-    title: "Reading Comprehension Cards",
-    desc: "Visual reading comprehension cards designed for children who benefit from structured, picture-supported text.",
-    cat: "reading", age: "school",
-    tags: ["reading", "literacy", "visual", "comprehension"],
-    icon: "📖", iconBg: "#fdeaea", iconColor: "#b83232",
-    badge: "badge-red", badgeText: "Reading",
-    file: "#"
-  },
-  {
-    title: "Social Stories Pack",
-    desc: "A collection of social stories covering school routines, transitions, greetings, and emotions.",
-    cat: "social", age: "school",
-    tags: ["social", "stories", "emotions", "school"],
-    icon: "🤝", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
-    badge: "badge-blue", badgeText: "Social Skills",
-    file: "#"
-  },
-  {
-    title: "Transition to Adulthood Guide",
-    desc: "A planning workbook for teens with autism moving toward post-secondary education, employment, or independent living.",
-    cat: "iep", age: "teen",
-    tags: ["transition", "adulthood", "employment", "planning"],
-    icon: "🎓", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
-    badge: "badge-teal", badgeText: "IEP / School",
-    file: "#"
-  },
-  {
-    title: "Fine Motor Exercises",
-    desc: "Printable exercises to build fine motor skills including pencil grip, cutting, and hand-eye coordination.",
-    cat: "motor", age: "early",
-    tags: ["fine motor", "pencil grip", "cutting", "hands"],
-    icon: "✏️", iconBg: "#fdf2e0", iconColor: "#c47d15",
-    badge: "badge-gold", badgeText: "Motor Skills",
-    file: "#"
-  },
-  {
-    title: "Teen Self-Advocacy Workbook",
-    desc: "Helps autistic teens understand their rights, communicate their needs, and participate in their own IEP meetings.",
-    cat: "social", age: "teen",
-    tags: ["advocacy", "teen", "rights", "IEP", "self-determination"],
-    icon: "💪", iconBg: "#fdeaea", iconColor: "#b83232",
-    badge: "badge-red", badgeText: "Social Skills",
-    file: "#"
-  },
-  {
-    title: "AAC Introduction Guide",
-    desc: "An introduction to Augmentative and Alternative Communication (AAC) for non-speaking or minimally speaking children.",
-    cat: "communication", age: "early",
-    tags: ["AAC", "communication", "non-speaking", "PECS"],
+    title: "AAC Practice Worksheet",
+    desc: "Augmentative & Alternative Communication practice. Sentence starters, conversation scripts, and a weekly star chart.",
+    cat: "communication", age: "school",
+    tags: ["AAC", "speech", "device", "conversation"],
     icon: "📱", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
     badge: "badge-blue", badgeText: "Communication",
-    file: "#"
+    file: "resources/Communication_AAC_Practice_Worksheet.pdf"
+  },
+ 
+  /* ── MOTOR SKILLS ───────────────────────────────────── */
+  {
+    title: "Fine Motor Skills Practice",
+    desc: "Pencil grip check, tracing exercises, scissor skill levels, and a daily fine motor activity log.",
+    cat: "motor", age: "early",
+    tags: ["fine motor", "pencil grip", "tracing", "cutting"],
+    icon: "✏️", iconBg: "#fdf2e0", iconColor: "#c47d15",
+    badge: "badge-gold", badgeText: "Motor Skills",
+    file: "resources/MotorSkills_FineMotor_Practice.pdf"
   },
   {
-    title: "Classroom Inclusion Strategies",
-    desc: "A guide for teachers and paraprofessionals on supporting autistic students in inclusive classroom settings.",
-    cat: "iep", age: "school",
-    tags: ["inclusion", "classroom", "teacher", "strategies"],
-    icon: "🏫", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
-    badge: "badge-teal", badgeText: "IEP / School",
-    file: "#"
+    title: "Sensory Play Activity Cards",
+    desc: "10 structured sensory and gross motor activities including playdough, obstacle courses, and weighted blanket techniques. Includes weekly tracker.",
+    cat: "motor", age: "early",
+    tags: ["sensory", "gross motor", "play", "proprioception"],
+    icon: "🖐️", iconBg: "#fdf2e0", iconColor: "#c47d15",
+    badge: "badge-gold", badgeText: "Motor Skills",
+    file: "resources/MotorSkills_Sensory_Play_Activities.pdf"
   },
+ 
+  /* ── READING ────────────────────────────────────────── */
   {
-    title: "Sight Word Flashcards",
-    desc: "Visual sight word cards with pictures to support early reading in children who learn visually.",
+    title: "Sight Words Flashcard Sheet",
+    desc: "Cut-out flashcard sheets with Dolch pre-primer and high-frequency words. Includes instructions and a progress star chart.",
     cat: "reading", age: "early",
-    tags: ["sight words", "reading", "flashcards", "visual"],
+    tags: ["sight words", "flashcards", "reading", "literacy"],
     icon: "🔠", iconBg: "#fdeaea", iconColor: "#b83232",
     badge: "badge-red", badgeText: "Reading",
-    file: "#"
+    file: "resources/Reading_Sight_Words_Flashcards.pdf"
   },
   {
-    title: "Emotions Recognition Worksheet",
-    desc: "Picture-based worksheets helping children identify and name different emotions in themselves and others.",
-    cat: "social", age: "school",
-    tags: ["emotions", "feelings", "social", "recognition"],
-    icon: "😊", iconBg: "#fdf2e0", iconColor: "#c47d15",
-    badge: "badge-gold", badgeText: "Social Skills",
-    file: "#"
+    title: "Reading Comprehension: A Day at the Park",
+    desc: "Short story with literal and inferential comprehension questions. Great for school-age readers building understanding beyond decoding.",
+    cat: "reading", age: "school",
+    tags: ["comprehension", "reading", "inference", "story"],
+    icon: "📖", iconBg: "#fdeaea", iconColor: "#b83232",
+    badge: "badge-red", badgeText: "Reading",
+    file: "resources/Reading_Comprehension_A_Day_at_the_Park.pdf"
   },
+ 
+  /* ── IEP / SCHOOL ───────────────────────────────────── */
+  {
+    title: "IEP Goal Progress Tracker",
+    desc: "Track up to 3 IEP goals with weekly evidence logs, scoring scale (1–4), and parent notes section. Ready to bring to IEP meetings.",
+    cat: "iep", age: "school",
+    tags: ["IEP", "goals", "progress", "tracking", "school"],
+    icon: "📋", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
+    badge: "badge-teal", badgeText: "IEP / School",
+    file: "resources/IEP_Goal_Progress_Tracker.pdf"
+  },
+  {
+    title: "Classroom Accommodations Checklist",
+    desc: "Evidence-based accommodations across sensory, communication, academic, and social-behavioural domains. For teachers and families.",
+    cat: "iep", age: "school",
+    tags: ["accommodations", "classroom", "IEP", "inclusion", "teacher"],
+    icon: "🏫", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
+    badge: "badge-teal", badgeText: "IEP / School",
+    file: "resources/IEP_Classroom_Accommodations_Checklist.pdf"
+  },
+ 
+  /* ── SOCIAL SKILLS ──────────────────────────────────── */
+  {
+    title: "Emotions Recognition Worksheet",
+    desc: "Identify 8 core emotions, practise recognizing feelings in social situations, and build personal coping strategies.",
+    cat: "social", age: "school",
+    tags: ["emotions", "feelings", "social", "coping", "recognition"],
+    icon: "😊", iconBg: "#f0eefa", iconColor: "#5b3fa8",
+    badge: "badge-purple", badgeText: "Social Skills",
+    file: "resources/SocialSkills_Emotions_Recognition.pdf"
+  },
+  {
+    title: "Social Story: Making a New Friend",
+    desc: "A 6-step social story covering noticing, approaching, greeting, listening, finding common ground, and ending a conversation. Includes practice script.",
+    cat: "social", age: "school",
+    tags: ["social story", "friendship", "conversation", "scripts"],
+    icon: "🤝", iconBg: "#f0eefa", iconColor: "#5b3fa8",
+    badge: "badge-purple", badgeText: "Social Skills",
+    file: "resources/SocialSkills_Making_A_New_Friend.pdf"
+  },
+ 
 ];
 
 var catFilter = 'all';
