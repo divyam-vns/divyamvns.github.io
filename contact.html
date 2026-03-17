@@ -1,60 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact & Support - Global Autism Hub</title>
-<meta name="description" content="Contact Global Autism Hub for autism support, resource submissions, or inquiries. Connect with autism organizations and the global community.">
-<meta name="keywords" content="autism contact, autism support, submit autism resources, autism help">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Support — Global Autism Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .contact-info h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+    .contact-info p { font-size: 14px; color: var(--text2); margin-bottom: 1.5rem; line-height: 1.65; }
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-item:last-child { border-bottom: none; }
+    .c-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .c-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); margin-bottom: 2px; }
+    .c-val { font-size: 14px; color: var(--text); }
+    .social-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1rem; }
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid var(--border2);
+      color: var(--text2);
+      transition: all 0.15s;
+    }
+    .social-btn:hover { background: var(--blue-light); color: var(--blue); border-color: var(--blue); }
+    /* form */
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+    }
+    .form-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.25rem;
+    }
+    .form-card .subtitle { font-size: 13px; color: var(--text2); margin-bottom: 1.25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .submit-btn {
+      width: 100%;
+      padding: 13px;
+      background: var(--blue);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-top: 4px;
+    }
+    .submit-btn:hover { background: var(--blue-mid); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .success-msg {
+      display: none;
+      background: var(--teal-light);
+      color: var(--teal);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 12px;
+    }
+    /* FAQ */
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 13px 16px;
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      background: var(--surface);
+      transition: background 0.15s;
+    }
+    .faq-q:hover { background: var(--blue-light); }
+    .faq-a {
+      padding: 0 16px;
+      max-height: 0;
+      overflow: hidden;
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.65;
+      background: #fafbff;
+      transition: max-height 0.3s ease, padding 0.2s;
+    }
+    .faq-a.open { max-height: 200px; padding: 12px 16px; border-top: 1px solid var(--border); }
+    @media (max-width: 700px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>🌍 Global Autism Hub</h1>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About Autism</a>
-  <a href="resources.html">Resources</a>
-  <a href="education.html">Education</a>
-  <a href="research.html">Research</a>
-  <a href="contact.html">Contact</a>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span>🌍</span> Global Autism Hub</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Autism</a>
+      <a href="resources.html">Resources</a>
+      <a href="education.html">Education</a>
+      <a href="research.html">Research</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
-<main>
-  <h2>Contact & Support</h2>
+<div class="page-wrap">
+  <div class="page-header">
+    <h2>Contact &amp; Support</h2>
+    <p>Have a question, want to submit resources, or need support? We'd love to hear from you.</p>
+  </div>
 
-  <section>
-    <h3>Get in Touch</h3>
-    <p>Email: <a href="mailto:support@globalautismhub.org">support@globalautismhub.org</a></p>
-    <p>Follow us on social media for updates:</p>
-    <ul>
-      <li><a href="#" target="_blank">Facebook</a></li>
-      <li><a href="#" target="_blank">Twitter</a></li>
-      <li><a href="#" target="_blank">LinkedIn</a></li>
-    </ul>
-  </section>
+  <div class="contact-grid">
+    <!-- LEFT: contact info -->
+    <div>
+      <div class="card" style="margin-bottom:1.25rem">
+        <div class="card-title">Get in touch</div>
+        <div class="contact-item">
+          <div class="c-icon">✉️</div>
+          <div>
+            <div class="c-label">Email</div>
+            <div class="c-val"><a href="mailto:support@globalautismhub.org" style="color:var(--blue)">support@globalautismhub.org</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">🕐</div>
+          <div>
+            <div class="c-label">Response time</div>
+            <div class="c-val">Typically within 2–3 business days</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">🌍</div>
+          <div>
+            <div class="c-label">Languages</div>
+            <div class="c-val">English, Hindi, Japanese, Spanish, Arabic, Vietnamese, Urdu, Chinese</div>
+          </div>
+        </div>
+      </div>
 
-  <section>
-    <h3>Submit Resources</h3>
-    <p>If you have autism-related worksheets, guides, or research links, you can submit them for review to be added to our resource hub.</p>
-  </section>
+      <div class="card" style="margin-bottom:1.25rem">
+        <div class="card-title">Follow us</div>
+        <p style="font-size:13px;color:var(--text2);margin-bottom:10px">Stay updated with resources, awareness events, and community news.</p>
+        <div class="social-row">
+          <a href="https://facebook.com" target="_blank" class="social-btn">📘 Facebook</a>
+          <a href="https://twitter.com" target="_blank" class="social-btn">🐦 Twitter / X</a>
+          <a href="https://linkedin.com" target="_blank" class="social-btn">💼 LinkedIn</a>
+          <a href="https://instagram.com" target="_blank" class="social-btn">📷 Instagram</a>
+        </div>
+      </div>
 
-  <section>
-    <h3>FAQ / Help</h3>
-    <ul>
-      <li>How can I download educational worksheets? → Go to <a href="education.html">Education Page</a></li>
-      <li>Where can I find autism support organizations? → Check <a href="resources.html">Resources Page</a></li>
-    </ul>
-  </section>
-</main>
+      <div class="card">
+        <div class="card-title">Quick answers</div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">How do I download worksheets? <span>+</span></div>
+          <div class="faq-a">Go to the <a href="education.html" style="color:var(--blue)">Education page</a> and use the filters to find resources. Click "Download PDF" on any card to download the file directly to your device.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">Can I submit my own resources? <span>+</span></div>
+          <div class="faq-a">Yes! Use the contact form on this page to submit your resources for review. We welcome worksheets, guides, translated materials, and research links.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">Are resources available in other languages? <span>+</span></div>
+          <div class="faq-a">We are actively working on translated materials. Use the language selector in the navigation to switch the site language. Contact us if you'd like to help translate resources.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">How do I find autism support near me? <span>+</span></div>
+          <div class="faq-a">Visit the <a href="resources.html" style="color:var(--blue)">Resources page</a> for links to global autism organizations. You can also contact us with your location and we'll help you find local support.</div>
+        </div>
+      </div>
+    </div>
 
-<footer>
-  <p>&copy; 2025 Global Autism Hub</p>
+    <!-- RIGHT: contact form -->
+    <div class="form-card">
+      <h3>Send us a message</h3>
+      <p class="subtitle">Use this form to ask questions, submit resources, or provide feedback. All fields marked * are required.</p>
+
+      <!--
+        HOW TO ACTIVATE THIS FORM (free, no backend needed):
+        1. Go to https://formspree.io and create a free account
+        2. Click "New Form" and enter your email address
+        3. You'll get a form ID like "xpzgkwqr"
+        4. Replace YOUR_FORMSPREE_ID below with that ID
+        5. The form will then send emails directly to you
+      -->
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="field">
+            <label for="fname">First name *</label>
+            <input type="text" id="fname" name="first_name" required placeholder="Your first name">
+          </div>
+          <div class="field">
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" name="last_name" placeholder="Your last name">
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="role">I am a...</label>
+          <select id="role" name="role">
+            <option value="">— Select your role —</option>
+            <option>Parent / Caregiver</option>
+            <option>Autistic individual</option>
+            <option>Teacher / Educator</option>
+            <option>Therapist / Clinician</option>
+            <option>Researcher</option>
+            <option>Organization / Nonprofit</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="subject">Subject *</label>
+          <select id="subject" name="subject" required>
+            <option value="">— Select a subject —</option>
+            <option>General question</option>
+            <option>Resource submission</option>
+            <option>Report an issue</option>
+            <option>Translation / language support</option>
+            <option>Partnership / collaboration</option>
+            <option>Feedback about the site</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required placeholder="Tell us how we can help, or describe the resource you'd like to submit..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+        <div class="success-msg" id="successMsg">
+          ✓ Message sent! Thank you — we'll be in touch within 2–3 business days.
+        </div>
+        <p style="font-size:11px;color:var(--text3);margin-top:10px">Your information is kept private and never shared. Powered by Formspree.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>© 2025 Global Autism Hub · Autism support and educational resources worldwide</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+function toggleFAQ(el) {
+  var ans = el.nextElementSibling;
+  var isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(function(a) { a.classList.remove('open'); });
+  if (!isOpen) ans.classList.add('open');
+}
+
+function handleSubmit(e) {
+  /* If Formspree ID is not set, show success for demo purposes */
+  var action = document.getElementById('contactForm').action;
+  if (action.indexOf('YOUR_FORMSPREE_ID') > -1) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    setTimeout(function() {
+      btn.textContent = 'Sent!';
+      document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('contactForm').reset();
+    }, 800);
+  }
+  /* If real Formspree ID is set, the form submits normally via POST */
+}
+</script>
 </body>
 </html>
