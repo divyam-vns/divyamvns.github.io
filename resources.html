@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autism Support Resources &amp; Organizations | Global Autism Hub</title>
+  <meta name="description" content="Find trusted autism support organizations, therapy resources, parent guides, and global autism networks. All free.">
+  <meta name="keywords" content="autism resources, autism organizations, autism support, autism speaks, ASAN, national autistic society, autism parent resources">
+  <meta property="og:title" content="Autism Support Resources &amp; Organizations">
+  <meta property="og:url" content="https://divyam-vns.github.io/divyamvns.github.io/resources.html">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .ftab{padding:7px 15px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text2);cursor:pointer;transition:all .15s;font-weight:500;margin:0 3px 6px 0}
+    .ftab:hover{border-color:var(--blue);color:var(--blue)}
+    .ftab.on{background:var(--blue);color:white;border-color:var(--blue)}
+    .org-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.1rem 1.25rem;display:flex;gap:14px;align-items:start;transition:box-shadow .2s,border-color .2s}
+    .org-card:hover{box-shadow:0 4px 16px rgba(26,95,168,.1);border-color:var(--blue-mid)}
+    .org-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .org-card h3{font-size:14px;font-weight:600;margin-bottom:3px;color:var(--text)}
+    .org-country{font-size:11px;color:var(--text3);margin-bottom:4px}
+    .org-desc{font-size:12px;color:var(--text2);line-height:1.55;margin-bottom:8px}
+    .org-link{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--blue);text-decoration:none}
+    .res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+    .therapy-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.1rem 1.25rem}
+    .therapy-card h3{font-size:14px;font-weight:600;margin-bottom:5px;color:var(--text)}
+    .tc-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:500;margin-bottom:8px}
+    .tc-evidence{background:#e0f5f1;color:#085041}
+    .tc-mixed{background:#faeeda;color:#633806}
+    .therapy-card p{font-size:12px;color:var(--text2);line-height:1.6}
+    .book-row{display:flex;gap:12px;padding:10px 0;border-bottom:0.5px solid var(--border);align-items:start}
+    .book-row:last-child{border-bottom:none}
+    .book-cover{width:36px;height:50px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px}
+    .book-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+    .book-meta{font-size:11px;color:var(--text3);margin-bottom:4px}
+    .book-desc{font-size:12px;color:var(--text2);line-height:1.55}
+    .benefit-row{display:flex;gap:12px;padding:10px 0;border-bottom:0.5px solid var(--border);font-size:13px;align-items:start}
+    .benefit-row:last-child{border-bottom:none}
+    .benefit-country{font-size:11px;font-weight:700;color:white;padding:3px 8px;border-radius:4px;background:var(--blue);flex-shrink:0;white-space:nowrap}
+    .app-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.9rem 1rem}
+    .app-card h4{font-size:13px;font-weight:600;margin-bottom:3px;color:var(--text)}
+    .app-meta{font-size:11px;color:var(--text3);margin-bottom:5px}
+    .app-card p{font-size:12px;color:var(--text2);line-height:1.55}
+    .ab-free{background:#e0f5f1;color:#085041;display:inline-block;padding:1px 7px;border-radius:4px;font-size:10px;font-weight:600;margin-right:3px}
+    .ab-paid{background:#e8f1fc;color:#0C447C;display:inline-block;padding:1px 7px;border-radius:4px;font-size:10px;font-weight:600;margin-right:3px}
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span>🌍</span> Global Autism Hub</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Autism</a>
+      <a href="resources.html">Resources</a>
+      <a href="education.html">Education</a>
+      <a href="research.html">Research</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="parent-guide.html">Parent Guide</a>
+      <a href="adults.html">Adults</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div style="background:#f0f4fa;border-top:1px solid var(--border);padding:5px 1.5rem;">
+    <div style="max-width:1100px;margin:0 auto;" class="nav-lang">
+      <a href="javascript:void(0)" onclick="doGTranslate('en|en')">English</a><a href="javascript:void(0)" onclick="doGTranslate('en|hi')">हिंदी</a><a href="javascript:void(0)" onclick="doGTranslate('en|ja')">日本語</a><a href="javascript:void(0)" onclick="doGTranslate('en|zh-CN')">中文</a><a href="javascript:void(0)" onclick="doGTranslate('en|ar')">العربية</a><a href="javascript:void(0)" onclick="doGTranslate('en|vi')">Tiếng Việt</a><a href="javascript:void(0)" onclick="doGTranslate('en|ur')">اردو</a><a href="javascript:void(0)" onclick="doGTranslate('en|es')">Español</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header"><h2>Support Resources &amp; Directory</h2><p>Trusted organisations, therapy guides, recommended books, apps, and government benefit programmes — worldwide.</p></div>
+
+  <div class="section-heading"><h2>Global autism organisations</h2></div>
+  <div style="margin-bottom:1rem">
+    <button class="ftab on" onclick="filterOrgs('all',this)">All countries</button>
+    <button class="ftab" onclick="filterOrgs('us',this)">United States</button>
+    <button class="ftab" onclick="filterOrgs('uk',this)">United Kingdom</button>
+    <button class="ftab" onclick="filterOrgs('india',this)">India</button>
+    <button class="ftab" onclick="filterOrgs('global',this)">Global</button>
+    <button class="ftab" onclick="filterOrgs('other',this)">Other countries</button>
+  </div>
+  <div class="res-grid" id="orgGrid">
+    <div class="org-card" data-country="us"><div class="org-icon" style="background:#e8f1fc">🇺🇸</div><div><div class="org-country">United States</div><h3>Autism Speaks</h3><div class="org-desc">Largest US autism advocacy org. Comprehensive resource guide, family services, tool kits for newly diagnosed families.</div><a href="https://www.autismspeaks.org" target="_blank" class="org-link">autismspeaks.org ↗</a></div></div>
+    <div class="org-card" data-country="us"><div class="org-icon" style="background:#e8f1fc">🇺🇸</div><div><div class="org-country">United States</div><h3>Autism Society of America</h3><div class="org-desc">Oldest autism org in the US (1965). Strong focus on adult autism, employment, and local chapter network.</div><a href="https://www.autism-society.org" target="_blank" class="org-link">autism-society.org ↗</a></div></div>
+    <div class="org-card" data-country="us"><div class="org-icon" style="background:#f0eefa">🇺🇸</div><div><div class="org-country">United States — Autistic-led</div><h3>ASAN (Autistic Self Advocacy Network)</h3><div class="org-desc">Run by and for autistic people. Focuses on civil rights, policy, and neurodiversity. Essential for understanding the autistic perspective.</div><a href="https://autisticadvocacy.org" target="_blank" class="org-link">autisticadvocacy.org ↗</a></div></div>
+    <div class="org-card" data-country="us"><div class="org-icon" style="background:#e8f1fc">🇺🇸</div><div><div class="org-country">United States</div><h3>CDC Autism Information</h3><div class="org-desc">Official US government prevalence data, diagnosis information, and early intervention resources. Free.</div><a href="https://www.cdc.gov/ncbddd/autism" target="_blank" class="org-link">cdc.gov/autism ↗</a></div></div>
+    <div class="org-card" data-country="us"><div class="org-icon" style="background:#e0f5f1">🇺🇸</div><div><div class="org-country">United States</div><h3>NAMI HelpLine</h3><div class="org-desc">Autism alongside mental health. HelpLine: 1-800-950-6264. Strong resources for adults with autism and co-occurring conditions.</div><a href="https://www.nami.org" target="_blank" class="org-link">nami.org ↗</a></div></div>
+    <div class="org-card" data-country="uk"><div class="org-icon" style="background:#e8f1fc">🇬🇧</div><div><div class="org-country">United Kingdom</div><h3>National Autistic Society (NAS)</h3><div class="org-desc">UK's leading autism charity. Comprehensive guidance on diagnosis, schools, employment, and benefits. Helpline: 0808 800 4104.</div><a href="https://www.autism.org.uk" target="_blank" class="org-link">autism.org.uk ↗</a></div></div>
+    <div class="org-card" data-country="uk"><div class="org-icon" style="background:#f0eefa">🇬🇧</div><div><div class="org-country">United Kingdom — Autistic-led</div><h3>Autistic UK</h3><div class="org-desc">Autistic-led org focused on rights, identity, and community. Excellent for late diagnosis and masking in autistic adults.</div><a href="https://autistic.uk" target="_blank" class="org-link">autistic.uk ↗</a></div></div>
+    <div class="org-card" data-country="uk"><div class="org-icon" style="background:#e0f5f1">🇬🇧</div><div><div class="org-country">United Kingdom</div><h3>Ambitious About Autism</h3><div class="org-desc">Focuses on education and employment for autistic young people. Runs schools and the WorkFit employment programme.</div><a href="https://www.ambitiousaboutautism.org.uk" target="_blank" class="org-link">ambitiousaboutautism.org.uk ↗</a></div></div>
+    <div class="org-card" data-country="india"><div class="org-icon" style="background:#fdf2e0">🇮🇳</div><div><div class="org-country">India</div><h3>Action For Autism (AFA)</h3><div class="org-desc">India's first autism-specific organisation. Training, advocacy, and resources. Open Door school in Delhi. Phone: 011-26534644.</div><a href="https://www.autism-india.org" target="_blank" class="org-link">autism-india.org ↗</a></div></div>
+    <div class="org-card" data-country="india"><div class="org-icon" style="background:#fdf2e0">🇮🇳</div><div><div class="org-country">India</div><h3>Autism Society India</h3><div class="org-desc">National umbrella body for autism organisations across India. Connects families with local support groups and therapy centres.</div><a href="https://www.autismsocietyindia.com" target="_blank" class="org-link">autismsocietyindia.com ↗</a></div></div>
+    <div class="org-card" data-country="india"><div class="org-icon" style="background:#e0f5f1">🇮🇳</div><div><div class="org-country">India</div><h3>NIMHANS Autism Clinic</h3><div class="org-desc">National Institute of Mental Health and Neurosciences, Bangalore. Government hospital offering autism diagnosis, research, and treatment.</div><a href="https://nimhans.ac.in" target="_blank" class="org-link">nimhans.ac.in ↗</a></div></div>
+    <div class="org-card" data-country="global"><div class="org-icon" style="background:#e8f1fc">🌍</div><div><div class="org-country">Global — WHO</div><h3>World Health Organization</h3><div class="org-desc">WHO global autism fact sheets, policy frameworks, and country-level resource links. Official international statistics.</div><a href="https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders" target="_blank" class="org-link">who.int ↗</a></div></div>
+    <div class="org-card" data-country="global"><div class="org-icon" style="background:#f0eefa">🌍</div><div><div class="org-country">Global — Research</div><h3>SPARK for Autism</h3><div class="org-desc">World's largest autism genetics study (50,000+ participants). Families can enrol, contribute to research, and access community resources.</div><a href="https://sparkforautism.org" target="_blank" class="org-link">sparkforautism.org ↗</a></div></div>
+    <div class="org-card" data-country="other"><div class="org-icon" style="background:#e8f1fc">🇦🇺</div><div><div class="org-country">Australia</div><h3>Autism CRC</h3><div class="org-desc">Australia's national autism research and resource centre. Guides on NDIS, schools, and employment for Australian families.</div><a href="https://www.autismcrc.com.au" target="_blank" class="org-link">autismcrc.com.au ↗</a></div></div>
+    <div class="org-card" data-country="other"><div class="org-icon" style="background:#e8f1fc">🇨🇦</div><div><div class="org-country">Canada</div><h3>Autism Canada</h3><div class="org-desc">National organisation connecting families with province-by-province resources, diagnosis guides, and support services.</div><a href="https://autismcanada.org" target="_blank" class="org-link">autismcanada.org ↗</a></div></div>
+    <div class="org-card" data-country="other"><div class="org-icon" style="background:#e8f1fc">🇯🇵</div><div><div class="org-country">Japan</div><h3>日本自閉症協会</h3><div class="org-desc">Japan's primary autism organisation. Resources in Japanese for families and connections to regional support groups across Japan.</div><a href="https://www.autism.or.jp" target="_blank" class="org-link">autism.or.jp ↗</a></div></div>
+  </div>
+
+  <div class="section-heading" style="margin-top:2.5rem"><h2>Therapy types explained</h2></div>
+  <p style="font-size:13px;color:var(--text2);margin-bottom:1.25rem">Understanding what each therapy involves helps families make informed choices.</p>
+  <div class="res-grid">
+    <div class="therapy-card"><h3>Speech-Language Therapy (SLT)</h3><span class="tc-badge tc-evidence">Strong evidence</span><p>Targets communication — verbal speech, AAC devices, social language, and understanding. Recommended as first-line support for most autistic children. Usually 1–2 sessions/week with home practice.</p></div>
+    <div class="therapy-card"><h3>Occupational Therapy (OT)</h3><span class="tc-badge tc-evidence">Strong evidence</span><p>Addresses sensory processing, fine motor skills, self-care, and daily living activities. Especially helpful for sensory sensitivities. Sensory integration therapy is a key component.</p></div>
+    <div class="therapy-card"><h3>Applied Behavior Analysis (ABA)</h3><span class="tc-badge tc-mixed">Evidence + debate</span><p>Behaviour-based intervention reinforcing desired behaviours. Strong evidence for skill building, but debated in the autistic community. Prioritise naturalistic, child-led ABA if chosen. Provider quality varies significantly.</p></div>
+    <div class="therapy-card"><h3>Early Start Denver Model (ESDM)</h3><span class="tc-badge tc-evidence">Strong evidence</span><p>Play-based, naturalistic intervention for ages 12 months–5 years. Combines ABA with developmental and relationship-based approaches. One of the most rigorously studied early interventions.</p></div>
+    <div class="therapy-card"><h3>PECS (Picture Exchange Communication)</h3><span class="tc-badge tc-evidence">Good evidence</span><p>Picture-based communication for non-speaking or minimally speaking children. Children exchange picture cards to communicate wants. Often a stepping stone toward other communication methods.</p></div>
+    <div class="therapy-card"><h3>Cognitive Behavioural Therapy (CBT)</h3><span class="tc-badge tc-evidence">Good evidence (anxiety)</span><p>Adapted CBT is evidence-based for anxiety and depression in autistic adolescents and adults. Most effective with therapists experienced in autism.</p></div>
+  </div>
+
+  <div class="section-heading" style="margin-top:2.5rem"><h2>Government benefits &amp; funding by country</h2></div>
+  <div class="card">
+    <div class="benefit-row"><span class="benefit-country">USA</span><div><strong style="color:var(--text)">Medicaid / EPSDT + SSI:</strong> <span style="color:var(--text2)">Children under 21 on Medicaid are entitled to autism services under EPSDT. SSI (Supplemental Security Income) for disabled children. Apply at SSA.gov.</span></div></div>
+    <div class="benefit-row"><span class="benefit-country">UK</span><div><strong style="color:var(--text)">DLA / PIP:</strong> <span style="color:var(--text2)">Disability Living Allowance (children under 16) and Personal Independence Payment (adults 16+). Many autistic people qualify. Apply at GOV.UK. NAS benefits helpline: 0808 800 4104.</span></div></div>
+    <div class="benefit-row"><span class="benefit-country">Australia</span><div><strong style="color:var(--text)">NDIS:</strong> <span style="color:var(--text2)">National Disability Insurance Scheme provides funding for therapy, equipment, and support. Most autistic children qualify. Early intervention packages from age 2. Apply at ndis.gov.au.</span></div></div>
+    <div class="benefit-row"><span class="benefit-country">India</span><div><strong style="color:var(--text)">RPWD Act 2016:</strong> <span style="color:var(--text2)">Rights of Persons with Disabilities Act provides rights to education and employment. Disability certificate from CMO enables concessions. National Trust schemes provide supported living assistance.</span></div></div>
+    <div class="benefit-row"><span class="benefit-country">Canada</span><div><strong style="color:var(--text)">DTC + RDSP:</strong> <span style="color:var(--text2)">Disability Tax Credit provides federal tax relief. Registered Disability Savings Plan for long-term security. Provincial autism funding varies — check your province's website.</span></div></div>
+    <div class="benefit-row"><span class="benefit-country">EU</span><div><strong style="color:var(--text)">EU Disability Strategy:</strong> <span style="color:var(--text2)">Each EU member state has its own system. Autism Europe (autism-europe.com) provides country-by-country guidance for European families.</span></div></div>
+  </div>
+
+  <div class="section-heading" style="margin-top:2.5rem"><h2>Recommended books</h2></div>
+  <div class="card">
+    <div class="book-row"><div class="book-cover" style="background:#e8f1fc">📗</div><div><div class="book-title">The Reason I Jump</div><div class="book-meta">Naoki Higashida · Translated by David Mitchell</div><div class="book-desc">Written by a 13-year-old non-speaking autistic boy. One of the most powerful first-person accounts of autism ever written. Essential reading for understanding autism from the inside.</div></div></div>
+    <div class="book-row"><div class="book-cover" style="background:#e0f5f1">📘</div><div><div class="book-title">NeuroTribes: The Legacy of Autism</div><div class="book-meta">Steve Silberman</div><div class="book-desc">Comprehensive history of autism — from Kanner to today's neurodiversity movement. Winner of the Samuel Johnson Prize. Deeply researched and accessible.</div></div></div>
+    <div class="book-row"><div class="book-cover" style="background:#fdf2e0">📙</div><div><div class="book-title">Ten Things Every Child with Autism Wishes You Knew</div><div class="book-meta">Ellen Notbohm</div><div class="book-desc">Practical, empathetic guide for parents and teachers. Written from the child's perspective. One of the most widely recommended books for new autism parents.</div></div></div>
+    <div class="book-row"><div class="book-cover" style="background:#f0eefa">📕</div><div><div class="book-title">Unmasking Autism</div><div class="book-meta">Dr. Devon Price</div><div class="book-desc">Explores autistic masking. Essential for understanding autism in women, girls, and late-diagnosed adults.</div></div></div>
+  </div>
+
+  <div class="section-heading" style="margin-top:2.5rem"><h2>Recommended apps &amp; tools</h2></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.75rem">
+    <div class="app-card"><h4>LetMeTalk</h4><div class="app-meta"><span class="ab-free">Free</span> AAC · Android</div><p>Open-source AAC app. Children tap pictures to build sentences. Fully functional, no subscription.</p></div>
+    <div class="app-card"><h4>Cboard</h4><div class="app-meta"><span class="ab-free">Free</span> AAC · All platforms</div><p>Web-based AAC board. Works on any device. Supports 25+ languages. Free for personal use.</p></div>
+    <div class="app-card"><h4>Proloquo2Go</h4><div class="app-meta"><span class="ab-paid">Paid $249</span> AAC · iOS</div><p>Industry-standard AAC app used in schools and clinics. Robust symbol library. Often covered by insurance or NDIS.</p></div>
+    <div class="app-card"><h4>Choiceworks</h4><div class="app-meta"><span class="ab-paid">Paid $6.99</span> Schedules · iOS</div><p>Visual schedule, waiting, and feelings boards. Simple for young children. Widely recommended by occupational therapists.</p></div>
+    <div class="app-card"><h4>Khan Academy Kids</h4><div class="app-meta"><span class="ab-free">Free</span> Learning · All platforms</div><p>Comprehensive learning app covering literacy, maths, and social-emotional learning. Self-paced and visual — well-suited to many autistic learners.</p></div>
+    <div class="app-card"><h4>Calm</h4><div class="app-meta"><span class="ab-free">Free tier</span> Sensory · All platforms</div><p>Mindfulness app with sleep stories and breathing exercises. Useful for anxiety management and bedtime routines.</p></div>
+  </div>
+
+  <div style="margin-top:2rem;text-align:center">
+    <a href="education.html" class="btn btn-blue" style="margin-right:10px">Free worksheets</a>
+    <a href="contact.html" class="btn btn-teal">Crisis helplines</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>© 2025 Global Autism Hub · Resource links verified at time of publication. Always verify current information directly with organisations.</p>
+</footer>
+<div id="google_translate_element" style="display:none"></div>
+<script>
+function toggleNav(){ document.getElementById('navLinks').classList.toggle('open'); }
+function filterOrgs(country,btn){ document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('on')); btn.classList.add('on'); document.querySelectorAll('.org-card').forEach(function(c){ c.style.display=(country==='all'||c.dataset.country===country)?'':'none'; }); }
+function googleTranslateElementInit(){ new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'hi,ja,zh-CN,ar,vi,ur,es'},'google_translate_element'); }
+function doGTranslate(lang_pair){ var lang=lang_pair.split('|')[1]; var teCombo=document.querySelector('.goog-te-combo'); if(teCombo){teCombo.value=lang;teCombo.dispatchEvent(new Event('change'));} }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
