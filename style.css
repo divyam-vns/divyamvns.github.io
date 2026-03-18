@@ -214,7 +214,6 @@ body {
   font-size: 11px;
   font-weight: 600;
 }
-.badge-purple { background: #f0eefa; color: #5b3fa8; }
 .badge-blue  { background: var(--blue-light); color: var(--blue); }
 .badge-teal  { background: var(--teal-light); color: var(--teal); }
 .badge-gold  { background: var(--gold-light); color: var(--gold); }
