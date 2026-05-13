@@ -1,22 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
   <url>
-    <loc>https://divyam-vns.github.io/divyamvns.github.io/</loc>
+    <loc>https://divyam-vns.github.io/divyamvns.github.io/index.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://divyam-vns.github.io/divyamvns.github.io/about.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://divyam-vns.github.io/divyamvns.github.io/education.html</loc>
+    <loc>https://divyam-vns.github.io/divyamvns.github.io/therapies.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
   </url>
+
   <url>
     <loc>https://divyam-vns.github.io/divyamvns.github.io/resources.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
+
+  <url>
+    <loc>https://divyam-vns.github.io/divyamvns.github.io/education.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://divyam-vns.github.io/divyamvns.github.io/research.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
+
   <url>
     <loc>https://divyam-vns.github.io/divyamvns.github.io/contact.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
+
 </urlset>
