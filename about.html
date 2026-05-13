@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Autism — Signs, Diagnosis & Early Intervention | Global Autism Hub</title>
   <meta name="description" content="Learn what autism spectrum disorder (ASD) is, early signs by age, diagnosis process, therapies, and answers to common questions. Free, accurate information for parents and families.">
-  <meta name="keywords" content="what is autism, autism signs, autism diagnosis, early autism signs, autism symptoms, autism spectrum disorder, ASD, autism therapy, autism FAQ, autism early intervention">
+  <meta name="keywords" content="what is autism, autism signs, autism diagnosis, early autism signs, autism symptoms, autism spectrum disorder, ASD, autism therapy, autism FAQ, autism early intervention, autism types, autism in girls, autism in adults, autism sensory, autism communication">
   <meta property="og:title" content="About Autism — Signs, Diagnosis & FAQ | Global Autism Hub">
   <meta property="og:description" content="What is autism? Learn the early signs, how diagnosis works, therapies available, and get honest answers to common questions about autism spectrum disorder.">
   <meta property="og:url" content="https://divyam-vns.github.io/divyamvns.github.io/about.html">
@@ -15,127 +15,245 @@
   <meta name="twitter:title" content="About Autism — Signs, Diagnosis & FAQ">
   <meta name="twitter:description" content="Learn the early signs of autism, how diagnosis works, and what support is available. Free information for parents and families worldwide.">
   <link rel="canonical" href="https://divyam-vns.github.io/divyamvns.github.io/about.html">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What causes autism?","acceptedAnswer":{"@type":"Answer","text":"Autism results from a combination of genetic and environmental factors. There is no single known cause. Vaccines do not cause autism — this has been thoroughly debunked by large-scale international research."}},
+    {"@type":"Question","name":"Can adults be diagnosed with autism?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many people — especially women, girls, and people of colour — receive a first diagnosis in adulthood. Late diagnosis can still be validating and life-changing."}},
+    {"@type":"Question","name":"How is autism diagnosed?","acceptedAnswer":{"@type":"Answer","text":"Diagnosis involves a comprehensive evaluation by trained clinicians. There is no blood test or brain scan for autism. Evaluations use standardised assessments such as ADOS-2 and ADI-R alongside developmental history and behavioural observation."}},
+    {"@type":"Question","name":"Does autism affect intelligence?","acceptedAnswer":{"@type":"Answer","text":"No. Intelligence varies widely across the autism spectrum, just as it does in the general population. Many autistic individuals have exceptional abilities in specific areas."}},
+    {"@type":"Question","name":"What therapies are available for autism?","acceptedAnswer":{"@type":"Answer","text":"Common supports include occupational therapy, speech-language therapy, sensory integration therapy, CBT (for anxiety and depression), and ABA. The right support depends on the individual's specific needs and goals."}}
+  ]}
+  </script>
+
   <link rel="stylesheet" href="style.css">
   <style>
+    /* ── PAGE HERO ── */
+    .about-hero {
+      background: linear-gradient(135deg, #1d4e89 0%, #2d6a9f 60%, #3b82c4 100%);
+      color: white;
+      padding: 56px 5vw 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .about-hero-label {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .09em;
+      text-transform: uppercase; padding: 4px 14px; margin-bottom: 18px;
+      position: relative;
+    }
+    .about-hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 400; line-height: 1.2;
+      max-width: 680px; margin: 0 auto 14px;
+      position: relative;
+    }
+    .about-hero p {
+      color: rgba(255,255,255,.8);
+      font-size: 1rem; max-width: 540px;
+      margin: 0 auto 28px; position: relative;
+    }
+    .about-hero-pills {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center; position: relative;
+    }
+    .about-pill {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.3);
+      color: white; border-radius: 999px;
+      padding: 6px 16px; font-size: .8rem; font-weight: 500;
+      text-decoration: none; transition: background .15s;
+    }
+    .about-pill:hover { background: rgba(255,255,255,.25); }
+
+    /* ── QUICK STATS ── */
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 2rem;
+    }
+    .about-stat {
+      background: var(--surface);
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+    .about-stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem; color: var(--blue);
+      line-height: 1; margin-bottom: 4px;
+    }
+    .about-stat-label { font-size: 12px; color: var(--text2); line-height: 1.4; }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: .09em;
+      text-transform: uppercase; color: var(--blue);
+      margin-bottom: 6px;
+    }
+
     /* ── ACCORDION ── */
     .accordion { margin-bottom: 8px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border2); }
     .accordion-btn {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 18px;
-      background: var(--surface);
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-      font-weight: 500;
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text);
-      text-align: left;
-      transition: background 0.15s;
+      width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 18px; background: var(--surface); border: none; cursor: pointer;
+      font-size: 15px; font-weight: 500; font-family: 'DM Sans', sans-serif;
+      color: var(--text); text-align: left; transition: background 0.15s;
     }
     .accordion-btn:hover { background: var(--blue-light); }
     .accordion-btn .icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--blue-light);
-      color: var(--blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: 600;
-      flex-shrink: 0;
-      transition: transform 0.25s;
+      width: 22px; height: 22px; border-radius: 50%; background: var(--blue-light);
+      color: var(--blue); display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 600; flex-shrink: 0; transition: transform 0.25s;
     }
     .accordion-btn.open { background: var(--blue-light); }
     .accordion-btn.open .icon { transform: rotate(45deg); background: var(--blue); color: white; }
     .accordion-body {
-      max-height: 0;
-      overflow: hidden;
+      max-height: 0; overflow: hidden;
       transition: max-height 0.35s ease, padding 0.2s;
-      background: #fafbff;
-      padding: 0 18px;
-      font-size: 14px;
-      color: var(--text2);
-      line-height: 1.7;
-      border-top: none;
+      background: #fafbff; padding: 0 18px;
+      font-size: 14px; color: var(--text2); line-height: 1.75;
     }
-    .accordion-body.open { max-height: 400px; padding: 14px 18px; border-top: 1px solid var(--border); }
+    .accordion-body.open { max-height: 600px; padding: 14px 18px; border-top: 1px solid var(--border); }
+    .accordion-body ul { padding-left: 18px; margin-top: 6px; }
+    .accordion-body ul li { margin-bottom: 4px; }
 
     /* ── TIMELINE ── */
     .timeline { position: relative; padding-left: 28px; }
     .timeline::before {
-      content: '';
-      position: absolute;
-      left: 9px;
-      top: 8px;
-      bottom: 8px;
-      width: 2px;
-      background: var(--border2);
+      content: ''; position: absolute; left: 9px; top: 8px; bottom: 8px;
+      width: 2px; background: var(--border2);
     }
     .tl-item { position: relative; margin-bottom: 28px; }
     .tl-item:last-child { margin-bottom: 0; }
     .tl-dot {
-      position: absolute;
-      left: -24px;
-      top: 4px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--blue);
-      border: 2px solid white;
+      position: absolute; left: -24px; top: 4px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--blue); border: 2px solid white;
       box-shadow: 0 0 0 2px var(--blue);
     }
-    .tl-age {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 3px;
-    }
+    .tl-age { font-size: 12px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px; }
     .tl-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; color: var(--text); }
     .tl-item p { font-size: 13px; color: var(--text2); }
+    .tl-item ul { font-size: 13px; color: var(--text2); padding-left: 16px; margin-top: 4px; }
+    .tl-item ul li { margin-bottom: 2px; }
 
     /* ── SIGN GRID ── */
     .sign-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      display: flex;
-      gap: 12px;
-      align-items: start;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.25rem;
+      display: flex; gap: 12px; align-items: start;
     }
     .sign-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--blue-light);
-      color: var(--blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--blue-light); color: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
     }
     .sign-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
     .sign-card p { font-size: 13px; color: var(--text2); }
+
+    /* ── MYTH VS FACT ── */
+    .myth-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .myth-table thead th {
+      padding: 10px 14px; text-align: left; font-weight: 700;
+      font-size: 12px; letter-spacing: .05em; text-transform: uppercase;
+    }
+    .myth-table thead th:first-child { background: #fde8e8; color: #b83232; border-radius: 8px 0 0 0; }
+    .myth-table thead th:last-child  { background: #e8f5e9; color: #2e7d32; border-radius: 0 8px 0 0; }
+    .myth-table tbody td {
+      padding: 12px 14px; vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+    .myth-table tbody tr:last-child td { border-bottom: none; }
+    .myth-table tbody td:first-child { color: #b83232; font-size: 13px; background: #fff8f8; }
+    .myth-table tbody td:last-child  { color: #2e7d32; font-size: 13px; background: #f8fff8; }
+
+    /* ── DIAGNOSIS STEPS ── */
+    .diag-steps { display: flex; flex-direction: column; gap: 12px; }
+    .diag-step { display: flex; gap: 14px; align-items: flex-start; }
+    .diag-num {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--blue); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    }
+    .diag-step h4 { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+    .diag-step p { font-size: 13px; color: var(--text2); }
+
+    /* ── THERAPY CARDS ── */
+    .therapy-mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 16px; }
+    .therapy-mini {
+      border-radius: var(--radius); padding: 14px;
+      text-decoration: none; transition: transform .15s, box-shadow .15s;
+      display: block;
+    }
+    .therapy-mini:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,.1); }
+    .therapy-mini-icon { font-size: 1.4rem; margin-bottom: 6px; }
+    .therapy-mini h4 { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+    .therapy-mini p { font-size: 11px; opacity: .75; }
+
+    /* ── SPECTRUM INFO ── */
+    .spectrum-band {
+      display: flex; gap: 0; border-radius: var(--radius); overflow: hidden;
+      margin: 1rem 0; font-size: 12px; font-weight: 600;
+    }
+    .spectrum-seg {
+      flex: 1; padding: 10px 8px; text-align: center;
+      color: white; line-height: 1.3;
+    }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      background: linear-gradient(135deg, #1d4e89, #2d6a9f);
+      color: white; border-radius: var(--radius-lg);
+      padding: 2rem; text-align: center; margin: 2rem 0;
+    }
+    .cta-strip h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 8px; }
+    .cta-strip p { opacity: .8; font-size: 14px; margin-bottom: 16px; }
+    .cta-strip-btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .cta-strip-btns a {
+      padding: 10px 20px; border-radius: 8px;
+      font-weight: 600; font-size: .875rem; text-decoration: none;
+      transition: opacity .15s;
+    }
+    .cta-strip-btns a:hover { opacity: .88; }
+    .btn-w  { background: white; color: #1d4e89; }
+    .btn-gh { background: rgba(255,255,255,.15); color: white; border: 1px solid rgba(255,255,255,.35); }
+
+    @media(max-width:600px){
+      .myth-table thead { display: none; }
+      .myth-table tbody td { display: block; width: 100%; }
+      .myth-table tbody td:first-child::before { content: '❌ Myth: '; font-weight: 700; }
+      .myth-table tbody td:last-child::before  { content: '✅ Fact: ';  font-weight: 700; }
+    }
   </style>
   <script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"hi,ja,zh-CN,ar,vi,ur,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element");}window.onload=function(){if(typeof google!=="undefined"&&google.translate)googleTranslateElementInit();};</script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><span>🌍</span> Global Autism Hub</a>
     <div class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
-      <a href="about.html">About Autism</a>
+      <a href="about.html" class="active">About Autism</a>
+      <a href="therapies.html">Therapies</a>
       <a href="resources.html">Resources</a>
       <a href="education.html">Education</a>
       <a href="research.html">Research</a>
@@ -150,178 +268,517 @@
   </div>
 </nav>
 
+<!-- ── HERO ── -->
+<div class="about-hero">
+  <div class="about-hero-label">Evidence-Based · Respectful · Up to Date</div>
+  <h1>Understanding Autism Spectrum Disorder</h1>
+  <p>Accurate, compassionate information about what autism is, how it presents, and how to find the right support — for families, educators, and individuals.</p>
+  <div class="about-hero-pills">
+    <a href="#what-is" class="about-pill">What is Autism?</a>
+    <a href="#signs" class="about-pill">Signs &amp; Characteristics</a>
+    <a href="#timeline" class="about-pill">Early Signs by Age</a>
+    <a href="#diagnosis" class="about-pill">Diagnosis</a>
+    <a href="#therapies-overview" class="about-pill">Therapies</a>
+    <a href="#myths" class="about-pill">Myths vs Facts</a>
+    <a href="#faq" class="about-pill">FAQ</a>
+  </div>
+</div>
+
 <div class="page-wrap">
 
-  <div class="page-header">
-    <h2>About Autism</h2>
-    <p>Accurate, respectful information about autism spectrum disorder — what it is, how it presents, and how to seek support.</p>
+  <!-- ── QUICK STATS ── -->
+  <div class="about-stats" style="margin-top:2rem">
+    <div class="about-stat">
+      <div class="about-stat-num">1 in 36</div>
+      <div class="about-stat-label">children diagnosed in the US (CDC 2023)</div>
+    </div>
+    <div class="about-stat">
+      <div class="about-stat-num">78M+</div>
+      <div class="about-stat-label">autistic people worldwide</div>
+    </div>
+    <div class="about-stat">
+      <div class="about-stat-num">4×</div>
+      <div class="about-stat-label">more often diagnosed in males than females</div>
+    </div>
+    <div class="about-stat">
+      <div class="about-stat-num">~40%</div>
+      <div class="about-stat-label">of autistic people are also diagnosed with ADHD</div>
+    </div>
+    <div class="about-stat">
+      <div class="about-stat-num">84%</div>
+      <div class="about-stat-label">experience clinically significant anxiety</div>
+    </div>
   </div>
 
   <!-- ── WHAT IS AUTISM ── -->
-  <div class="card" style="margin-bottom:2rem">
-    <div class="card-title">Overview</div>
-    <p style="font-size:15px;line-height:1.75;color:var(--text2)">
+  <div class="card" style="margin-bottom:2rem;scroll-margin-top:80px" id="what-is">
+    <div class="section-label">Overview</div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:12px">What is Autism?</h2>
+    <p style="font-size:15px;line-height:1.8;color:var(--text2)">
       <strong style="color:var(--text)">Autism spectrum disorder (ASD)</strong> is a neurodevelopmental difference that affects how people communicate, interact socially, and process sensory information. It is called a "spectrum" because it manifests uniquely in every individual — there is no single "autism experience."
     </p>
     <p style="margin-top:12px;font-size:14px;color:var(--text2)">
-      Autism is not a disease or disorder to be "cured." Many autistic people describe autism as a core part of their identity. The goal of support and intervention is to improve quality of life and help each person thrive on their own terms.
+      Autism is present from birth, though it may not be identified until later in life. It is not caused by parenting, vaccines, diet, or trauma. The exact causes involve a complex interplay of genetics and early brain development.
     </p>
+    <p style="margin-top:12px;font-size:14px;color:var(--text2)">
+      Autism is not a disease to be "cured." Many autistic people describe autism as a core part of their identity and thinking style. The goal of any support or intervention should be to improve quality of life and help each person thrive <em>on their own terms</em>.
+    </p>
+
+    <div style="margin-top:1.25rem">
+      <div class="section-label">The Spectrum — What It Really Means</div>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:10px">The spectrum is not a straight line from "mild" to "severe." Every autistic person has a unique profile of strengths and challenges across multiple dimensions.</p>
+      <div class="spectrum-band">
+        <div class="spectrum-seg" style="background:#4e8bd4">Communication</div>
+        <div class="spectrum-seg" style="background:#3d7abf">Social</div>
+        <div class="spectrum-seg" style="background:#2d6aaa">Sensory</div>
+        <div class="spectrum-seg" style="background:#1e5a95">Executive Function</div>
+        <div class="spectrum-seg" style="background:#0f4a80">Repetitive Behaviours</div>
+      </div>
+      <p style="font-size:12px;color:var(--text3);text-align:center">Each dimension varies independently. One autistic person may have high support needs in communication but very few in daily living skills.</p>
+    </div>
+
+    <div style="background:#f0f7ff;border-radius:10px;padding:14px 16px;margin-top:1.25rem;font-size:13px;color:var(--text2)">
+      <strong style="color:var(--text)">Language note:</strong> Some autistic people prefer identity-first language ("autistic person") while others prefer person-first language ("person with autism"). We use both on this site — always follow the individual's preference. Neither is wrong.
+    </div>
+  </div>
+
+  <!-- ── WHO IS AFFECTED ── -->
+  <div class="card" style="margin-bottom:2rem">
+    <div class="section-label">Who is affected</div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:14px">Autism Across Genders, Ages &amp; Cultures</h2>
+    <div class="card-grid" style="margin-bottom:0">
+      <div class="sign-card">
+        <div class="sign-icon">👦</div>
+        <div>
+          <h4>Boys &amp; Men</h4>
+          <p>Autism is diagnosed about 4× more often in males, partly because the diagnostic criteria were historically based on male presentations.</p>
+        </div>
+      </div>
+      <div class="sign-card">
+        <div class="sign-icon">👧</div>
+        <div>
+          <h4>Girls &amp; Women</h4>
+          <p>Autistic females often "mask" or camouflage their traits — mirroring social behaviour — leading to missed or late diagnoses. Anxiety and depression are more common as a result.</p>
+        </div>
+      </div>
+      <div class="sign-card">
+        <div class="sign-icon">🧑</div>
+        <div>
+          <h4>Adults</h4>
+          <p>Many adults receive a first diagnosis in their 30s, 40s or beyond. Recognition of late-diagnosed autism has grown significantly. Late diagnosis is still valid and often life-changing.</p>
+        </div>
+      </div>
+      <div class="sign-card">
+        <div class="sign-icon">🌏</div>
+        <div>
+          <h4>Global &amp; Cultural Context</h4>
+          <p>Autism occurs in all cultures, ethnicities, and socioeconomic groups. Access to diagnosis and support varies dramatically by country and community.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- ── SIGNS ── -->
-  <div class="section-heading" style="margin-top:2rem"><h2>Signs &amp; Characteristics</h2></div>
+  <div class="section-heading" style="scroll-margin-top:80px" id="signs"><h2>Signs &amp; Characteristics</h2></div>
+  <p style="font-size:13px;color:var(--text2);margin-bottom:1rem">Autism presents differently in every person. These are common characteristics — not all will apply to every autistic individual, and some may be strengths.</p>
   <div class="card-grid" style="margin-bottom:2rem">
     <div class="sign-card">
       <div class="sign-icon">💬</div>
       <div>
         <h4>Communication differences</h4>
-        <p>Delayed speech, preference for written over verbal communication, literal interpretation of language, or highly detailed verbal expression.</p>
+        <p>Delayed speech development, preference for written over verbal communication, literal interpretation of language, highly detailed or formal verbal expression, or use of AAC/non-verbal communication.</p>
       </div>
     </div>
     <div class="sign-card">
       <div class="sign-icon">🤝</div>
       <div>
         <h4>Social interaction</h4>
-        <p>Difficulty reading social cues, preference for direct communication, challenges with unwritten social rules or small talk.</p>
+        <p>Difficulty reading unspoken social cues, preference for direct and honest communication, challenges with unwritten social rules, small talk, or group dynamics. Deep, loyal friendships are common.</p>
       </div>
     </div>
     <div class="sign-card">
       <div class="sign-icon">🔁</div>
       <div>
-        <h4>Repetitive behaviors</h4>
-        <p>Stimming (self-stimulatory behavior), strong routines, deep focus on specific interests, need for consistency.</p>
+        <h4>Repetitive behaviours &amp; routines</h4>
+        <p>Stimming (self-stimulatory behaviour — rocking, hand-flapping, spinning), strong preference for consistency and predictability, deep passionate interests (special interests), distress at unexpected change.</p>
       </div>
     </div>
     <div class="sign-card">
       <div class="sign-icon">🌡️</div>
       <div>
-        <h4>Sensory sensitivities</h4>
-        <p>Over- or under-sensitivity to sound, light, touch, taste, or smell. Sensory overload can be overwhelming.</p>
+        <h4>Sensory processing</h4>
+        <p>Over- or under-sensitivity to sound, light, touch, taste, smell, movement, or body awareness. Sensory overload can cause meltdowns or shutdowns. Some seek intense sensory input.</p>
+      </div>
+    </div>
+    <div class="sign-card">
+      <div class="sign-icon">🧩</div>
+      <div>
+        <h4>Executive functioning</h4>
+        <p>Differences in planning, organising, initiating tasks, shifting attention, and managing time. Often co-occurs with ADHD. May mask as laziness or defiance but reflects genuine neurological differences.</p>
+      </div>
+    </div>
+    <div class="sign-card">
+      <div class="sign-icon">⭐</div>
+      <div>
+        <h4>Strengths &amp; abilities</h4>
+        <p>Exceptional attention to detail, strong memory, pattern recognition, deep expertise in areas of interest, honesty and loyalty, creative problem-solving, and highly original thinking styles.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CO-OCCURRING CONDITIONS ── -->
+  <div class="card" style="margin-bottom:2rem">
+    <div class="section-label">Co-occurring conditions</div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:10px">Autism Doesn't Arrive Alone</h2>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:14px">Many autistic people also live with one or more co-occurring conditions. These are separate diagnoses that require their own support — not part of autism itself.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">
+      <div style="background:#f0f4ff;border-radius:10px;padding:12px 14px;font-size:13px">
+        <div style="font-weight:700;margin-bottom:3px;color:#1d4e89">ADHD</div>
+        <div style="color:var(--text2)">~40% of autistic people also have ADHD — attention, impulsivity, hyperactivity differences</div>
+      </div>
+      <div style="background:#f0fff4;border-radius:10px;padding:12px 14px;font-size:13px">
+        <div style="font-weight:700;margin-bottom:3px;color:#2d6a4f">Anxiety disorders</div>
+        <div style="color:var(--text2)">Up to 84% experience clinically significant anxiety — social anxiety is most common</div>
+      </div>
+      <div style="background:#fff8f0;border-radius:10px;padding:12px 14px;font-size:13px">
+        <div style="font-weight:700;margin-bottom:3px;color:#b5451b">Depression</div>
+        <div style="color:var(--text2)">Higher rates of depression, especially in late-diagnosed adults and those who mask heavily</div>
+      </div>
+      <div style="background:#fdf0ff;border-radius:10px;padding:12px 14px;font-size:13px">
+        <div style="font-weight:700;margin-bottom:3px;color:#7b2d8b">OCD</div>
+        <div style="color:var(--text2)">OCD is distinct from autism's repetitive behaviours — it involves distressing intrusive thoughts</div>
+      </div>
+      <div style="background:#f5f5f5;border-radius:10px;padding:12px 14px;font-size:13px">
+        <div style="font-weight:700;margin-bottom:3px;color:#333">Epilepsy</div>
+        <div style="color:var(--text2)">~30% of autistic people develop epilepsy at some point in their lives</div>
+      </div>
+      <div style="background:#fff0f0;border-radius:10px;padding:12px 14px;font-size:13px">
+        <div style="font-weight:700;margin-bottom:3px;color:#b83232">Dyslexia / Dyspraxia</div>
+        <div style="color:var(--text2)">Motor coordination, reading, and processing speed differences are common co-occurring profiles</div>
       </div>
     </div>
   </div>
 
   <!-- ── TIMELINE ── -->
-  <div class="section-heading" id="timeline"><h2>Early Signs by Age</h2></div>
+  <div class="section-heading" style="scroll-margin-top:80px" id="timeline"><h2>Early Signs by Age</h2></div>
   <div class="card" style="margin-bottom:2rem">
-    <p style="font-size:13px;color:var(--text2);margin-bottom:1.5rem">Early identification leads to significantly better outcomes. Here are signs to look for at each stage of development.</p>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:1.5rem">Early identification leads to significantly better outcomes. Here are signs to look for at each stage of development. Remember: presence of some signs does not confirm autism; absence does not rule it out.</p>
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-age">6 months</div>
-        <h4>Limited social smiling or eye contact</h4>
-        <p>Typical infants smile responsively and make eye contact. Limited response to name or faces may be an early indicator.</p>
+        <div class="tl-age">0 – 6 months</div>
+        <h4>Limited early social responsiveness</h4>
+        <ul>
+          <li>Limited or absent social smiling in response to faces</li>
+          <li>Reduced or inconsistent eye contact</li>
+          <li>May not track faces or respond to voices</li>
+        </ul>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-age">12 months</div>
-        <h4>Limited babbling or gestures</h4>
-        <p>May not wave, point, or babble to communicate. Does not respond consistently when name is called.</p>
+        <div class="tl-age">6 – 12 months</div>
+        <h4>Reduced communication gestures</h4>
+        <ul>
+          <li>Does not babble or coo to communicate</li>
+          <li>Does not wave, point, or reach to show interest</li>
+          <li>Does not consistently respond when name is called</li>
+          <li>Limited back-and-forth "conversational" babbling</li>
+        </ul>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-age">18 months</div>
-        <h4>No single words</h4>
-        <p>No single meaningful words spoken. Loss of previously acquired speech or social skills is a significant warning sign.</p>
+        <div class="tl-age">12 – 18 months</div>
+        <h4>No single words or reduced joint attention</h4>
+        <ul>
+          <li>No single meaningful words by 16 months</li>
+          <li>Does not follow a pointing gesture to look at objects</li>
+          <li>Limited imitation of actions or sounds</li>
+          <li>Strong attachment to unusual objects</li>
+        </ul>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-age">24 months</div>
-        <h4>No two-word spontaneous phrases</h4>
-        <p>Reduced shared attention, strong attachment to specific objects or routines, limited imitation of others.</p>
+        <div class="tl-age">18 – 24 months</div>
+        <h4>No two-word phrases; repetitive play patterns</h4>
+        <ul>
+          <li>No spontaneous two-word phrases (not echolalia)</li>
+          <li>Lines up or groups toys rather than playing imaginatively</li>
+          <li>Strong need for routines; distressed by change</li>
+          <li>Loss of previously acquired speech or social skills — always a red flag</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-age">2 – 5 years</div>
+        <h4>Social and communication differences become clearer</h4>
+        <ul>
+          <li>Limited interest in peer play; prefers parallel or solitary play</li>
+          <li>Repetitive speech (echolalia), scripted language</li>
+          <li>Intense, narrow interests; distress at change of topic or routine</li>
+          <li>Sensory over- or under-reactions to everyday input</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-age">School age (5+)</div>
+        <h4>Social differences and academic profile</h4>
+        <ul>
+          <li>Difficulty understanding unwritten rules of friendship</li>
+          <li>Uneven academic profile — exceptional in some areas, struggling in others</li>
+          <li>Meltdowns in response to sensory or social overload</li>
+          <li>Anxiety, especially in unstructured social settings (lunch, recess, group work)</li>
+        </ul>
       </div>
       <div class="tl-item">
         <div class="tl-dot" style="background:var(--teal);box-shadow:0 0 0 2px var(--teal)"></div>
-        <div class="tl-age" style="color:var(--teal)">Any age</div>
-        <h4>Talk to your pediatrician</h4>
-        <p>If you notice any of these signs, request a developmental screening. Early intervention — including speech therapy, occupational therapy, and educational support — significantly improves outcomes.</p>
+        <div class="tl-age" style="color:var(--teal)">Any age — Act now</div>
+        <h4>If you notice these signs, seek a referral</h4>
+        <p>Speak with your paediatrician or GP. Early intervention — including speech therapy, occupational therapy, and targeted educational support — significantly improves long-term outcomes. A referral costs nothing. Waiting does.</p>
       </div>
     </div>
   </div>
 
+  <!-- ── DIAGNOSIS ── -->
+  <div class="card" style="margin-bottom:2rem;scroll-margin-top:80px" id="diagnosis">
+    <div class="section-label">Diagnosis</div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:14px">How is Autism Diagnosed?</h2>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:18px">There is no blood test or brain scan for autism. Diagnosis is based on comprehensive clinical assessment by qualified professionals.</p>
+    <div class="diag-steps">
+      <div class="diag-step">
+        <div class="diag-num">1</div>
+        <div>
+          <h4>Speak to your GP or paediatrician</h4>
+          <p>Describe your concerns and ask for a referral to a developmental paediatrician, child psychologist, or specialist autism assessment team.</p>
+        </div>
+      </div>
+      <div class="diag-step">
+        <div class="diag-num">2</div>
+        <div>
+          <h4>Developmental history review</h4>
+          <p>The clinician gathers detailed information about developmental milestones, family history, and current functioning from parents, carers, and teachers.</p>
+        </div>
+      </div>
+      <div class="diag-step">
+        <div class="diag-num">3</div>
+        <div>
+          <h4>Standardised assessments</h4>
+          <p>Commonly used tools include the <strong>ADOS-2</strong> (Autism Diagnostic Observation Schedule) — a structured observation — and the <strong>ADI-R</strong> (Autism Diagnostic Interview, Revised), conducted with parents.</p>
+        </div>
+      </div>
+      <div class="diag-step">
+        <div class="diag-num">4</div>
+        <div>
+          <h4>Multi-disciplinary input</h4>
+          <p>A full assessment often involves a speech-language therapist, occupational therapist, and psychologist working together to build a complete picture.</p>
+        </div>
+      </div>
+      <div class="diag-step">
+        <div class="diag-num">5</div>
+        <div>
+          <h4>Diagnosis &amp; post-diagnostic support</h4>
+          <p>If autism is confirmed, the team explains the diagnosis and recommends next steps. Ask about post-diagnostic support groups, therapy referrals, and school/workplace accommodations.</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff8f0;border:1px solid #fcd9b6;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;color:#7a3000">
+      <strong>Important:</strong> Diagnosis criteria differ between DSM-5 (USA) and ICD-11 (international). Both now use a single "autism spectrum disorder" category replacing older terms like Asperger's syndrome or PDD-NOS.
+    </div>
+  </div>
+
+  <!-- ── THERAPIES OVERVIEW ── -->
+  <div class="card" style="margin-bottom:2rem;scroll-margin-top:80px" id="therapies-overview">
+    <div class="section-label">Support &amp; therapies</div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:8px">What Therapies &amp; Supports Are Available?</h2>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:16px">Every autistic person is different — effective support is always individualised. Here are the five most evidence-supported therapies.</p>
+    <div class="therapy-mini-grid">
+      <a href="therapies.html#ot" class="therapy-mini" style="background:#d8f3dc;color:#2d6a4f">
+        <div class="therapy-mini-icon">🖐️</div>
+        <h4>Occupational Therapy</h4>
+        <p>Daily living skills, sensory regulation, motor skills</p>
+      </a>
+      <a href="therapies.html#speech" class="therapy-mini" style="background:#dbeafe;color:#1d4e89">
+        <div class="therapy-mini-icon">💬</div>
+        <h4>Speech Therapy</h4>
+        <p>Communication, language, AAC, social pragmatics</p>
+      </a>
+      <a href="therapies.html#sensory" class="therapy-mini" style="background:#f3e8ff;color:#7b2d8b">
+        <div class="therapy-mini-icon">🌀</div>
+        <h4>Sensory Integration</h4>
+        <p>Sensory overload, regulation, meltdown reduction</p>
+      </a>
+      <a href="therapies.html#cbt" class="therapy-mini" style="background:#fde8df;color:#b5451b">
+        <div class="therapy-mini-icon">🧠</div>
+        <h4>CBT (adapted)</h4>
+        <p>Anxiety, depression, OCD, emotional regulation</p>
+      </a>
+      <a href="therapies.html#aba" class="therapy-mini" style="background:#fef3c7;color:#b5860b">
+        <div class="therapy-mini-icon">⚙️</div>
+        <h4>ABA Therapy</h4>
+        <p>Skill building, behaviour support, learning</p>
+      </a>
+    </div>
+    <a href="therapies.html" class="btn btn-blue btn-sm">Read the Full Therapy Guide →</a>
+  </div>
+
+  <!-- ── MYTHS VS FACTS ── -->
+  <div class="section-heading" style="scroll-margin-top:80px" id="myths"><h2>Myths vs Facts</h2></div>
+  <div class="card" style="margin-bottom:2rem;padding:0;overflow:hidden">
+    <table class="myth-table">
+      <thead>
+        <tr>
+          <th>❌ Common Myth</th>
+          <th>✅ The Fact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vaccines cause autism</td>
+          <td>Thoroughly debunked. Dozens of large-scale international studies involving millions of children have found no link between vaccines and autism.</td>
+        </tr>
+        <tr>
+          <td>Autistic people lack empathy</td>
+          <td>Many autistic people feel empathy deeply — sometimes intensely so. The "double empathy problem" shows that communication breakdown is mutual, not one-sided.</td>
+        </tr>
+        <tr>
+          <td>Autism can be "cured"</td>
+          <td>Autism is a neurodevelopmental difference, not a disease. The goal of support is to improve quality of life and wellbeing — not to eliminate someone's neurotype.</td>
+        </tr>
+        <tr>
+          <td>All autistic people have intellectual disabilities</td>
+          <td>Intelligence varies widely across the spectrum. Many autistic people have average or above-average IQs. Some have co-occurring intellectual disabilities, but this is not autism itself.</td>
+        </tr>
+        <tr>
+          <td>Autism only affects children</td>
+          <td>Autistic children become autistic adults. Autism is lifelong. Support needs may change across the lifespan, but the neurodivergence itself does not disappear.</td>
+        </tr>
+        <tr>
+          <td>Autistic people can't have relationships or careers</td>
+          <td>Many autistic people have fulfilling relationships, families, and successful careers. With the right support and understanding, the possibilities are not limited.</td>
+        </tr>
+        <tr>
+          <td>You can tell if someone is autistic by looking at them</td>
+          <td>Autism is invisible. Many autistic people — particularly women and those who have learned to mask — appear "neurotypical" in short social interactions.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <!-- ── FAQ ACCORDION ── -->
-  <div class="section-heading"><h2>Frequently Asked Questions</h2></div>
+  <div class="section-heading" style="scroll-margin-top:80px" id="faq"><h2>Frequently Asked Questions</h2></div>
 
   <div class="accordion">
-    <button class="accordion-btn" onclick="toggleAcc(this)">
-      What causes autism?
-      <span class="icon">+</span>
-    </button>
+    <button class="accordion-btn" onclick="toggleAcc(this)">What causes autism?<span class="icon">+</span></button>
     <div class="accordion-body">
-      Research shows autism results from a combination of genetic and environmental factors. There is no single known cause. Vaccines do not cause autism — this has been thoroughly debunked by large-scale international studies. No parenting style or food causes autism.
+      Research shows autism results from a combination of genetic and environmental factors — primarily differences in early brain development. There is no single known cause. <strong>Vaccines do not cause autism</strong> — this has been thoroughly debunked by dozens of large-scale international studies. No parenting style, diet, or childhood experience causes autism.
     </div>
   </div>
 
   <div class="accordion">
-    <button class="accordion-btn" onclick="toggleAcc(this)">
-      Is autism a disease or disability?
-      <span class="icon">+</span>
-    </button>
+    <button class="accordion-btn" onclick="toggleAcc(this)">Is autism a disease, disorder, or disability?<span class="icon">+</span></button>
     <div class="accordion-body">
-      Autism is a neurodevelopmental difference, not a disease or illness. Many autistic people and organizations use identity-first language ("autistic person") and describe autism as a core part of who they are. Others prefer person-first language ("person with autism"). Follow the individual's preference.
+      Autism is a neurodevelopmental difference — a different way the brain is wired. Many autistic people and advocacy organisations use identity-first language ("autistic person") and describe autism as a core part of who they are, not a problem to be fixed. Others prefer person-first language ("person with autism"). Follow the individual's stated preference. Neither is wrong. Whether autism constitutes a disability depends on the environment and the supports available — many barriers autistic people face are created by a world not designed with them in mind.
     </div>
   </div>
 
   <div class="accordion">
-    <button class="accordion-btn" onclick="toggleAcc(this)">
-      Can adults be diagnosed with autism?
-      <span class="icon">+</span>
-    </button>
+    <button class="accordion-btn" onclick="toggleAcc(this)">Can adults be diagnosed with autism?<span class="icon">+</span></button>
     <div class="accordion-body">
-      Yes. Many people — especially women, girls, and people of color — receive a first diagnosis in adulthood. Autistic females often "mask" or camouflage their traits, leading to missed diagnoses in childhood. Late diagnosis can still be validating and life-changing, offering access to support and self-understanding.
+      Yes — absolutely. Many people receive a first autism diagnosis in their 30s, 40s, 50s, or beyond. Autistic females and non-binary individuals are particularly likely to be missed in childhood, as they often "mask" (camouflage autistic traits by mimicking social norms). Late diagnosis is valid, can be profoundly validating, and opens access to tailored support. If you suspect you may be autistic, speak to your GP about a referral to an adult autism assessment service.
     </div>
   </div>
 
   <div class="accordion">
-    <button class="accordion-btn" onclick="toggleAcc(this)">
-      What therapies and supports are available?
-      <span class="icon">+</span>
-    </button>
+    <button class="accordion-btn" onclick="toggleAcc(this)">What therapies and supports are available?<span class="icon">+</span></button>
     <div class="accordion-body">
-      Common supports include speech-language therapy, occupational therapy, social skills groups, and educational accommodations (IEPs). Applied Behavior Analysis (ABA) is widely used but is debated within the autistic community — quality varies widely. The right support depends on the individual's specific needs and preferences. Always involve the autistic person in decisions about their care.
+      The five most widely used, evidence-supported therapies are:
+      <ul>
+        <li><strong>Occupational Therapy (OT):</strong> Daily living skills, sensory regulation, motor development</li>
+        <li><strong>Speech-Language Therapy:</strong> Communication, language, AAC (for non-speaking individuals)</li>
+        <li><strong>Sensory Integration Therapy:</strong> Managing sensory overload across all 7 senses</li>
+        <li><strong>CBT (autism-adapted):</strong> Anxiety, depression, emotional regulation</li>
+        <li><strong>ABA Therapy:</strong> Skill building and behaviour support — seek neurodiversity-affirming providers</li>
+      </ul>
+      The right combination depends entirely on the individual's needs and goals. Always involve the autistic person in decisions about their own support. <a href="therapies.html" style="color:var(--blue)">Read our full therapy guide →</a>
     </div>
   </div>
 
   <div class="accordion">
-    <button class="accordion-btn" onclick="toggleAcc(this)">
-      Does autism affect intelligence?
-      <span class="icon">+</span>
-    </button>
+    <button class="accordion-btn" onclick="toggleAcc(this)">Does autism affect intelligence?<span class="icon">+</span></button>
     <div class="accordion-body">
-      No — intelligence varies widely across the autism spectrum, just as it does in the general population. Many autistic individuals have exceptional abilities in specific areas (mathematics, music, memory, pattern recognition). Co-occurring intellectual disabilities affect some autistic people but are not inherent to autism.
+      No. Intelligence varies across the autism spectrum just as it does in the general population. Many autistic individuals have exceptional abilities in specific areas — mathematics, music, memory, pattern recognition, coding, or creative arts. Some autistic people have co-occurring intellectual disabilities, but this is a separate diagnosis and not inherent to autism. IQ tests can also underestimate autistic people's abilities due to processing speed and communication differences.
     </div>
   </div>
 
   <div class="accordion">
-    <button class="accordion-btn" onclick="toggleAcc(this)">
-      How is autism diagnosed?
-      <span class="icon">+</span>
-    </button>
+    <button class="accordion-btn" onclick="toggleAcc(this)">How is autism diagnosed?<span class="icon">+</span></button>
     <div class="accordion-body">
-      Diagnosis involves a comprehensive evaluation by trained clinicians including developmental pediatricians, child psychologists, or psychiatrists. There is no blood test or brain scan for autism. Evaluations assess developmental history, behavior observations, and standardized assessments (such as ADOS-2 and ADI-R). If you suspect autism in your child or yourself, speak with your primary care physician for a referral.
+      Diagnosis involves a comprehensive evaluation by trained clinicians — typically developmental paediatricians, child or adult psychologists, or psychiatrists. There is no blood test or brain scan. Assessment includes detailed developmental history, structured observation (often using ADOS-2), parental/carer interview (ADI-R), and review of current functioning across settings. If you're concerned about yourself or your child, speak to your GP or primary care physician for a referral. Private assessments are available in many countries if NHS/public wait times are long.
     </div>
   </div>
 
-  <div style="margin-top:2rem;text-align:center">
-    <a href="resources.html" class="btn btn-blue">View All Resources</a>
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">What is "masking" and why does it matter?<span class="icon">+</span></button>
+    <div class="accordion-body">
+      Masking (or camouflaging) is when autistic people suppress or hide their autistic traits to fit into neurotypical social environments — scripting conversations, forcing eye contact, suppressing stimming, or mimicking others' behaviour. Masking is exhausting and is strongly associated with anxiety, depression, burnout, and late diagnosis — particularly in autistic women. Understanding masking is important for parents, teachers, and clinicians because a child who "seems fine" at school may be in crisis at home after spending all day masking.
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">What is an autism meltdown vs a tantrum?<span class="icon">+</span></button>
+    <div class="accordion-body">
+      A meltdown is an involuntary response to sensory, emotional, or situational overwhelm — not a choice or a behaviour designed to manipulate. The autistic person loses control of their responses and may cry, scream, hit themselves, or become non-verbal. They cannot "just calm down." A tantrum, by contrast, is a deliberate behaviour often used to achieve a specific goal, and the child typically retains awareness of their environment. During a meltdown, the priority is safety, reducing sensory input, and calm, quiet presence — not consequences or correction.
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">How can I support an autistic child at school?<span class="icon">+</span></button>
+    <div class="accordion-body">
+      Key strategies include:
+      <ul>
+        <li>Visual timetables and clear, predictable routines</li>
+        <li>Advance notice of changes or transitions</li>
+        <li>A quiet space or sensory break option</li>
+        <li>Clear, literal instructions — avoid sarcasm or idioms</li>
+        <li>Reduce sensory demands where possible (seating, lighting, noise)</li>
+        <li>Recognise and celebrate strengths and special interests</li>
+        <li>Collaborate with the child's OT and SLT</li>
+        <li>Request an IEP (USA) or EHCP (UK) for formal accommodations</li>
+      </ul>
+      <a href="education.html" style="color:var(--blue)">Explore our education resources →</a>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-strip">
+    <h3>Ready to explore support options?</h3>
+    <p>Our therapy guide, resources, and education tools are free and available for families worldwide.</p>
+    <div class="cta-strip-btns">
+      <a href="therapies.html" class="btn-w">Explore All Therapies</a>
+      <a href="resources.html" class="btn-gh">Browse Resources</a>
+      <a href="contact.html" class="btn-gh">Find Support Near You</a>
+    </div>
   </div>
 
 </div>
 
 <footer class="site-footer">
   <p>© 2025 Global Autism Hub · Autism support and educational resources worldwide</p>
+  <p style="margin-top:6px;font-size:12px">
+    <a href="https://www.autismspeaks.org" target="_blank">Autism Speaks</a> ·
+    <a href="https://autisticadvocacy.org" target="_blank">ASAN</a> ·
+    <a href="https://www.autism.org.uk" target="_blank">National Autistic Society</a>
+  </p>
 </footer>
 
 <script>
 function toggleNav() {
   document.getElementById('navLinks').classList.toggle('open');
 }
-
 function toggleAcc(btn) {
   var body = btn.nextElementSibling;
   var isOpen = body.classList.contains('open');
-  document.querySelectorAll('.accordion-btn').forEach(function(b) { b.classList.remove('open'); });
-  document.querySelectorAll('.accordion-body').forEach(function(b) { b.classList.remove('open'); });
+  document.querySelectorAll('.accordion-btn').forEach(function(b){ b.classList.remove('open'); });
+  document.querySelectorAll('.accordion-body').forEach(function(b){ b.classList.remove('open'); });
   if (!isOpen) {
     btn.classList.add('open');
     body.classList.add('open');
