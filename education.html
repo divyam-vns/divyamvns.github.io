@@ -4,90 +4,177 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Autism Worksheets & Educational Resources | Global Autism Hub</title>
-  <meta name="description" content="Download free printable autism worksheets — IEP goal trackers, speech therapy practice, sensory play activities, social stories, and reading comprehension. Filter by age and category. No sign-up needed.">
-  <meta name="keywords" content="free autism worksheets, autism printables, IEP goal tracker, speech therapy worksheets autism, autism sensory activities, autism social stories, autism reading worksheets, free special education resources, autism worksheets for kids">
+  <meta name="description" content="Download free printable autism worksheets — IEP goal trackers, speech therapy practice, sensory play activities, social stories, OT exercises, CBT tools, ABA data sheets, and reading comprehension. Filter by age and category. No sign-up needed.">
+  <meta name="keywords" content="free autism worksheets, autism printables, IEP goal tracker, speech therapy worksheets autism, autism sensory activities, autism social stories, autism reading worksheets, free special education resources, autism worksheets for kids, OT worksheets autism, ABA data sheets, CBT autism worksheets, sensory diet template, occupational therapy autism printables">
   <meta property="og:title" content="Free Autism Worksheets & Printables — Download Instantly">
-  <meta property="og:description" content="Free printable autism worksheets for parents and teachers — IEP trackers, speech therapy, sensory activities, social stories and more. Filter by age and category.">
+  <meta property="og:description" content="Free printable autism worksheets for parents and teachers — IEP trackers, speech therapy, OT, sensory activities, social stories and more. Filter by age and category.">
   <meta property="og:url" content="https://divyam-vns.github.io/divyamvns.github.io/education.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://divyam-vns.github.io/divyamvns.github.io/preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free Autism Worksheets — Download Instantly">
-  <meta name="twitter:description" content="Free printable autism worksheets for parents and teachers. IEP trackers, speech therapy, sensory activities and more. No sign-up needed.">
+  <meta name="twitter:description" content="Free printable autism worksheets for parents and teachers. IEP trackers, speech therapy, OT, sensory activities and more. No sign-up needed.">
   <link rel="canonical" href="https://divyam-vns.github.io/divyamvns.github.io/education.html">
   <link rel="stylesheet" href="style.css">
   <style>
-    .filter-bar {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 1rem 1.25rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      margin-bottom: 1.5rem;
+    /* ── HERO ── */
+    .edu-hero {
+      background: linear-gradient(135deg, #1d4e89 0%, #2d6a9f 60%, #3b82c4 100%);
+      color: white; padding: 52px 5vw 48px; text-align: center;
     }
-    .filter-bar label { font-size: 13px; font-weight: 500; color: var(--text2); white-space: nowrap; }
-    .filter-bar select { width: auto; min-width: 160px; }
+    .edu-hero-label {
+      display: inline-block;
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px; font-size: .72rem; font-weight: 700;
+      letter-spacing: .09em; text-transform: uppercase;
+      padding: 4px 14px; margin-bottom: 16px;
+    }
+    .edu-hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      font-weight: 400; line-height: 1.2;
+      max-width: 640px; margin: 0 auto 12px;
+    }
+    .edu-hero p {
+      color: rgba(255,255,255,.8); font-size: .95rem;
+      max-width: 520px; margin: 0 auto 26px;
+    }
+    .edu-hero-stats {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      justify-content: center;
+    }
+    .edu-hero-stat {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 10px; padding: 10px 18px;
+      font-size: .82rem;
+    }
+    .edu-hero-stat strong { display: block; font-size: 1.2rem; font-family: 'DM Serif Display', serif; }
+
+    /* ── FILTER BAR ── */
+    .filter-section { margin-bottom: 1.5rem; }
+    .filter-label {
+      font-size: 11px; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--text2);
+      margin-bottom: 8px; display: block;
+    }
+    .filter-bar {
+      display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+      margin-bottom: 10px;
+    }
     .filter-btn {
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 1.5px solid var(--border2);
-      background: transparent;
-      font-size: 13px;
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text2);
-      cursor: pointer;
-      transition: all 0.15s;
-      font-weight: 500;
+      padding: 8px 16px; border-radius: 20px;
+      border: 1.5px solid var(--border2); background: transparent;
+      font-size: 13px; font-family: 'DM Sans', sans-serif;
+      color: var(--text2); cursor: pointer;
+      transition: all 0.15s; font-weight: 500;
     }
     .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
     .filter-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+
+    /* ── SEARCH ── */
+    .res-search {
+      position: relative; margin-bottom: 1.25rem;
+    }
+    .res-search input {
+      width: 100%; padding: 11px 44px 11px 16px;
+      border-radius: 10px; border: 1.5px solid var(--border2);
+      font-size: 14px; font-family: 'DM Sans', sans-serif;
+      color: var(--text); outline: none;
+      transition: border-color .15s;
+    }
+    .res-search input:focus { border-color: var(--blue); }
+    .res-search-icon {
+      position: absolute; right: 14px; top: 50%;
+      transform: translateY(-50%); color: var(--text3); font-size: 16px;
+    }
+
+    /* ── RESULTS COUNT ── */
     .results-count { font-size: 13px; color: var(--text3); margin-bottom: 1rem; }
+
+    /* ── RESOURCE CARD ── */
     .res-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem 1.5rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
       transition: box-shadow 0.2s, border-color 0.2s;
-      display: flex;
-      flex-direction: column;
+      display: flex; flex-direction: column;
     }
     .res-card:hover { box-shadow: 0 4px 16px rgba(26,95,168,0.1); border-color: var(--blue-mid); }
     .res-card-top { display: flex; gap: 10px; align-items: start; margin-bottom: 10px; }
     .res-icon {
-      width: 40px; height: 40px;
-      border-radius: 10px;
+      width: 40px; height: 40px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
+      font-size: 20px; flex-shrink: 0;
     }
     .res-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; color: var(--text); }
-    .res-card p { font-size: 13px; color: var(--text2); flex: 1; margin-bottom: 12px; }
-    .res-card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+    .res-card p { font-size: 13px; color: var(--text2); flex: 1; margin-bottom: 12px; line-height: 1.6; }
+    .res-card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; flex-wrap: wrap; gap: 8px; }
+
+    /* ── THERAPY GUIDE BANNER ── */
+    .therapy-banner {
+      background: linear-gradient(135deg, #2d6a4f, #40916c);
+      color: white; border-radius: var(--radius-lg);
+      padding: 1.5rem 2rem; margin: 2rem 0;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .therapy-banner h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem; margin-bottom: 5px;
+    }
+    .therapy-banner p { font-size: 13px; opacity: .85; max-width: 480px; }
+
+    /* ── CATEGORY SECTION HEADERS ── */
+    .cat-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 0 6px; margin-top: 8px; margin-bottom: 2px;
+      border-bottom: 2px solid var(--border);
+    }
+    .cat-header-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+    }
+    .cat-header h3 { font-size: 1rem; font-weight: 700; }
+    .cat-header span { font-size: 12px; color: var(--text3); margin-left: auto; }
+
+    /* ── NO RESULTS ── */
     .no-results {
-      text-align: center;
-      padding: 3rem;
-      color: var(--text3);
-      font-size: 15px;
-      grid-column: 1 / -1;
+      text-align: center; padding: 3rem; color: var(--text3);
+      font-size: 15px; grid-column: 1 / -1;
     }
     .no-results span { display: block; font-size: 2rem; margin-bottom: 8px; }
+
+    /* ── HOW TO USE SECTION ── */
+    .how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 14px; margin: 1rem 0 2rem; }
+    .how-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem;
+      font-size: 13px;
+    }
+    .how-card-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--blue); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .how-card h4 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+    .how-card p { color: var(--text2); font-size: 12px; }
   </style>
   <script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"hi,ja,zh-CN,ar,vi,ur,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element");}window.onload=function(){if(typeof google!=="undefined"&&google.translate)googleTranslateElementInit();};</script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><span>🌍</span> Global Autism Hub</a>
     <div class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="about.html">About Autism</a>
+      <a href="therapies.html">Therapies</a>
       <a href="resources.html">Resources</a>
-      <a href="education.html">Education</a>
+      <a href="education.html" class="active">Education</a>
       <a href="research.html">Research</a>
       <a href="glossary.html">Glossary</a>
       <a href="parent-guide.html">Parent Guide</a>
@@ -100,37 +187,101 @@
   </div>
 </nav>
 
+<!-- ── HERO ── -->
+<div class="edu-hero">
+  <div class="edu-hero-label">Free · No Sign-Up · Printable</div>
+  <h1>Autism Educational Resources & Worksheets</h1>
+  <p>Downloadable worksheets, therapy materials, IEP guides, and teaching tools for parents, educators, and therapists.</p>
+  <div class="edu-hero-stats">
+    <div class="edu-hero-stat"><strong>20+</strong> free resources</div>
+    <div class="edu-hero-stat"><strong>7</strong> categories</div>
+    <div class="edu-hero-stat"><strong>All ages</strong> covered</div>
+    <div class="edu-hero-stat"><strong>No</strong> sign-up needed</div>
+  </div>
+</div>
+
 <div class="page-wrap">
-  <div class="page-header">
-    <h2>Educational Resources</h2>
-    <p>Downloadable worksheets, IEP guides, and therapy materials. Filter by category and age group to find exactly what you need.</p>
+
+  <!-- ── THERAPY GUIDE BANNER ── -->
+  <div class="therapy-banner">
+    <div>
+      <h3>Looking for therapy information?</h3>
+      <p>Our full guide covers Occupational Therapy, Speech Therapy, Sensory Integration, CBT, and ABA — how each works, teaching methods, and resources.</p>
+    </div>
+    <a href="therapies.html" class="btn btn-white btn-sm" style="white-space:nowrap;background:white;color:#2d6a4f;font-weight:700">Read Therapy Guide →</a>
   </div>
 
-  <!-- ── FILTER BAR ── -->
-  <div class="filter-bar">
-    <label>Category:</label>
-    <button class="filter-btn active" onclick="setFilter('cat','all',this)">All</button>
-    <button class="filter-btn" onclick="setFilter('cat','communication',this)">Communication</button>
-    <button class="filter-btn" onclick="setFilter('cat','motor',this)">Motor Skills</button>
-    <button class="filter-btn" onclick="setFilter('cat','reading',this)">Reading</button>
-    <button class="filter-btn" onclick="setFilter('cat','iep',this)">IEP / School</button>
-    <button class="filter-btn" onclick="setFilter('cat','social',this)">Social Skills</button>
+  <!-- ── HOW TO USE ── -->
+  <div style="margin-bottom:.5rem">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);margin-bottom:10px">How to use these resources</div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-card-num">1</div>
+        <h4>Filter by category or age</h4>
+        <p>Use the buttons below to narrow down by therapy type, school need, or age group.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-num">2</div>
+        <h4>Download the PDF</h4>
+        <p>Click "Download PDF" to save or print. All materials are free — no account needed.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-num">3</div>
+        <h4>Share with your team</h4>
+        <p>These are designed for home, school, and clinic use. Share freely with teachers and therapists.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-num">4</div>
+        <h4>Pair with therapy</h4>
+        <p>Each resource links to its therapy type. Read our <a href="therapies.html" style="color:var(--blue)">therapy guide</a> to use them effectively.</p>
+      </div>
+    </div>
   </div>
-  <div class="filter-bar">
-    <label>Age group:</label>
-    <button class="filter-btn active" onclick="setFilter('age','all',this)">All ages</button>
-    <button class="filter-btn" onclick="setFilter('age','early',this)">Early childhood (2–5)</button>
-    <button class="filter-btn" onclick="setFilter('age','school',this)">School age (6–12)</button>
-    <button class="filter-btn" onclick="setFilter('age','teen',this)">Teen (13+)</button>
+
+  <!-- ── FILTERS ── -->
+  <div class="filter-section">
+    <span class="filter-label">Filter by category</span>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="setFilter('cat','all',this)">All</button>
+      <button class="filter-btn" onclick="setFilter('cat','communication',this)">💬 Speech &amp; Communication</button>
+      <button class="filter-btn" onclick="setFilter('cat','ot',this)">🖐️ Occupational Therapy</button>
+      <button class="filter-btn" onclick="setFilter('cat','sensory',this)">🌀 Sensory</button>
+      <button class="filter-btn" onclick="setFilter('cat','cbt',this)">🧠 CBT &amp; Emotions</button>
+      <button class="filter-btn" onclick="setFilter('cat','aba',this)">⚙️ ABA &amp; Behaviour</button>
+      <button class="filter-btn" onclick="setFilter('cat','iep',this)">📋 IEP &amp; School</button>
+      <button class="filter-btn" onclick="setFilter('cat','social',this)">🤝 Social Skills</button>
+      <button class="filter-btn" onclick="setFilter('cat','reading',this)">📖 Reading &amp; Literacy</button>
+    </div>
+
+    <span class="filter-label">Filter by age group</span>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="setFilter('age','all',this)">All ages</button>
+      <button class="filter-btn" onclick="setFilter('age','early',this)">Early childhood (2–5)</button>
+      <button class="filter-btn" onclick="setFilter('age','school',this)">School age (6–12)</button>
+      <button class="filter-btn" onclick="setFilter('age','teen',this)">Teen (13+)</button>
+      <button class="filter-btn" onclick="setFilter('age','adult',this)">Adult</button>
+    </div>
+  </div>
+
+  <!-- ── SEARCH ── -->
+  <div class="res-search">
+    <input type="text" id="resSearch" placeholder="Search worksheets, e.g. 'sensory diet', 'emotions', 'IEP'..." oninput="renderResources()" autocomplete="off">
+    <div class="res-search-icon">🔍</div>
   </div>
 
   <p class="results-count" id="resultsCount"></p>
-
   <div class="card-grid" id="resourceGrid"></div>
+
 </div>
 
+<!-- ── FOOTER ── -->
 <footer class="site-footer">
   <p>© 2025 Global Autism Hub · Autism support and educational resources worldwide</p>
+  <p style="margin-top:6px;font-size:12px">
+    <a href="https://www.autismspeaks.org" target="_blank">Autism Speaks</a> ·
+    <a href="https://autisticadvocacy.org" target="_blank">ASAN</a> ·
+    <a href="https://www.autism.org.uk" target="_blank">National Autistic Society</a>
+  </p>
 </footer>
 
 <script>
@@ -139,112 +290,271 @@ function toggleNav() {
 }
 
 var resources = [
+  /* ── IEP & SCHOOL ── */
   {
     title: "What is an IEP?",
-    desc: "A complete guide to Individualized Education Programs — what they include, parent rights, and how to request one.",
+    desc: "A complete guide to Individualized Education Programs — what they include, parent rights, and how to request one from your child's school.",
     cat: "iep", age: "school",
-    tags: ["IEP", "school", "rights"],
+    tags: ["IEP", "school", "parent rights"],
     icon: "📋", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
     badge: "badge-blue", badgeText: "IEP Guide",
     file: "resources/What_is_an_IEP.pdf"
   },
   {
-    title: "Speech Therapy Worksheets",
-    desc: "Free printable worksheets for improving communication, vocabulary, and expressive language skills.",
-    cat: "communication", age: "early",
-    tags: ["speech", "language", "printable"],
-    icon: "💬", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
-    badge: "badge-teal", badgeText: "Communication",
-    file: "resources/Speech_Therapy.pdf"
-  },
-  {
-    title: "Sensory Play Activities",
-    desc: "Structured sensory play ideas to support sensory integration and fine motor development in young children.",
-    cat: "motor", age: "early",
-    tags: ["sensory", "motor", "play", "tactile"],
-    icon: "🖐️", iconBg: "#fdf2e0", iconColor: "#c47d15",
-    badge: "badge-gold", badgeText: "Motor Skills",
+    title: "IEP Goal Tracker",
+    desc: "A printable weekly tracker for monitoring progress toward IEP goals at home and in the classroom. Space for 6 goals with notes.",
+    cat: "iep", age: "school",
+    tags: ["IEP", "goal tracking", "progress"],
+    icon: "📊", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
+    badge: "badge-blue", badgeText: "IEP Guide",
     file: "#"
   },
   {
-    title: "Reading Comprehension Cards",
-    desc: "Visual reading comprehension cards designed for children who benefit from structured, picture-supported text.",
-    cat: "reading", age: "school",
-    tags: ["reading", "literacy", "visual", "comprehension"],
-    icon: "📖", iconBg: "#fdeaea", iconColor: "#b83232",
-    badge: "badge-red", badgeText: "Reading",
+    title: "Classroom Inclusion Strategies",
+    desc: "A guide for teachers and paraprofessionals on supporting autistic students — visual schedules, sensory accommodations, and communication adaptations.",
+    cat: "iep", age: "school",
+    tags: ["inclusion", "classroom", "teacher", "accommodations"],
+    icon: "🏫", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
+    badge: "badge-teal", badgeText: "IEP / School",
     file: "#"
   },
   {
-    title: "Social Stories Pack",
-    desc: "A collection of social stories covering school routines, transitions, greetings, and emotions.",
-    cat: "social", age: "school",
-    tags: ["social", "stories", "emotions", "school"],
-    icon: "🤝", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
-    badge: "badge-blue", badgeText: "Social Skills",
-    file: "#"
-  },
-  {
-    title: "Transition to Adulthood Guide",
-    desc: "A planning workbook for teens with autism moving toward post-secondary education, employment, or independent living.",
+    title: "Transition to Adulthood Planning Guide",
+    desc: "A planning workbook for teens with autism moving toward post-secondary education, employment, or independent living. Includes goal-setting pages.",
     cat: "iep", age: "teen",
     tags: ["transition", "adulthood", "employment", "planning"],
     icon: "🎓", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
     badge: "badge-teal", badgeText: "IEP / School",
     file: "#"
   },
+
+  /* ── SPEECH & COMMUNICATION ── */
   {
-    title: "Fine Motor Exercises",
-    desc: "Printable exercises to build fine motor skills including pencil grip, cutting, and hand-eye coordination.",
-    cat: "motor", age: "early",
-    tags: ["fine motor", "pencil grip", "cutting", "hands"],
-    icon: "✏️", iconBg: "#fdf2e0", iconColor: "#c47d15",
-    badge: "badge-gold", badgeText: "Motor Skills",
-    file: "#"
-  },
-  {
-    title: "Teen Self-Advocacy Workbook",
-    desc: "Helps autistic teens understand their rights, communicate their needs, and participate in their own IEP meetings.",
-    cat: "social", age: "teen",
-    tags: ["advocacy", "teen", "rights", "IEP", "self-determination"],
-    icon: "💪", iconBg: "#fdeaea", iconColor: "#b83232",
-    badge: "badge-red", badgeText: "Social Skills",
-    file: "#"
+    title: "Speech Therapy Worksheets",
+    desc: "Free printable worksheets for improving communication, vocabulary, and expressive language skills. Designed for use with a speech-language therapist.",
+    cat: "communication", age: "early",
+    tags: ["speech", "language", "expressive", "printable"],
+    icon: "💬", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
+    badge: "badge-teal", badgeText: "Speech Therapy",
+    file: "resources/Speech_Therapy.pdf"
   },
   {
     title: "AAC Introduction Guide",
-    desc: "An introduction to Augmentative and Alternative Communication (AAC) for non-speaking or minimally speaking children.",
+    desc: "An introduction to Augmentative and Alternative Communication (AAC) for non-speaking or minimally verbal children — includes PECS overview and device selection tips.",
     cat: "communication", age: "early",
-    tags: ["AAC", "communication", "non-speaking", "PECS"],
+    tags: ["AAC", "non-speaking", "PECS", "communication device"],
     icon: "📱", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
     badge: "badge-blue", badgeText: "Communication",
     file: "#"
   },
   {
-    title: "Classroom Inclusion Strategies",
-    desc: "A guide for teachers and paraprofessionals on supporting autistic students in inclusive classroom settings.",
-    cat: "iep", age: "school",
-    tags: ["inclusion", "classroom", "teacher", "strategies"],
-    icon: "🏫", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
-    badge: "badge-teal", badgeText: "IEP / School",
+    title: "Vocabulary Builder Cards",
+    desc: "Picture-word flashcards organised by theme (food, home, school, feelings) to build expressive and receptive vocabulary in young children.",
+    cat: "communication", age: "early",
+    tags: ["vocabulary", "flashcards", "picture cards", "language"],
+    icon: "🃏", iconBg: "#e0f5f1", iconColor: "#0d7f6e",
+    badge: "badge-teal", badgeText: "Speech Therapy",
+    file: "#"
+  },
+  {
+    title: "Conversation Starters Worksheet",
+    desc: "Structured conversation prompt cards and turn-taking scripts to support social communication skills in school-age children.",
+    cat: "communication", age: "school",
+    tags: ["conversation", "social communication", "pragmatics", "turn-taking"],
+    icon: "🗣️", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
+    badge: "badge-blue", badgeText: "Communication",
+    file: "#"
+  },
+
+  /* ── OCCUPATIONAL THERAPY ── */
+  {
+    title: "Sensory Diet Template",
+    desc: "A printable daily sensory diet schedule with morning, school, afternoon, and evening activity slots. Used by occupational therapists to support sensory regulation.",
+    cat: "ot", age: "school",
+    tags: ["sensory diet", "OT", "occupational therapy", "daily schedule"],
+    icon: "🖐️", iconBg: "#d8f3dc", iconColor: "#2d6a4f",
+    badge: "badge-green", badgeText: "Occupational Therapy",
+    file: "#"
+  },
+  {
+    title: "Fine Motor Exercises Pack",
+    desc: "Printable exercises to build fine motor skills including pencil grip, cutting practice, threading, and hand-eye coordination activities.",
+    cat: "ot", age: "early",
+    tags: ["fine motor", "pencil grip", "cutting", "OT", "hands"],
+    icon: "✏️", iconBg: "#d8f3dc", iconColor: "#2d6a4f",
+    badge: "badge-green", badgeText: "Occupational Therapy",
+    file: "#"
+  },
+  {
+    title: "Visual Daily Routine Chart",
+    desc: "A customisable picture-based daily routine chart for home and classroom. Helps autistic children understand what comes next and reduces transition anxiety.",
+    cat: "ot", age: "early",
+    tags: ["visual schedule", "routine", "transitions", "OT", "daily living"],
+    icon: "🗓️", iconBg: "#d8f3dc", iconColor: "#2d6a4f",
+    badge: "badge-green", badgeText: "Occupational Therapy",
+    file: "#"
+  },
+  {
+    title: "Self-Care Skills Checklist",
+    desc: "A step-by-step visual checklist for daily self-care tasks — hand washing, teeth brushing, dressing — broken into small steps for easier learning.",
+    cat: "ot", age: "early",
+    tags: ["self-care", "independence", "daily living", "OT", "routine"],
+    icon: "🪥", iconBg: "#d8f3dc", iconColor: "#2d6a4f",
+    badge: "badge-green", badgeText: "Occupational Therapy",
+    file: "#"
+  },
+
+  /* ── SENSORY ── */
+  {
+    title: "Sensory Play Activities Guide",
+    desc: "Structured sensory play ideas across all 7 senses — tactile, vestibular, proprioceptive, auditory, visual, olfactory, and gustatory. For home and therapy settings.",
+    cat: "sensory", age: "early",
+    tags: ["sensory play", "tactile", "vestibular", "proprioception", "activities"],
+    icon: "🌀", iconBg: "#f3e8ff", iconColor: "#7b2d8b",
+    badge: "badge-purple", badgeText: "Sensory",
+    file: "#"
+  },
+  {
+    title: "Sensory Profile Checklist",
+    desc: "A parent-completed checklist to identify sensory over- and under-sensitivities across all senses. Useful preparation before an OT sensory assessment.",
+    cat: "sensory", age: "school",
+    tags: ["sensory profile", "hypersensitive", "hyposensitive", "checklist", "OT"],
+    icon: "📝", iconBg: "#f3e8ff", iconColor: "#7b2d8b",
+    badge: "badge-purple", badgeText: "Sensory",
+    file: "#"
+  },
+  {
+    title: "Calming Corner Kit",
+    desc: "Printable visuals and instructions for setting up a classroom or home calming corner — includes calm-down strategy cards and a feelings check-in chart.",
+    cat: "sensory", age: "school",
+    tags: ["calming corner", "meltdown", "regulation", "sensory", "classroom"],
+    icon: "🧸", iconBg: "#f3e8ff", iconColor: "#7b2d8b",
+    badge: "badge-purple", badgeText: "Sensory",
+    file: "#"
+  },
+
+  /* ── CBT & EMOTIONS ── */
+  {
+    title: "Worry Thermometer Worksheet",
+    desc: "A visual anxiety rating tool — the 'worry thermometer' — used in autism-adapted CBT to help children identify and communicate anxiety levels before they escalate.",
+    cat: "cbt", age: "school",
+    tags: ["CBT", "anxiety", "worry", "emotion rating", "thermometer"],
+    icon: "🌡️", iconBg: "#fde8df", iconColor: "#b5451b",
+    badge: "badge-orange", badgeText: "CBT & Emotions",
+    file: "#"
+  },
+  {
+    title: "Emotions Recognition Worksheet",
+    desc: "Picture-based worksheets helping children identify and name different emotions in themselves and others. Includes a body map for locating physical feelings.",
+    cat: "cbt", age: "school",
+    tags: ["emotions", "feelings", "CBT", "recognition", "body map"],
+    icon: "😊", iconBg: "#fde8df", iconColor: "#b5451b",
+    badge: "badge-orange", badgeText: "CBT & Emotions",
+    file: "#"
+  },
+  {
+    title: "Thought-Feeling-Behaviour Record",
+    desc: "A simplified CBT thought record adapted for autistic learners — uses visual prompts and concrete questions to challenge unhelpful thinking patterns.",
+    cat: "cbt", age: "teen",
+    tags: ["CBT", "thought record", "cognitive", "anxiety", "teen"],
+    icon: "🧠", iconBg: "#fde8df", iconColor: "#b5451b",
+    badge: "badge-orange", badgeText: "CBT & Emotions",
+    file: "#"
+  },
+  {
+    title: "Coping Strategies Toolkit",
+    desc: "A printable personal coping toolkit for autistic children and teens — lists calming strategies, breathing exercises, and grounding techniques with visuals.",
+    cat: "cbt", age: "school",
+    tags: ["coping", "anxiety", "breathing", "grounding", "CBT", "calming"],
+    icon: "🧰", iconBg: "#fde8df", iconColor: "#b5451b",
+    badge: "badge-orange", badgeText: "CBT & Emotions",
+    file: "#"
+  },
+
+  /* ── ABA & BEHAVIOUR ── */
+  {
+    title: "ABC Behaviour Data Sheet",
+    desc: "An Antecedent-Behaviour-Consequence (ABC) data collection form for tracking behaviour patterns at home or in school. Essential for functional behaviour assessment.",
+    cat: "aba", age: "school",
+    tags: ["ABA", "behaviour", "ABC data", "FBA", "antecedent", "data sheet"],
+    icon: "⚙️", iconBg: "#fef3c7", iconColor: "#b5860b",
+    badge: "badge-gold", badgeText: "ABA & Behaviour",
+    file: "#"
+  },
+  {
+    title: "Reinforcer Preference Survey",
+    desc: "A structured parent and child questionnaire to identify preferred reinforcers — toys, activities, foods, and social rewards — for use in ABA programmes.",
+    cat: "aba", age: "early",
+    tags: ["ABA", "reinforcement", "preference", "motivation", "BCBA"],
+    icon: "⭐", iconBg: "#fef3c7", iconColor: "#b5860b",
+    badge: "badge-gold", badgeText: "ABA & Behaviour",
+    file: "#"
+  },
+  {
+    title: "Token Board Template",
+    desc: "A printable customisable token board for visual reinforcement systems. Includes blank token designs, a 'first-then' board, and instructions for parents.",
+    cat: "aba", age: "early",
+    tags: ["ABA", "token board", "reinforcement", "first-then", "visual"],
+    icon: "🏆", iconBg: "#fef3c7", iconColor: "#b5860b",
+    badge: "badge-gold", badgeText: "ABA & Behaviour",
+    file: "#"
+  },
+
+  /* ── SOCIAL SKILLS ── */
+  {
+    title: "Social Stories Pack",
+    desc: "A collection of social stories covering school routines, transitions, greetings, waiting, and managing emotions. Can be personalised with child's name and photo.",
+    cat: "social", age: "school",
+    tags: ["social stories", "transitions", "emotions", "school", "greetings"],
+    icon: "🤝", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
+    badge: "badge-blue", badgeText: "Social Skills",
+    file: "#"
+  },
+  {
+    title: "Friendship Skills Worksheets",
+    desc: "Interactive worksheets teaching the building blocks of friendship — sharing, listening, asking questions, and handling disagreements — with visual supports.",
+    cat: "social", age: "school",
+    tags: ["friendship", "social skills", "peers", "listening", "sharing"],
+    icon: "👫", iconBg: "#e8f1fc", iconColor: "#1a5fa8",
+    badge: "badge-blue", badgeText: "Social Skills",
+    file: "#"
+  },
+  {
+    title: "Teen Self-Advocacy Workbook",
+    desc: "Helps autistic teens understand their rights, communicate their needs clearly, and participate confidently in their own IEP and EHCP review meetings.",
+    cat: "social", age: "teen",
+    tags: ["self-advocacy", "teen", "rights", "IEP", "self-determination"],
+    icon: "💪", iconBg: "#fdeaea", iconColor: "#b83232",
+    badge: "badge-red", badgeText: "Social Skills",
+    file: "#"
+  },
+
+  /* ── READING & LITERACY ── */
+  {
+    title: "Reading Comprehension Cards",
+    desc: "Visual reading comprehension cards designed for children who benefit from structured, picture-supported text. Includes who/what/when/where/why question prompts.",
+    cat: "reading", age: "school",
+    tags: ["reading", "literacy", "visual", "comprehension", "questions"],
+    icon: "📖", iconBg: "#fdeaea", iconColor: "#b83232",
+    badge: "badge-red", badgeText: "Reading",
     file: "#"
   },
   {
     title: "Sight Word Flashcards",
-    desc: "Visual sight word cards with pictures to support early reading in children who learn visually.",
+    desc: "Visual sight word cards with accompanying pictures to support early reading in children who learn visually. 100 high-frequency words organised by level.",
     cat: "reading", age: "early",
-    tags: ["sight words", "reading", "flashcards", "visual"],
+    tags: ["sight words", "reading", "flashcards", "visual", "literacy"],
     icon: "🔠", iconBg: "#fdeaea", iconColor: "#b83232",
     badge: "badge-red", badgeText: "Reading",
     file: "#"
   },
   {
-    title: "Emotions Recognition Worksheet",
-    desc: "Picture-based worksheets helping children identify and name different emotions in themselves and others.",
-    cat: "social", age: "school",
-    tags: ["emotions", "feelings", "social", "recognition"],
-    icon: "😊", iconBg: "#fdf2e0", iconColor: "#c47d15",
-    badge: "badge-gold", badgeText: "Social Skills",
+    title: "Phonics Visual Support Cards",
+    desc: "Picture-phonics cards linking each letter sound to a memorable image — especially helpful for visual learners with phonological processing differences.",
+    cat: "reading", age: "early",
+    tags: ["phonics", "reading", "visual", "letters", "sounds"],
+    icon: "🔤", iconBg: "#fdeaea", iconColor: "#b83232",
+    badge: "badge-red", badgeText: "Reading",
     file: "#"
   },
 ];
@@ -255,31 +565,35 @@ var ageFilter = 'all';
 function setFilter(type, val, btn) {
   if (type === 'cat') {
     catFilter = val;
-    document.querySelectorAll('.filter-bar:first-of-type .filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.filter-bar:first-of-type .filter-btn').forEach(function(b){ b.classList.remove('active'); });
   } else {
     ageFilter = val;
-    document.querySelectorAll('.filter-bar:nth-of-type(2) .filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.filter-bar:nth-of-type(2) .filter-btn').forEach(function(b){ b.classList.remove('active'); });
   }
   btn.classList.add('active');
   renderResources();
 }
 
 function renderResources() {
+  var q = (document.getElementById('resSearch').value || '').toLowerCase().trim();
   var filtered = resources.filter(function(r) {
-    return (catFilter === 'all' || r.cat === catFilter) && (ageFilter === 'all' || r.age === ageFilter);
+    var catMatch = catFilter === 'all' || r.cat === catFilter;
+    var ageMatch = ageFilter === 'all' || r.age === ageFilter;
+    var searchMatch = !q || (r.title + r.desc + r.tags.join(' ')).toLowerCase().indexOf(q) > -1;
+    return catMatch && ageMatch && searchMatch;
   });
 
-  var count = document.getElementById('resultsCount');
-  count.textContent = filtered.length + ' resource' + (filtered.length !== 1 ? 's' : '') + ' found';
+  document.getElementById('resultsCount').textContent =
+    filtered.length + ' resource' + (filtered.length !== 1 ? 's' : '') + ' found';
 
   var grid = document.getElementById('resourceGrid');
   if (!filtered.length) {
-    grid.innerHTML = '<div class="no-results"><span>🔍</span>No resources match this filter combination.<br>Try adjusting your filters.</div>';
+    grid.innerHTML = '<div class="no-results"><span>🔍</span>No resources match this filter.<br>Try adjusting the category, age group, or search term.</div>';
     return;
   }
 
   grid.innerHTML = filtered.map(function(r) {
-    var isFile = r.file !== '#';
+    var hasFile = r.file !== '#';
     return '<div class="res-card">'
       + '<div class="res-card-top">'
       + '<div class="res-icon" style="background:' + r.iconBg + ';color:' + r.iconColor + '">' + r.icon + '</div>'
@@ -287,8 +601,10 @@ function renderResources() {
       + '</div>'
       + '<p>' + r.desc + '</p>'
       + '<div class="res-card-footer">'
-      + '<div>' + r.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>'
-      + (isFile ? '<a href="' + r.file + '" class="btn btn-blue btn-sm" style="white-space:nowrap">Download PDF</a>' : '<button class="btn btn-sm" style="opacity:0.5;cursor:default" disabled>Coming soon</button>')
+      + '<div>' + r.tags.slice(0,3).map(function(t){ return '<span class="tag">' + t + '</span>'; }).join('') + '</div>'
+      + (hasFile
+          ? '<a href="' + r.file + '" class="btn btn-blue btn-sm" style="white-space:nowrap">⬇ Download PDF</a>'
+          : '<button class="btn btn-sm" style="opacity:.45;cursor:default;background:var(--border2);color:var(--text2)" disabled>Coming soon</button>')
       + '</div></div>';
   }).join('');
 }
