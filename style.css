@@ -318,3 +318,235 @@ textarea { min-height: 100px; resize: vertical; }
   .hero { padding: 3rem 1rem 2.5rem; }
   .page-wrap { padding: 2rem 1rem; }
 }
+
+/* ── WORKSHEET PAGE STYLES ────────────────────────────────── */
+.ws-hero {
+  background: linear-gradient(135deg, #1d4e89 0%, #0d7f6e 100%);
+  color: white;
+  padding: 52px 5vw 48px;
+  text-align: center;
+}
+.ws-hero-label {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+  font-size: .72rem; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; padding: 4px 14px; margin-bottom: 16px;
+}
+.ws-hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 400; line-height: 1.2;
+  max-width: 680px; margin: 0 auto 12px;
+}
+.ws-hero p {
+  color: rgba(255,255,255,.82); font-size: .95rem;
+  max-width: 540px; margin: 0 auto 24px;
+}
+.ws-hero-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.ws-pill {
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  color: white; border-radius: 999px;
+  padding: 6px 16px; font-size: .8rem; font-weight: 500;
+  text-decoration: none; transition: background .15s;
+}
+.ws-pill:hover { background: rgba(255,255,255,.25); }
+
+/* Therapy section tabs */
+.ws-tab-bar {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 1.5rem;
+}
+.ws-tab {
+  padding: 8px 18px; border-radius: 20px;
+  border: 1.5px solid var(--border2); background: transparent;
+  font-size: 13px; font-family: 'DM Sans', sans-serif;
+  color: var(--text2); cursor: pointer;
+  transition: all .15s; font-weight: 500;
+}
+.ws-tab:hover { border-color: var(--blue); color: var(--blue); }
+.ws-tab.active { background: var(--blue); color: white; border-color: var(--blue); }
+
+/* Therapy section card */
+.ws-therapy-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.ws-therapy-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.ws-therapy-icon {
+  width: 46px; height: 46px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.ws-therapy-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem; color: var(--text); margin-bottom: 3px;
+}
+.ws-therapy-header p { font-size: 13px; color: var(--text2); }
+.ws-therapy-body { padding: 1.5rem; }
+
+/* Worksheet cards grid */
+.ws-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.ws-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow .2s, border-color .2s;
+}
+.ws-card:hover { box-shadow: var(--shadow); border-color: var(--blue-mid); }
+.ws-card-header {
+  padding: .9rem 1.1rem .7rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.ws-card-body { padding: .75rem 1.1rem 1rem; }
+.ws-card-body p { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: .75rem; }
+.ws-card-body ul { font-size: 12px; color: var(--text2); padding-left: 16px; margin-bottom: .75rem; line-height: 1.8; }
+.ws-card h3 { font-size: 14px; font-weight: 600; color: var(--text); }
+.ws-card-footer {
+  padding: .6rem 1.1rem .8rem;
+  display: flex; gap: 8px; flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+/* Print-friendly worksheet template */
+.ws-template {
+  background: white;
+  border: 1.5px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  page-break-inside: avoid;
+}
+.ws-template-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  border-bottom: 2px solid var(--text);
+  padding-bottom: .75rem; margin-bottom: 1rem;
+}
+.ws-template-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+.ws-template-meta { font-size: 11px; color: var(--text3); text-align: right; }
+.ws-field-row {
+  display: flex; gap: 16px; margin-bottom: .75rem; flex-wrap: wrap;
+}
+.ws-field {
+  flex: 1; min-width: 160px;
+}
+.ws-field label {
+  display: block; font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .06em;
+  color: var(--text2); margin-bottom: 4px;
+}
+.ws-field-line {
+  border: none; border-bottom: 1.5px solid var(--border2);
+  width: 100%; height: 28px; display: block;
+  font-family: 'DM Sans', sans-serif; font-size: 14px;
+  background: transparent; outline: none; color: var(--text);
+  padding: 0 4px;
+}
+.ws-field-line:focus { border-color: var(--blue); }
+.ws-scale-row {
+  display: flex; gap: 8px; align-items: stretch;
+  margin: .75rem 0;
+}
+.ws-scale-cell {
+  flex: 1; border: 1.5px solid var(--border2);
+  border-radius: 8px; padding: 10px 8px;
+  text-align: center; cursor: pointer;
+  transition: all .15s; min-height: 80px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.ws-scale-cell:hover { border-color: var(--blue); background: var(--blue-light); }
+.ws-scale-cell.selected { border-color: var(--blue); background: var(--blue-light); }
+.ws-scale-num { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--blue); font-weight: bold; }
+.ws-scale-label { font-size: 10px; color: var(--text2); margin-top: 4px; line-height: 1.3; }
+.ws-checkbox-list { list-style: none; padding: 0; }
+.ws-checkbox-list li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+  font-size: 13px; color: var(--text2);
+}
+.ws-checkbox-list li:last-child { border-bottom: none; }
+.ws-checkbox-list input[type=checkbox] {
+  width: 16px; height: 16px; flex-shrink: 0;
+  accent-color: var(--blue); cursor: pointer;
+}
+.ws-table {
+  width: 100%; border-collapse: collapse; font-size: 13px; margin: .75rem 0;
+}
+.ws-table th {
+  background: var(--text); color: white;
+  padding: 8px 10px; text-align: left;
+  font-size: 11px; font-weight: 600; letter-spacing: .04em;
+}
+.ws-table td {
+  padding: 8px 10px; border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.ws-table td input { border: none; width: 100%; font-size: 13px; outline: none; background: transparent; color: var(--text); }
+.ws-textarea {
+  width: 100%; min-height: 70px; border: 1.5px solid var(--border2);
+  border-radius: 6px; padding: 8px 10px; font-size: 13px;
+  font-family: 'DM Sans', sans-serif; color: var(--text);
+  resize: vertical; outline: none; margin: .5rem 0;
+}
+.ws-textarea:focus { border-color: var(--blue); }
+.ws-grid-cells {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; margin: .75rem 0;
+}
+.ws-grid-cell {
+  border: 1.5px solid var(--border2); border-radius: 8px;
+  min-height: 80px; padding: 8px; display: flex;
+  flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; font-size: 12px; color: var(--text2);
+  cursor: pointer; transition: all .15s;
+}
+.ws-grid-cell:hover { border-color: var(--blue); background: var(--blue-light); }
+.ws-grid-cell .cell-icon { font-size: 1.5rem; margin-bottom: 5px; }
+
+/* Info note block */
+.ws-note {
+  background: var(--blue-light);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px; margin: .75rem 0;
+  font-size: 12px; color: var(--text2);
+}
+.ws-note strong { color: var(--blue); }
+
+/* 2026 Guideline badge */
+.badge-2026 {
+  display: inline-block; padding: 3px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 700;
+  background: #e8f1fc; color: #1a5fa8;
+  border: 1px solid #c7dcf5;
+}
+
+/* ── PRINT STYLES ──────────────────────────────────────────── */
+@media print {
+  .site-nav, .ws-hero, footer, .ws-tab-bar,
+  .ws-therapy-header, .ws-card-footer, .btn, .btn-blue,
+  .btn-sm, .no-print { display: none !important; }
+
+  body { background: white; color: black; font-size: 12pt; }
+  .page-wrap { padding: 0; max-width: 100%; }
+  .ws-template { border: 1.5pt solid #333; page-break-inside: avoid; margin-bottom: 1.5cm; }
+  .ws-field-line { border-bottom: 1pt solid #666; }
+  .ws-scale-cell { border: 1pt solid #999; }
+  .ws-table th { background: #333 !important; -webkit-print-color-adjust: exact; }
+  .ws-therapy-section { border: none; box-shadow: none; page-break-before: always; }
+  .ws-card { page-break-inside: avoid; }
+}
