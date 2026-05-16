@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapy Worksheets & Printable Resources | Global Autism Hub</title>
+  <meta name="description" content="Free printable therapy worksheets for autism — Speech Therapy communication boards, OT fine motor activities, CBT emotional regulation scales, sensory diet planners, and visual schedules. Updated with 2026 clinical guidelines.">
+  <meta name="keywords" content="autism therapy worksheets, speech therapy printables, OT worksheets autism, CBT emotional regulation autism, sensory diet planner, visual schedule autism, communication board printable, autism printables 2026">
+  <meta property="og:title" content="Therapy Worksheets & Printable Resources — Global Autism Hub">
+  <meta property="og:description" content="Free printable therapy worksheets for autism — Speech, OT, CBT, Sensory, and Educational supports. Updated 2026.">
+  <meta property="og:url" content="https://divyam-vns.github.io/divyamvns.github.io/worksheets.html">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://divyam-vns.github.io/divyamvns.github.io/worksheets.html">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .therapy-intro-note {
+      background: var(--bg); border-radius: var(--radius);
+      padding: 12px 16px; margin-bottom: 1.25rem;
+      font-size: 13px; color: var(--text2); line-height: 1.7;
+      border: 1px solid var(--border);
+    }
+    .ws-section { display: none; }
+    .ws-section.visible { display: block; }
+    .print-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: var(--radius);
+      border: 1.5px solid var(--border2); background: white;
+      font-size: 12px; font-weight: 600; color: var(--text2);
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: all .15s;
+    }
+    .print-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+    .view-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: var(--radius);
+      border: none; background: var(--blue);
+      font-size: 12px; font-weight: 600; color: white;
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: all .15s;
+    }
+    .view-btn:hover { background: var(--blue-mid); }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: var(--radius);
+      border: none; background: #059669;
+      font-size: 12px; font-weight: 600; color: white;
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: all .15s; text-decoration: none;
+    }
+    .dl-btn:hover { background: #047857; }
+    /* Overlay for worksheet preview */
+    .ws-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,.55); overflow-y: auto;
+      padding: 2rem 1rem;
+    }
+    .ws-overlay.open { display: block; }
+    .ws-modal {
+      background: white; border-radius: var(--radius-lg);
+      max-width: 760px; margin: 0 auto;
+      padding: 2rem; position: relative;
+    }
+    .ws-modal-close {
+      position: absolute; top: 16px; right: 18px;
+      background: none; border: none; font-size: 22px;
+      cursor: pointer; color: var(--text2); line-height: 1;
+    }
+    .ws-modal-close:hover { color: var(--text); }
+    .ws-modal-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem; margin-bottom: .4rem; color: var(--text);
+    }
+    .ws-modal-sub { font-size: 13px; color: var(--text2); margin-bottom: 1.25rem; }
+    .ws-modal-actions {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin-bottom: 1.5rem; padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    /* Color themes for each therapy */
+    .color-speech .ws-therapy-icon { background: #dbeafe; }
+    .color-speech .ws-card-header { background: #f0f6ff; }
+    .color-ot .ws-therapy-icon { background: #d8f3dc; }
+    .color-ot .ws-card-header { background: #f0fdf4; }
+    .color-cbt .ws-therapy-icon { background: #fde8df; }
+    .color-cbt .ws-card-header { background: #fff7f4; }
+    .color-edu .ws-therapy-icon { background: #fdf2e0; }
+    .color-edu .ws-card-header { background: #fffbf0; }
+    .color-sensory .ws-therapy-icon { background: #e0f5f1; }
+    .color-sensory .ws-card-header { background: #f0fdf9; }
+    /* Strengths banner */
+    .strengths-banner {
+      background: linear-gradient(135deg, #e8f1fc, #e0f5f1);
+      border: 1px solid #c7dcf5; border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem; margin-bottom: 2rem;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .strengths-banner-icon { font-size: 2rem; flex-shrink: 0; }
+    .strengths-banner h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; color: var(--blue); }
+    .strengths-banner p { font-size: 13px; color: var(--text2); }
+    .emotion-scale { display: flex; gap: 6px; margin: .75rem 0; }
+    .emotion-cell {
+      flex: 1; border: 2px solid transparent; border-radius: 8px;
+      padding: 10px 4px; text-align: center; cursor: pointer; transition: all .15s;
+    }
+    .emotion-cell:hover { transform: scale(1.04); }
+    .emotion-cell .e-num { font-size: 1.2rem; font-weight: 700; font-family: 'DM Serif Display', serif; }
+    .emotion-cell .e-face { font-size: 1.4rem; margin: 4px 0; }
+    .emotion-cell .e-label { font-size: 10px; font-weight: 600; line-height: 1.3; }
+    .e1 { background: #d1fae5; border-color: #6ee7b7; color: #065f46; }
+    .e2 { background: #e0f2fe; border-color: #7dd3fc; color: #0c4a6e; }
+    .e3 { background: #fef9c3; border-color: #fde047; color: #854d0e; }
+    .e4 { background: #fed7aa; border-color: #fb923c; color: #7c2d12; }
+    .e5 { background: #fee2e2; border-color: #f87171; color: #7f1d1d; }
+    .comm-board {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: .75rem 0;
+    }
+    .comm-cell {
+      border: 2px solid var(--border2); border-radius: 8px;
+      padding: 10px 6px; text-align: center; cursor: pointer;
+      transition: all .15s; background: white;
+    }
+    .comm-cell:hover { border-color: var(--blue); background: var(--blue-light); }
+    .comm-cell .c-icon { font-size: 1.6rem; margin-bottom: 4px; }
+    .comm-cell .c-word { font-size: 11px; font-weight: 600; color: var(--text); }
+    /* Worksheet list styles */
+    .ws-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .ws-list-item {
+      border: 1.5px solid var(--border2); border-radius: 10px;
+      padding: 14px; transition: all .15s; background: white;
+    }
+    .ws-list-item:hover { border-color: var(--blue); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .ws-list-item .ws-item-id { font-size: 10px; font-weight: 600; color: var(--text3); letter-spacing: .5px; margin-bottom: 4px; }
+    .ws-list-item .ws-item-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+    .ws-list-item .ws-item-desc { font-size: 12px; color: var(--text2); margin-bottom: 8px; line-height: 1.4; }
+    .ws-list-item .ws-item-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .ws-count-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 4px 10px; border-radius: 20px;
+      font-size: 11px; font-weight: 600;
+      background: var(--blue-light); color: var(--blue);
+    }
+    @media (max-width: 600px) {
+      .comm-board { grid-template-columns: repeat(3, 1fr); }
+      .emotion-scale { flex-wrap: wrap; }
+      .emotion-cell { min-width: 56px; }
+      .ws-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span>🌍</span> Global Autism Hub</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Autism</a>
+      <a href="therapies.html">Therapies</a>
+      <a href="resources.html">Resources</a>
+      <a href="education.html">Education</a>
+      <a href="worksheets.html" class="active">Worksheets</a>
+      <a href="research.html">Research</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="parent-guide.html">Parent Guide</a>
+      <a href="adults.html">Adults</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="ws-hero">
+  <div class="ws-hero-label">Updated 2026 Clinical Guidelines · Free · Printable · Downloadable</div>
+  <h1>Therapy Worksheets &amp; Printable Resources</h1>
+  <p>Evidence-based, neurodiversity-affirming worksheets for Speech Therapy, OT, CBT, Educational Support, and Sensory Integration. 100 worksheets across 5 categories. All ages. No sign-up needed.</p>
+  <div class="ws-hero-pills">
+    <a href="#" onclick="showSection('speech');return false;" class="ws-pill">Speech Therapy (20)</a>
+    <a href="#" onclick="showSection('ot');return false;" class="ws-pill">Occupational Therapy (20)</a>
+    <a href="#" onclick="showSection('cbt');return false;" class="ws-pill">CBT &amp; Emotions (20)</a>
+    <a href="#" onclick="showSection('edu');return false;" class="ws-pill">Educational Support (20)</a>
+    <a href="#" onclick="showSection('sensory');return false;" class="ws-pill">Sensory Integration (20)</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- 2026 Strengths Banner -->
+  <div class="strengths-banner">
+    <div class="strengths-banner-icon">✨</div>
+    <div>
+      <h3>2026 Neurodiversity-Affirming Approach — 100 Worksheets</h3>
+      <p>All worksheets on this page reflect updated 2026 clinical best practices: strengths-based framing, individual autonomy, sensory-informed design, and co-regulation strategies. They are designed to support — not suppress — authentic autistic expression. Each worksheet is available as a downloadable PDF. Worksheets cover early childhood through adulthood.</p>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="ws-tab-bar" id="tabBar">
+    <button class="ws-tab active" onclick="showSection('speech',this)">Speech Therapy <span class="ws-count-badge">20</span></button>
+    <button class="ws-tab" onclick="showSection('ot',this)">Occupational Therapy <span class="ws-count-badge">20</span></button>
+    <button class="ws-tab" onclick="showSection('cbt',this)">CBT &amp; Emotions <span class="ws-count-badge">20</span></button>
+    <button class="ws-tab" onclick="showSection('edu',this)">Educational Support <span class="ws-count-badge">20</span></button>
+    <button class="ws-tab" onclick="showSection('sensory',this)">Sensory Integration <span class="ws-count-badge">20</span></button>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 1: SPEECH THERAPY
+  ════════════════════════════════════════════════ -->
+  <div class="ws-section visible" id="sec-speech">
+    <div class="ws-therapy-section color-speech">
+      <div class="ws-therapy-header">
+        <div class="ws-therapy-icon">💬</div>
+        <div>
+          <span class="badge badge-blue" style="margin-bottom:4px">Speech &amp; Communication</span>
+          <h2>Speech Therapy Worksheets</h2>
+          <p>Communication boards, social scripting, and expressive language supports for all communication styles. 20 downloadable worksheets.</p>
+        </div>
+      </div>
+      <div class="ws-therapy-body">
+        <div class="therapy-intro-note">
+          <strong>2026 Guideline note:</strong> ASHA (2026) emphasizes that AAC and multimodal communication strategies should be offered proactively — not as a last resort. These worksheets support verbal, non-verbal, and AAC users equally. Communication includes gestures, pictures, devices, and written language.
+        </div>
+        <div class="ws-list" id="speech-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 2: OCCUPATIONAL THERAPY
+  ════════════════════════════════════════════════ -->
+  <div class="ws-section" id="sec-ot">
+    <div class="ws-therapy-section color-ot">
+      <div class="ws-therapy-header">
+        <div class="ws-therapy-icon">🖐️</div>
+        <div>
+          <span class="badge badge-teal" style="margin-bottom:4px">Occupational Therapy</span>
+          <h2>Occupational Therapy Worksheets</h2>
+          <p>Fine motor tracing, daily living routine checklists, bilateral coordination activities, and more. 20 downloadable worksheets.</p>
+        </div>
+      </div>
+      <div class="ws-therapy-body">
+        <div class="therapy-intro-note">
+          <strong>2026 Guideline note:</strong> AOTA (2026) guidelines prioritize occupation-centered, client-directed practice. OT worksheets should build real-world skills with intrinsic motivation. Adaptive task modification and environmental supports take precedence over drill-based training.
+        </div>
+        <div class="ws-list" id="ot-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 3: CBT & EMOTIONS
+  ════════════════════════════════════════════════ -->
+  <div class="ws-section" id="sec-cbt">
+    <div class="ws-therapy-section color-cbt">
+      <div class="ws-therapy-header">
+        <div class="ws-therapy-icon">🧠</div>
+        <div>
+          <span class="badge badge-red" style="margin-bottom:4px">CBT &amp; Emotional Regulation</span>
+          <h2>CBT &amp; Emotional Regulation Worksheets</h2>
+          <p>5-point scale, anxiety thought-challenging, coping tracker, and more adapted for neurodivergent learners. 20 downloadable worksheets.</p>
+        </div>
+      </div>
+      <div class="ws-therapy-body">
+        <div class="therapy-intro-note">
+          <strong>2026 Guideline note:</strong> The latest autism-adapted CBT frameworks (2025–2026) integrate polyvagal theory, interoception awareness, and co-regulation. These worksheets use concrete, visual, and body-based approaches rather than purely cognitive techniques. Developed in consultation with autistic self-advocates.
+        </div>
+        <div class="ws-list" id="cbt-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 4: EDUCATIONAL SUPPORT
+  ════════════════════════════════════════════════ -->
+  <div class="ws-section" id="sec-edu">
+    <div class="ws-therapy-section color-edu">
+      <div class="ws-therapy-header">
+        <div class="ws-therapy-icon">📚</div>
+        <div>
+          <span class="badge badge-gold" style="margin-bottom:4px">Educational Support</span>
+          <h2>Educational Support Worksheets</h2>
+          <p>Visual schedules, token economy charts, reading comprehension organizers, and more for neurodivergent learners. 20 downloadable worksheets.</p>
+        </div>
+      </div>
+      <div class="ws-therapy-body">
+        <div class="therapy-intro-note">
+          <strong>2026 Guideline note:</strong> The 2026 IDEA reauthorization framework and CAST's Universal Design for Learning (UDL) 3.0 guidelines emphasize multiple means of representation, expression, and engagement. All educational worksheets here offer visual, movement-based, and flexible completion options.
+        </div>
+        <div class="ws-list" id="edu-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 5: SENSORY INTEGRATION
+  ════════════════════════════════════════════════ -->
+  <div class="ws-section" id="sec-sensory">
+    <div class="ws-therapy-section color-sensory">
+      <div class="ws-therapy-header">
+        <div class="ws-therapy-icon">🌀</div>
+        <div>
+          <span class="badge badge-teal" style="margin-bottom:4px">Sensory Integration</span>
+          <h2>Sensory Integration Worksheets</h2>
+          <p>Sensory diet planners, environmental trigger trackers, heavy work checklists, and more. 20 downloadable worksheets.</p>
+        </div>
+      </div>
+      <div class="ws-therapy-body">
+        <div class="therapy-intro-note">
+          <strong>2026 Guideline note:</strong> The 2026 STAR Institute and AOTA sensory framework emphasizes individualized sensory diets, environmental modification before behavioral intervention, and explicit sensory literacy — teaching individuals to understand and communicate their own sensory needs.
+        </div>
+        <div class="ws-list" id="sensory-list"></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end page-wrap -->
+
+<!-- ════════════════════════════════════════════════
+     WORKSHEET OVERLAY MODALS
+════════════════════════════════════════════════ -->
+<div class="ws-overlay" id="wsOverlay">
+  <div class="ws-modal" id="wsModal">
+    <button class="ws-modal-close" onclick="closeWS()" aria-label="Close">&times;</button>
+    <div id="wsModalContent"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2025&ndash;2026 Global Autism Hub &middot; Therapy worksheets reflect 2026 clinical guidelines. Always use in conjunction with qualified therapists.</p>
+  <p style="margin-top:6px;font-size:12px">
+    <a href="https://www.autismspeaks.org" target="_blank">Autism Speaks</a> &middot;
+    <a href="https://autisticadvocacy.org" target="_blank">ASAN</a> &middot;
+    <a href="https://www.autism.org.uk" target="_blank">National Autistic Society</a>
+  </p>
+</footer>
+
+<script>
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+function showSection(id, btn) {
+  document.querySelectorAll('.ws-section').forEach(function(s) { s.classList.remove('visible'); });
+  var el = document.getElementById('sec-' + id);
+  if (el) el.classList.add('visible');
+
+  document.querySelectorAll('.ws-tab').forEach(function(t) { t.classList.remove('active'); });
+  if (btn) {
+    btn.classList.add('active');
+  } else {
+    var tabs = document.querySelectorAll('.ws-tab');
+    var map = { speech: 0, ot: 1, cbt: 2, edu: 3, sensory: 4 };
+    if (map[id] !== undefined && tabs[map[id]]) tabs[map[id]].classList.add('active');
+  }
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── WORKSHEET DATA ── */
+var wsData = {
+  speech: [
+    { id: 'WS-ST01', title: 'Core Vocabulary Communication Board', desc: '16-symbol core vocabulary board for AAC introduction', ages: '2\u2013adult', file: 'WS-ST01_Core_Vocabulary_Communication_Board.pdf' },
+    { id: 'WS-ST02', title: 'Social Scripting Practice Sheet', desc: 'Structured conversation scripts for common social situations', ages: '6\u2013adult', file: 'WS-ST02_Social_Scripting_Practice_Sheet.pdf' },
+    { id: 'WS-ST03', title: 'Expressive Language Visual Prompts', desc: 'Visual sentence frames to build expressive language', ages: '3\u201310', file: 'WS-ST03_Expressive_Language_Visual_Prompts.pdf' },
+    { id: 'WS-ST04', title: 'Requesting Help Communication Card', desc: 'Picture-based card for requesting help in different settings', ages: '2\u201312', file: 'WS-ST04_Requesting_Help_Communication_Card.pdf' },
+    { id: 'WS-ST05', title: 'Feelings & Needs Choice Board', desc: 'Interactive board linking emotions to needs and requests', ages: '3\u2013adult', file: 'WS-ST05_Feelings___Needs_Choice_Board.pdf' },
+    { id: 'WS-ST06', title: 'Conversation Turn-Taking Visual', desc: 'Visual guide for back-and-forth conversation with prompts', ages: '5\u201316', file: 'WS-ST06_Conversation_Turn_Taking_Visual.pdf' },
+    { id: 'WS-ST07', title: 'Yes/No & Choice Making Board', desc: 'Simple yes/no and binary choice communication board', ages: '2\u2013adult', file: 'WS-ST07_Yes_No___Choice_Making_Board.pdf' },
+    { id: 'WS-ST08', title: 'Daily Communication Journal', desc: 'Structured daily log for tracking communication attempts and modes', ages: '5\u2013adult', file: 'WS-ST08_Daily_Communication_Journal.pdf' },
+    { id: 'WS-ST09', title: 'WH-Question Practice Sheet', desc: 'Who, What, Where, When, Why question practice with picture prompts', ages: '4\u201312', file: 'WS-ST09_WH_Question_Practice_Sheet.pdf' },
+    { id: 'WS-ST10', title: 'Pragmatic Language Checklist', desc: 'Checklist for social language skills: greetings, farewells, topic maintenance', ages: '6\u201316', file: 'WS-ST10_Pragmatic_Language_Checklist.pdf' },
+    { id: 'WS-ST11', title: 'AAC Navigation Practice Grid', desc: 'Practice grid for navigating AAC device categories and pages', ages: '4\u2013adult', file: 'WS-ST11_AAC_Navigation_Practice_Grid.pdf' },
+    { id: 'WS-ST12', title: 'Story Retelling Graphic Organizer', desc: 'Visual organizer for retelling stories with beginning, middle, end', ages: '5\u201314', file: 'WS-ST12_Story_Retelling_Graphic_Organizer.pdf' },
+    { id: 'WS-ST13', title: 'Functional Request Phrase Builder', desc: 'Build "I want + object" and "I need + object" phrases visually', ages: '3\u201310', file: 'WS-ST13_Functional_Request_Phrase_Builder.pdf' },
+    { id: 'WS-ST14', title: 'Nonverbal Communication Cues Chart', desc: 'Chart showing body language, facial expressions, and gestures', ages: '8\u2013adult', file: 'WS-ST14_Nonverbal_Communication_Cues_Chart.pdf' },
+    { id: 'WS-ST15', title: 'Phone & Video Call Script', desc: 'Structured script for making and receiving phone/video calls', ages: '10\u2013adult', file: 'WS-ST15_Phone___Video_Call_Script.pdf' },
+    { id: 'WS-ST16', title: 'Category Sorting Speech Activity', desc: 'Sort words/pictures into categories to build vocabulary', ages: '4\u201310', file: 'WS-ST16_Category_Sorting_Speech_Activity.pdf' },
+    { id: 'WS-ST17', title: 'Following Directions Practice', desc: '1-step, 2-step, and 3-step direction practice with visuals', ages: '3\u201310', file: 'WS-ST17_Following_Directions_Practice.pdf' },
+    { id: 'WS-ST18', title: 'Describing Objects Worksheet', desc: 'Use attributes (color, shape, size, function) to describe objects', ages: '5\u201312', file: 'WS-ST18_Describing_Objects_Worksheet.pdf' },
+    { id: 'WS-ST19', title: 'Problem-Solving Communication Flow', desc: 'Visual flowchart: identify problem, consider options, communicate choice', ages: '8\u2013adult', file: 'WS-ST19_Problem_Solving_Communication_Flow.pdf' },
+    { id: 'WS-ST20', title: 'Self-Advocacy Script Cards', desc: 'Script cards for stating needs, setting boundaries, and requesting accommodations', ages: '10\u2013adult', file: 'WS-ST20_Self_Advocacy_Script_Cards.pdf' },
+  ],
+  ot: [
+    { id: 'WS-OT01', title: 'Fine Motor Tracing & Pencil Control', desc: 'Progressive tracing from lines to letter formation', ages: '3\u20138', file: 'WS-OT01_Fine_Motor_Tracing___Pencil_Control.pdf' },
+    { id: 'WS-OT02', title: 'Daily Living Routine Checklist', desc: 'Visual step-by-step checklists for morning and bedtime', ages: '4\u201312', file: 'WS-OT02_Daily_Living_Routine_Checklist.pdf' },
+    { id: 'WS-OT03', title: 'Bilateral Coordination Activity Cards', desc: '8 bilateral coordination activities with difficulty ratings', ages: '4\u201310', file: 'WS-OT03_Bilateral_Coordination_Activity_Cards.pdf' },
+    { id: 'WS-OT04', title: 'Scissor Skills Practice Sheet', desc: 'Progressive cutting lines: straight, curved, zigzag, shapes', ages: '3\u20138', file: 'WS-OT04_Scissor_Skills_Practice_Sheet.pdf' },
+    { id: 'WS-OT05', title: 'Pencil Grip Guide & Practice', desc: 'Visual guide for correct tripod grip with practice exercises', ages: '3\u20138', file: 'WS-OT05_Pencil_Grip_Guide___Practice.pdf' },
+    { id: 'WS-OT06', title: 'Hand Strength Exercise Log', desc: 'Daily log for squeeze, pinch, and grip strengthening activities', ages: '4\u201312', file: 'WS-OT06_Hand_Strength_Exercise_Log.pdf' },
+    { id: 'WS-OT07', title: 'Dressing Skills Sequence Cards', desc: 'Step-by-step visual cards for putting on clothes, shoes, zippers', ages: '3\u201310', file: 'WS-OT07_Dressing_Skills_Sequence_Cards.pdf' },
+    { id: 'WS-OT08', title: 'Mealtime Skills Checklist', desc: 'Checklist for utensil use, cup drinking, and table manners', ages: '2\u201310', file: 'WS-OT08_Mealtime_Skills_Checklist.pdf' },
+    { id: 'WS-OT09', title: 'Playdough & Clay Activity Cards', desc: '10 hand-strengthening activities using playdough and clay', ages: '3\u201310', file: 'WS-OT09_Playdough___Clay_Activity_Cards.pdf' },
+    { id: 'WS-OT10', title: 'Visual-Motor Integration Practice', desc: 'Copy shapes, connect dots, and complete patterns', ages: '4\u201310', file: 'WS-OT10_Visual_Motor_Integration_Practice.pdf' },
+    { id: 'WS-OT11', title: 'Self-Regulation Alert Program Sheet', desc: 'Engine speed analogy: how does your body run? High/low/just right', ages: '5\u201314', file: 'WS-OT11_Self_Regulation_Alert_Program_Sheet.pdf' },
+    { id: 'WS-OT12', title: 'Typing & Keyboard Familiarisation', desc: 'Introduction to keyboard layout with finger placement guide', ages: '6\u2013adult', file: 'WS-OT12_Typing___Keyboard_Familiarisation.pdf' },
+    { id: 'WS-OT13', title: 'Shoe-Tying Step-by-Step Visual', desc: 'Visual step-by-step guide for tying shoelaces', ages: '5\u201312', file: 'WS-OT13_Shoe_Tying_Step_by_Step_Visual.pdf' },
+    { id: 'WS-OT14', title: 'Hygiene Routine Visual Schedule', desc: 'Handwashing, toothbrushing, and face washing visual sequences', ages: '3\u201312', file: 'WS-OT14_Hygiene_Routine_Visual_Schedule.pdf' },
+    { id: 'WS-OT15', title: 'Grading Force & Pressure Worksheet', desc: 'Practice light vs. heavy touch for writing, handling objects', ages: '5\u201312', file: 'WS-OT15_Grading_Force___Pressure_Worksheet.pdf' },
+    { id: 'WS-OT16', title: 'Money Handling & Coin Recognition', desc: 'Identify coins, match values, and practice simple transactions', ages: '6\u2013adult', file: 'WS-OT16_Money_Handling___Coin_Recognition.pdf' },
+    { id: 'WS-OT17', title: 'Cooking Skills Sequence: Snack Prep', desc: 'Visual recipe cards for simple snack preparation', ages: '6\u2013adult', file: 'WS-OT17_Cooking_Skills_Sequence__Snack_Prep.pdf' },
+    { id: 'WS-OT18', title: 'Body Scheme & Spatial Awareness', desc: 'Identify body parts, left/right, and spatial concepts', ages: '4\u201310', file: 'WS-OT18_Body_Scheme___Spatial_Awareness.pdf' },
+    { id: 'WS-OT19', title: 'Sensory-Motor Warm-Up Cards', desc: 'Quick movement cards to prepare the body for table work', ages: '4\u201314', file: 'WS-OT19_Sensory_Motor_Warm_Up_Cards.pdf' },
+    { id: 'WS-OT20', title: 'Community Mobility Safety Checklist', desc: 'Safety checklist for crossing roads, using transport, navigating community', ages: '8\u2013adult', file: 'WS-OT20_Community_Mobility_Safety_Checklist.pdf' },
+  ],
+  cbt: [
+    { id: 'WS-CB01', title: '5-Point Emotional Regulation Scale', desc: 'Interactive scale with body cues and coping strategies', ages: '6\u2013adult', file: 'WS-CB01_5_Point_Emotional_Regulation_Scale.pdf' },
+    { id: 'WS-CB02', title: 'Anxiety Thought-Challenging Worksheet', desc: 'Simplified thought record with evidence for/against', ages: '10\u2013adult', file: 'WS-CB02_Anxiety_Thought_Challenging_Worksheet.pdf' },
+    { id: 'WS-CB03', title: 'Coping Mechanism Weekly Tracker', desc: 'Weekly tracker for recording and rating coping strategies', ages: '8\u2013adult', file: 'WS-CB03_Coping_Mechanism_Weekly_Tracker.pdf' },
+    { id: 'WS-CB04', title: 'Feelings Identification Flashcards', desc: '24 emotion cards with faces, body cues, and situation labels', ages: '4\u2013adult', file: 'WS-CB04_Feelings_Identification_Flashcards.pdf' },
+    { id: 'WS-CB05', title: 'My Safe & Calm Place Visualization', desc: 'Guided worksheet for creating a mental safe space', ages: '8\u2013adult', file: 'WS-CB05_My_Safe___Calm_Place_Visualization.pdf' },
+    { id: 'WS-CB06', title: 'Anger Thermometer & Action Plan', desc: 'Rate anger 1\u201310 with corresponding strategies at each level', ages: '6\u201316', file: 'WS-CB06_Anger_Thermometer___Action_Plan.pdf' },
+    { id: 'WS-CB07', title: 'Positive Affirmation Builder', desc: 'Create personal affirmations with evidence from real life', ages: '8\u2013adult', file: 'WS-CB07_Positive_Affirmation_Builder.pdf' },
+    { id: 'WS-CB08', title: 'Worry Time Scheduling Sheet', desc: 'Schedule and contain worry to a specific daily time slot', ages: '10\u2013adult', file: 'WS-CB08_Worry_Time_Scheduling_Sheet.pdf' },
+    { id: 'WS-CB09', title: 'Gratitude & Strengths Journal', desc: 'Daily gratitude log with personal strengths spotlight', ages: '6\u2013adult', file: 'WS-CB09_Gratitude___Strengths_Journal.pdf' },
+    { id: 'WS-CB10', title: 'Social Situation Anxiety Ladder', desc: 'Break feared social situations into small, manageable steps', ages: '10\u2013adult', file: 'WS-CB10_Social_Situation_Anxiety_Ladder.pdf' },
+    { id: 'WS-CB11', title: 'Body Scan Awareness Worksheet', desc: 'Guided body scan to identify where emotions are felt', ages: '8\u2013adult', file: 'WS-CB11_Body_Scan_Awareness_Worksheet.pdf' },
+    { id: 'WS-CB12', title: 'Problem-Solving Decision Tree', desc: 'Visual decision tree: define problem, brainstorm, evaluate, act', ages: '10\u2013adult', file: 'WS-CB12_Problem_Solving_Decision_Tree.pdf' },
+    { id: 'WS-CB13', title: 'Self-Esteem Building Activity Log', desc: 'Track daily achievements, compliments, and positive moments', ages: '8\u2013adult', file: 'WS-CB13_Self_Esteem_Building_Activity_Log.pdf' },
+    { id: 'WS-CB14', title: 'Relaxation Techniques Practice Card', desc: '6 techniques: deep breathing, progressive muscle relaxation, 5-4-3-2-1', ages: '6\u2013adult', file: 'WS-CB14_Relaxation_Techniques_Practice_Card.pdf' },
+    { id: 'WS-CB15', title: 'Cognitive Distortion Identifier', desc: 'Match thoughts to common thinking traps with correction prompts', ages: '12\u2013adult', file: 'WS-CB15_Cognitive_Distortion_Identifier.pdf' },
+    { id: 'WS-CB16', title: 'Emotional First Aid Kit Planner', desc: 'Plan personal tools, people, and activities for emotional crises', ages: '8\u2013adult', file: 'WS-CB16_Emotional_First_Aid_Kit_Planner.pdf' },
+    { id: 'WS-CB17', title: 'Boundaries & Assertiveness Script', desc: 'Scripts for saying no, setting limits, and requesting space', ages: '12\u2013adult', file: 'WS-CB17_Boundaries___Assertiveness_Script.pdf' },
+    { id: 'WS-CB18', title: 'Meltdown & Shutdown Recovery Plan', desc: 'Pre-plan for during and after meltdowns/shutdowns', ages: '8\u2013adult', file: 'WS-CB18_Meltdown___Shutdown_Recovery_Plan.pdf' },
+    { id: 'WS-CB19', title: 'Values & Goals Clarification Sheet', desc: 'Identify personal values and set meaningful goals', ages: '14\u2013adult', file: 'WS-CB19_Values___Goals_Clarification_Sheet.pdf' },
+    { id: 'WS-CB20', title: 'Interpersonal Effectiveness Worksheet', desc: 'Skills for making and keeping friendships', ages: '10\u2013adult', file: 'WS-CB20_Interpersonal_Effectiveness_Worksheet.pdf' },
+  ],
+  edu: [
+    { id: 'WS-ED01', title: 'Visual Daily Schedule Template', desc: 'Picture-based daily schedule with Now/Next board', ages: '2\u201312', file: 'WS-ED01_Visual_Daily_Schedule_Template.pdf' },
+    { id: 'WS-ED02', title: 'Token Economy Chart', desc: 'Customisable token board with rewards menu', ages: '3\u201312', file: 'WS-ED02_Token_Economy_Chart.pdf' },
+    { id: 'WS-ED03', title: 'Reading Comprehension Graphic Organizer', desc: '5W+H question boxes with drawing/writing options', ages: '6\u201314', file: 'WS-ED03_Reading_Comprehension_Graphic_Organizer.pdf' },
+    { id: 'WS-ED04', title: 'Homework Planner & Tracker', desc: 'Weekly homework planner with break scheduling', ages: '6\u201316', file: 'WS-ED04_Homework_Planner___Tracker.pdf' },
+    { id: 'WS-ED05', title: 'Spelling Practice Multisensory Sheet', desc: 'Trace, write, build, and find spelling words', ages: '5\u201312', file: 'WS-ED05_Spelling_Practice_Multisensory_Sheet.pdf' },
+    { id: 'WS-ED06', title: 'Math Word Problem Visual Organizer', desc: 'Visual steps: read, draw, equation, solve, check', ages: '6\u201314', file: 'WS-ED06_Math_Word_Problem_Visual_Organizer.pdf' },
+    { id: 'WS-ED07', title: 'IEP Goal Progress Tracker', desc: 'Track IEP goals with data collection tables', ages: 'All', file: 'WS-ED07_IEP_Goal_Progress_Tracker.pdf' },
+    { id: 'WS-ED08', title: 'Classroom Accommodations Checklist', desc: 'Checklist of common accommodations for IEP/504 plans', ages: 'All', file: 'WS-ED08_Classroom_Accommodations_Checklist.pdf' },
+    { id: 'WS-ED09', title: 'Study Skills: Note-Taking Template', desc: 'Structured note-taking template with key vocabulary section', ages: '10\u201318', file: 'WS-ED09_Study_Skills__Note_Taking_Template.pdf' },
+    { id: 'WS-ED10', title: 'Writing Planning Organizer', desc: 'Plan writing: topic, main idea, details, conclusion', ages: '6\u201314', file: 'WS-ED10_Writing_Planning_Organizer.pdf' },
+    { id: 'WS-ED11', title: 'Transition Planning Workbook Page', desc: 'Plan transitions between activities, classes, or schools', ages: '10\u2013adult', file: 'WS-ED11_Transition_Planning_Workbook_Page.pdf' },
+    { id: 'WS-ED12', title: 'Sight Word Flashcard Template', desc: 'Printable flashcard template for sight word practice', ages: '4\u201310', file: 'WS-ED12_Sight_Word_Flashcard_Template.pdf' },
+    { id: 'WS-ED13', title: 'Multiplication & Division Visual Aid', desc: 'Array and grouping visuals for multiplication concepts', ages: '7\u201312', file: 'WS-ED13_Multiplication___Division_Visual_Aid.pdf' },
+    { id: 'WS-ED14', title: 'Science Experiment Recording Sheet', desc: 'Hypothesis, method, observation, conclusion template', ages: '6\u201314', file: 'WS-ED14_Science_Experiment_Recording_Sheet.pdf' },
+    { id: 'WS-ED15', title: 'Social Studies Cause & Effect Chart', desc: 'Visual cause and effect mapping for history topics', ages: '8\u201314', file: 'WS-ED15_Social_Studies_Cause___Effect_Chart.pdf' },
+    { id: 'WS-ED16', title: 'Test Preparation Checklist', desc: 'Pre-test preparation steps and anxiety management', ages: '8\u201318', file: 'WS-ED16_Test_Preparation_Checklist.pdf' },
+    { id: 'WS-ED17', title: 'Self-Monitoring On-Task Chart', desc: 'Check-in system for monitoring attention and focus', ages: '6\u201316', file: 'WS-ED17_Self_Monitoring_On_Task_Chart.pdf' },
+    { id: 'WS-ED18', title: 'Vocabulary Building Frayer Model', desc: '4-quadrant vocabulary model: definition, examples, non-examples, drawing', ages: '8\u201316', file: 'WS-ED18_Vocabulary_Building_Frayer_Model.pdf' },
+    { id: 'WS-ED19', title: 'Project Planning Timeline', desc: 'Break large projects into steps with deadlines', ages: '10\u201318', file: 'WS-ED19_Project_Planning_Timeline.pdf' },
+    { id: 'WS-ED20', title: 'Executive Function Weekly Planner', desc: 'Plan, prioritize, and review tasks for the week', ages: '10\u2013adult', file: 'WS-ED20_Executive_Function_Weekly_Planner.pdf' },
+  ],
+  sensory: [
+    { id: 'WS-SI01', title: 'Daily Sensory Diet Planner', desc: 'Schedule sensory activities across 4 daily time blocks', ages: 'All', file: 'WS-SI01_Daily_Sensory_Diet_Planner.pdf' },
+    { id: 'WS-SI02', title: 'Environmental Trigger Tracker', desc: '14-day log to identify sensory overload patterns', ages: '5\u2013adult', file: 'WS-SI02_Environmental_Trigger_Tracker.pdf' },
+    { id: 'WS-SI03', title: 'Heavy Work Activity Checklist', desc: '20+ proprioceptive activities for home, school, outdoors', ages: 'All', file: 'WS-SI03_Heavy_Work_Activity_Checklist.pdf' },
+    { id: 'WS-SI04', title: 'Sensory Profile Self-Assessment', desc: 'Identify sensory preferences across 7 sense categories', ages: '8\u2013adult', file: 'WS-SI04_Sensory_Profile_Self_Assessment.pdf' },
+    { id: 'WS-SI05', title: 'Vestibular Activity Menu', desc: 'Movement-based activities: swings, spinning, balancing', ages: '3\u2013adult', file: 'WS-SI05_Vestibular_Activity_Menu.pdf' },
+    { id: 'WS-SI06', title: 'Tactile Tolerance Ladder', desc: 'Gradual exposure ladder for tactile sensitivities', ages: '4\u2013adult', file: 'WS-SI06_Tactile_Tolerance_Ladder.pdf' },
+    { id: 'WS-SI07', title: 'Auditory Sensitivity Log', desc: 'Track sound triggers, intensity, and coping strategies', ages: '6\u2013adult', file: 'WS-SI07_Auditory_Sensitivity_Log.pdf' },
+    { id: 'WS-SI08', title: 'Visual Environment Checklist', desc: 'Assess lighting, clutter, and visual noise in spaces', ages: 'All', file: 'WS-SI08_Visual_Environment_Checklist.pdf' },
+    { id: 'WS-SI09', title: 'Oral Sensory Activity Ideas', desc: 'Chew, crunch, and blow activities for oral sensory needs', ages: '3\u2013adult', file: 'WS-SI09_Oral_Sensory_Activity_Ideas.pdf' },
+    { id: 'WS-SI10', title: 'Proprioceptive Input Menu', desc: 'Deep pressure and joint compression activity options', ages: 'All', file: 'WS-SI10_Proprioceptive_Input_Menu.pdf' },
+    { id: 'WS-SI11', title: 'Sensory Break Choice Board', desc: 'Visual choice board for selecting sensory break activities', ages: '3\u201314', file: 'WS-SI11_Sensory_Break_Choice_Board.pdf' },
+    { id: 'WS-SI12', title: 'Classroom Sensory Accommodation Plan', desc: 'Plan sensory supports for the classroom environment', ages: 'All', file: 'WS-SI12_Classroom_Sensory_Accommodation_Plan.pdf' },
+    { id: 'WS-SI13', title: 'Home Sensory Modification Checklist', desc: 'Checklist for making home environments sensory-friendly', ages: 'All', file: 'WS-SI13_Home_Sensory_Modification_Checklist.pdf' },
+    { id: 'WS-SI14', title: 'Interoception Body Signals Worksheet', desc: 'Identify internal body signals for hunger, thirst, pain, emotions', ages: '6\u2013adult', file: 'WS-SI14_Interoception_Body_Signals_Worksheet.pdf' },
+    { id: 'WS-SI15', title: 'Sensory Regulation Scale (Child)', desc: 'Child-friendly scale: too little, just right, too much', ages: '3\u201310', file: 'WS-SI15_Sensory_Regulation_Scale__Child_.pdf' },
+    { id: 'WS-SI16', title: 'Sensory Regulation Scale (Teen/Adult)', desc: 'Self-assessment of sensory regulation across the day', ages: '12\u2013adult', file: 'WS-SI16_Sensory_Regulation_Scale__Teen_Adult_.pdf' },
+    { id: 'WS-SI17', title: 'Sensory-Motor Activity Schedule', desc: 'Weekly schedule combining sensory and motor activities', ages: '3\u201314', file: 'WS-SI17_Sensory_Motor_Activity_Schedule.pdf' },
+    { id: 'WS-SI18', title: 'Sensory Overload Early Warning Signs', desc: 'Identify personal early warning signs before overload', ages: '8\u2013adult', file: 'WS-SI18_Sensory_Overload_Early_Warning_Signs.pdf' },
+    { id: 'WS-SI19', title: 'Sensory Kit Packing List', desc: 'Checklist for creating a portable sensory support kit', ages: 'All', file: 'WS-SI19_Sensory_Kit_Packing_List.pdf' },
+    { id: 'WS-SI20', title: 'Sensory-Friendly Event Planner', desc: 'Plan events with sensory considerations built in', ages: 'All', file: 'WS-SI20_Sensory_Friendly_Event_Planner.pdf' },
+  ],
+};
+
+var catBadgeColors = {
+  speech: 'badge-blue',
+  ot: 'badge-teal',
+  cbt: 'badge-red',
+  edu: 'badge-gold',
+  sensory: 'badge-teal'
+};
+
+var catBadgeLabels = {
+  speech: 'Speech',
+  ot: 'OT',
+  cbt: 'CBT',
+  edu: 'Edu',
+  sensory: 'Sensory'
+};
+
+/* ── RENDER WORKSHEET LISTS ── */
+Object.keys(wsData).forEach(function(cat) {
+  var container = document.getElementById(cat + '-list');
+  if (!container) return;
+  wsData[cat].forEach(function(ws) {
+    var item = document.createElement('div');
+    item.className = 'ws-list-item';
+    item.innerHTML = '<div class="ws-item-id">' + ws.id + '</div>'
+      + '<div class="ws-item-title">' + ws.title + '</div>'
+      + '<div class="ws-item-desc">' + ws.desc + '</div>'
+      + '<div class="ws-item-footer">'
+      + '<a class="dl-btn" href="worksheets/' + cat + '/' + ws.file + '" download>Download PDF</a>'
+      + '<span class="badge ' + catBadgeColors[cat] + '">Ages ' + ws.ages + '</span>'
+      + '</div>';
+    container.appendChild(item);
+  });
+});
+
+/* ── WORKSHEET TEMPLATES (for interactive preview) ── */
+var wsTemplates = {
+
+  'comm-board': {
+    title: 'Core Vocabulary Communication Board',
+    sub: 'Print and laminate. Point to words or use with velcro symbols. Ages 2\u2013adult.',
+    content: function() {
+      var words = [
+        { icon: '\u2705', word: 'YES' }, { icon: '\u274C', word: 'NO' },
+        { icon: '\uD83D\uDE4F', word: 'MORE' }, { icon: '\uD6D1', word: 'STOP' },
+        { icon: '\uD83C\uDF4E', word: 'EAT' }, { icon: '\uD83D\uDCA7', word: 'DRINK' },
+        { icon: '\uD83D\uDEBD', word: 'TOILET' }, { icon: '\uD83D\uDECF', word: 'SLEEP' },
+        { icon: '\uD83D\uDE0A', word: 'HAPPY' }, { icon: '\uD83D\uDE22', word: 'SAD' },
+        { icon: '\uD83D\uDE24', word: 'ANGRY' }, { icon: '\uD83D\uDE1F', word: 'SCARED' },
+        { icon: '\uD83C\uDFE0', word: 'HOME' }, { icon: '\uD83C\uDFEB', word: 'SCHOOL' },
+        { icon: '\u25B6\uFE0F', word: 'GO' }, { icon: '\uD83E\uDD32', word: 'HELP' }
+      ];
+      var cells = words.map(function(w) {
+        return '<div class="comm-cell"><div class="c-icon">' + w.icon + '</div><div class="c-word">' + w.word + '</div></div>';
+      }).join('');
+      return '<div class="ws-note"><strong>How to use:</strong> Teach by pointing to a symbol while saying the word. Model 1 symbol above the child\'s current level. Never remove symbols \u2014 add more over time.</div>'
+        + '<div class="comm-board">' + cells + '</div>'
+        + '<div class="ws-field-row" style="margin-top:1rem"><div class="ws-field"><label>Child\'s name</label><input class="ws-field-line" type="text" placeholder=""></div><div class="ws-field"><label>Date created</label><input class="ws-field-line" type="text" placeholder=""></div><div class="ws-field"><label>SLT / Therapist</label><input class="ws-field-line" type="text" placeholder=""></div></div>';
+    }
+  },
+
+  'emotion-scale': {
+    title: '5-Point Emotional Regulation Scale',
+    sub: 'Select your level. Review body signals and coping strategies. Ages 6\u2013adult.',
+    content: function() {
+      var levels = [
+        { n: 1, face: '\uD83D\uDE0A', label: 'Calm & Ready', body: 'Relaxed muscles, steady breathing, focused eyes', strats: 'Keep going! You are in a great place to learn and connect.', cls: 'e1' },
+        { n: 2, face: '\uD83D\uDE10', label: 'A Little Uneasy', body: 'Slightly tense, mild stomach feeling, distracted', strats: 'Take 3 slow breaths. Drink water. Use a fidget if needed.', cls: 'e2' },
+        { n: 3, face: '\uD83D\uDE1F', label: 'Worried / Bothered', body: 'Faster heartbeat, tight chest, hard to focus', strats: 'Ask for a sensory break. Tell someone. Use your calm-down corner.', cls: 'e3' },
+        { n: 4, face: '\uD83D\uDE20', label: 'Very Upset', body: 'Hot face, clenched fists, loud thoughts', strats: 'Heavy work: push on a wall, carry something. Move away from the trigger.', cls: 'e4' },
+        { n: 5, face: '\uD83E\uDD2F', label: 'Overwhelmed / Meltdown', body: 'Unable to think, body feels out of control', strats: 'Safe space now. No demands. Quiet. Wait for the storm to pass.', cls: 'e5' }
+      ];
+      var html = '<div class="ws-note"><strong>How to use:</strong> Point to or circle your current level. Review the body signals and try a suggested strategy. Use daily to build self-awareness.</div>'
+        + '<div class="emotion-scale">'
+        + levels.map(function(l) {
+          return '<div class="emotion-cell ' + l.cls + '" onclick="selectLevel(this,' + l.n + ')">'
+            + '<div class="e-num">' + l.n + '</div>'
+            + '<div class="e-face">' + l.face + '</div>'
+            + '<div class="e-label">' + l.label + '</div></div>';
+        }).join('') + '</div>'
+        + '<div id="levelDetail" style="display:none;border-radius:8px;padding:14px;margin-top:10px;border:1.5px solid var(--border2)">'
+        + '<div style="font-weight:600;font-size:13px;margin-bottom:4px">Level <span id="ldNum"></span>: <span id="ldLabel"></span></div>'
+        + '<div style="font-size:12px;color:var(--text2);margin-bottom:6px"><strong>Body signals:</strong> <span id="ldBody"></span></div>'
+        + '<div style="font-size:12px;color:var(--text2)"><strong>Try this:</strong> <span id="ldStrat"></span></div></div>'
+        + '<div style="margin-top:1rem"><div style="font-weight:600;font-size:13px;margin-bottom:6px">My personalised strategies</div>'
+        + '<table class="ws-table"><thead><tr><th>Level</th><th>My coping strategy</th><th>Who can help me</th></tr></thead><tbody>'
+        + levels.map(function(l){ return '<tr><td>' + l.n + ' \u2014 ' + l.label + '</td><td><input type="text"></td><td><input type="text"></td></tr>'; }).join('')
+        + '</tbody></table></div>';
+
+      return html;
+    }
+  }
+
+};
+
+function openWS(id) {
+  var tmpl = wsTemplates[id];
+  if (!tmpl) return;
+  var modal = document.getElementById('wsModalContent');
+  modal.innerHTML = '<div class="ws-modal-title">' + tmpl.title + '</div>'
+    + '<div class="ws-modal-sub">' + tmpl.sub + '</div>'
+    + '<div class="ws-modal-actions">'
+    + '<button class="view-btn" onclick="window.print()">Print this worksheet</button>'
+    + '</div>'
+    + tmpl.content();
+  document.getElementById('wsOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeWS() {
+  document.getElementById('wsOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function selectLevel(el, n) {
+  var levels = [
+    { n:1, label:'Calm & Ready', body:'Relaxed muscles, steady breathing, focused eyes', strat:'Keep going! You are in a great place to learn and connect.' },
+    { n:2, label:'A Little Uneasy', body:'Slightly tense, mild stomach feeling, distracted', strat:'Take 3 slow breaths. Drink water. Use a fidget if needed.' },
+    { n:3, label:'Worried / Bothered', body:'Faster heartbeat, tight chest, hard to focus', strat:'Ask for a sensory break. Tell someone. Use your calm-down corner.' },
+    { n:4, label:'Very Upset', body:'Hot face, clenched fists, loud thoughts', strat:'Heavy work: push on a wall, carry something. Move away from the trigger.' },
+    { n:5, label:'Overwhelmed / Meltdown', body:'Unable to think, body feels out of control', strat:'Safe space now. No demands. Quiet. Wait for the storm to pass.' }
+  ];
+  var detail = document.getElementById('levelDetail');
+  detail.style.display = 'block';
+  var level = levels[n-1];
+  detail.style.borderColor = ['#6ee7b7','#7dd3fc','#fde047','#fb923c','#f87171'][n-1];
+  document.getElementById('ldNum').textContent = n;
+  document.getElementById('ldLabel').textContent = level.label;
+  document.getElementById('ldBody').textContent = level.body;
+  document.getElementById('ldStrat').textContent = level.strat;
+}
+
+document.getElementById('wsOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeWS();
+});
+</script>
+</body>
+</html>

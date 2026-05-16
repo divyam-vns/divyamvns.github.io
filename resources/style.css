@@ -1,0 +1,552 @@
+/* ============================================================
+   Global Autism Hub — Shared Stylesheet
+   Paste this file into your GitHub repo as: style.css
+   Then add <link rel="stylesheet" href="style.css"> to every page
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap');
+
+:root {
+  --blue:       #1a5fa8;
+  --blue-light: #e8f1fc;
+  --blue-mid:   #3b82d4;
+  --teal:       #0d7f6e;
+  --teal-light: #e0f5f1;
+  --gold:       #c47d15;
+  --gold-light: #fdf2e0;
+  --red:        #b83232;
+  --red-light:  #fdeaea;
+  --text:       #1a1a2e;
+  --text2:      #555566;
+  --text3:      #9090a0;
+  --bg:         #f7f8fc;
+  --surface:    #ffffff;
+  --border:     rgba(0,0,0,0.09);
+  --border2:    rgba(0,0,0,0.16);
+  --radius:     10px;
+  --radius-lg:  16px;
+  --shadow:     0 2px 12px rgba(26,95,168,0.10);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ── NAV ──────────────────────────────────────────────────── */
+.site-nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: var(--blue);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-logo span { font-size: 22px; }
+.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links a {
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text2);
+  transition: background 0.15s, color 0.15s;
+}
+.nav-links a:hover { background: var(--blue-light); color: var(--blue); }
+.nav-links a.active { background: var(--blue-light); color: var(--blue); }
+.nav-lang {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.nav-lang a {
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text3);
+  transition: all 0.15s;
+}
+.nav-lang a:hover { background: var(--blue-light); color: var(--blue); }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  border: none;
+  background: none;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.hero {
+  background: var(--blue);
+  color: white;
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+}
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.88;
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+}
+.btn-white { background: white; color: var(--blue); }
+.btn-white:hover { background: var(--blue-light); }
+.btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.6); }
+.btn-outline:hover { background: rgba(255,255,255,0.12); }
+.btn-blue { background: var(--blue); color: white; }
+.btn-blue:hover { background: var(--blue-mid); }
+.btn-teal { background: var(--teal); color: white; }
+.btn-teal:hover { opacity: 0.9; }
+.btn-sm { padding: 7px 14px; font-size: 13px; }
+
+/* ── PAGE WRAPPER ─────────────────────────────────────────── */
+.page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+.page-header { margin-bottom: 2rem; }
+.page-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.page-header p { color: var(--text2); font-size: 15px; }
+
+/* ── CARDS ────────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+.card + .card { margin-top: 1rem; }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.card-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text3);
+  margin-bottom: 0.75rem;
+}
+.resource-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.resource-card:hover {
+  box-shadow: var(--shadow);
+  border-color: var(--blue-mid);
+}
+.resource-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.resource-card p { font-size: 13px; color: var(--text2); margin-bottom: 12px; }
+
+/* ── BADGES / TAGS ────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.badge-blue  { background: var(--blue-light); color: var(--blue); }
+.badge-teal  { background: var(--teal-light); color: var(--teal); }
+.badge-gold  { background: var(--gold-light); color: var(--gold); }
+.badge-red   { background: var(--red-light);  color: var(--red); }
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  background: #f0f0f8;
+  color: var(--text3);
+  margin: 2px;
+}
+
+/* ── STATS STRIP ──────────────────────────────────────────── */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  background: var(--border2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: 2rem 0;
+}
+.stat-box {
+  background: var(--surface);
+  padding: 1.5rem;
+  text-align: center;
+}
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.4rem;
+  color: var(--blue);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label { font-size: 13px; color: var(--text2); }
+
+/* ── SECTION HEADING ──────────────────────────────────────── */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+.section-heading h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  color: var(--text);
+}
+.section-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border2);
+}
+
+/* ── FORM ELEMENTS ────────────────────────────────────────── */
+input[type=text], input[type=email], select, textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(26,95,168,0.1);
+}
+.field { margin-bottom: 1rem; }
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text2);
+  margin-bottom: 5px;
+}
+textarea { min-height: 100px; resize: vertical; }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.site-footer {
+  background: var(--text);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 13px;
+  margin-top: 4rem;
+}
+.site-footer a { color: rgba(255,255,255,0.85); }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .nav-links { display: none; flex-direction: column; padding: 1rem; }
+  .nav-links.open { display: flex; position: absolute; top: 64px; left: 0; right: 0; background: var(--surface); border-bottom: 1px solid var(--border2); z-index: 99; }
+  .hamburger { display: flex; }
+  .nav-lang { display: none; }
+  .hero { padding: 3rem 1rem 2.5rem; }
+  .page-wrap { padding: 2rem 1rem; }
+}
+
+/* ── WORKSHEET PAGE STYLES ────────────────────────────────── */
+.ws-hero {
+  background: linear-gradient(135deg, #1d4e89 0%, #0d7f6e 100%);
+  color: white;
+  padding: 52px 5vw 48px;
+  text-align: center;
+}
+.ws-hero-label {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+  font-size: .72rem; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; padding: 4px 14px; margin-bottom: 16px;
+}
+.ws-hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 400; line-height: 1.2;
+  max-width: 680px; margin: 0 auto 12px;
+}
+.ws-hero p {
+  color: rgba(255,255,255,.82); font-size: .95rem;
+  max-width: 540px; margin: 0 auto 24px;
+}
+.ws-hero-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.ws-pill {
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  color: white; border-radius: 999px;
+  padding: 6px 16px; font-size: .8rem; font-weight: 500;
+  text-decoration: none; transition: background .15s;
+}
+.ws-pill:hover { background: rgba(255,255,255,.25); }
+
+/* Therapy section tabs */
+.ws-tab-bar {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 1.5rem;
+}
+.ws-tab {
+  padding: 8px 18px; border-radius: 20px;
+  border: 1.5px solid var(--border2); background: transparent;
+  font-size: 13px; font-family: 'DM Sans', sans-serif;
+  color: var(--text2); cursor: pointer;
+  transition: all .15s; font-weight: 500;
+}
+.ws-tab:hover { border-color: var(--blue); color: var(--blue); }
+.ws-tab.active { background: var(--blue); color: white; border-color: var(--blue); }
+
+/* Therapy section card */
+.ws-therapy-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.ws-therapy-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.ws-therapy-icon {
+  width: 46px; height: 46px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.ws-therapy-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem; color: var(--text); margin-bottom: 3px;
+}
+.ws-therapy-header p { font-size: 13px; color: var(--text2); }
+.ws-therapy-body { padding: 1.5rem; }
+
+/* Worksheet cards grid */
+.ws-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.ws-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow .2s, border-color .2s;
+}
+.ws-card:hover { box-shadow: var(--shadow); border-color: var(--blue-mid); }
+.ws-card-header {
+  padding: .9rem 1.1rem .7rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.ws-card-body { padding: .75rem 1.1rem 1rem; }
+.ws-card-body p { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: .75rem; }
+.ws-card-body ul { font-size: 12px; color: var(--text2); padding-left: 16px; margin-bottom: .75rem; line-height: 1.8; }
+.ws-card h3 { font-size: 14px; font-weight: 600; color: var(--text); }
+.ws-card-footer {
+  padding: .6rem 1.1rem .8rem;
+  display: flex; gap: 8px; flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+/* Print-friendly worksheet template */
+.ws-template {
+  background: white;
+  border: 1.5px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  page-break-inside: avoid;
+}
+.ws-template-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  border-bottom: 2px solid var(--text);
+  padding-bottom: .75rem; margin-bottom: 1rem;
+}
+.ws-template-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+.ws-template-meta { font-size: 11px; color: var(--text3); text-align: right; }
+.ws-field-row {
+  display: flex; gap: 16px; margin-bottom: .75rem; flex-wrap: wrap;
+}
+.ws-field {
+  flex: 1; min-width: 160px;
+}
+.ws-field label {
+  display: block; font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .06em;
+  color: var(--text2); margin-bottom: 4px;
+}
+.ws-field-line {
+  border: none; border-bottom: 1.5px solid var(--border2);
+  width: 100%; height: 28px; display: block;
+  font-family: 'DM Sans', sans-serif; font-size: 14px;
+  background: transparent; outline: none; color: var(--text);
+  padding: 0 4px;
+}
+.ws-field-line:focus { border-color: var(--blue); }
+.ws-scale-row {
+  display: flex; gap: 8px; align-items: stretch;
+  margin: .75rem 0;
+}
+.ws-scale-cell {
+  flex: 1; border: 1.5px solid var(--border2);
+  border-radius: 8px; padding: 10px 8px;
+  text-align: center; cursor: pointer;
+  transition: all .15s; min-height: 80px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.ws-scale-cell:hover { border-color: var(--blue); background: var(--blue-light); }
+.ws-scale-cell.selected { border-color: var(--blue); background: var(--blue-light); }
+.ws-scale-num { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--blue); font-weight: bold; }
+.ws-scale-label { font-size: 10px; color: var(--text2); margin-top: 4px; line-height: 1.3; }
+.ws-checkbox-list { list-style: none; padding: 0; }
+.ws-checkbox-list li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+  font-size: 13px; color: var(--text2);
+}
+.ws-checkbox-list li:last-child { border-bottom: none; }
+.ws-checkbox-list input[type=checkbox] {
+  width: 16px; height: 16px; flex-shrink: 0;
+  accent-color: var(--blue); cursor: pointer;
+}
+.ws-table {
+  width: 100%; border-collapse: collapse; font-size: 13px; margin: .75rem 0;
+}
+.ws-table th {
+  background: var(--text); color: white;
+  padding: 8px 10px; text-align: left;
+  font-size: 11px; font-weight: 600; letter-spacing: .04em;
+}
+.ws-table td {
+  padding: 8px 10px; border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.ws-table td input { border: none; width: 100%; font-size: 13px; outline: none; background: transparent; color: var(--text); }
+.ws-textarea {
+  width: 100%; min-height: 70px; border: 1.5px solid var(--border2);
+  border-radius: 6px; padding: 8px 10px; font-size: 13px;
+  font-family: 'DM Sans', sans-serif; color: var(--text);
+  resize: vertical; outline: none; margin: .5rem 0;
+}
+.ws-textarea:focus { border-color: var(--blue); }
+.ws-grid-cells {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; margin: .75rem 0;
+}
+.ws-grid-cell {
+  border: 1.5px solid var(--border2); border-radius: 8px;
+  min-height: 80px; padding: 8px; display: flex;
+  flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; font-size: 12px; color: var(--text2);
+  cursor: pointer; transition: all .15s;
+}
+.ws-grid-cell:hover { border-color: var(--blue); background: var(--blue-light); }
+.ws-grid-cell .cell-icon { font-size: 1.5rem; margin-bottom: 5px; }
+
+/* Info note block */
+.ws-note {
+  background: var(--blue-light);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px; margin: .75rem 0;
+  font-size: 12px; color: var(--text2);
+}
+.ws-note strong { color: var(--blue); }
+
+/* 2026 Guideline badge */
+.badge-2026 {
+  display: inline-block; padding: 3px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 700;
+  background: #e8f1fc; color: #1a5fa8;
+  border: 1px solid #c7dcf5;
+}
+
+/* ── PRINT STYLES ──────────────────────────────────────────── */
+@media print {
+  .site-nav, .ws-hero, footer, .ws-tab-bar,
+  .ws-therapy-header, .ws-card-footer, .btn, .btn-blue,
+  .btn-sm, .no-print { display: none !important; }
+
+  body { background: white; color: black; font-size: 12pt; }
+  .page-wrap { padding: 0; max-width: 100%; }
+  .ws-template { border: 1.5pt solid #333; page-break-inside: avoid; margin-bottom: 1.5cm; }
+  .ws-field-line { border-bottom: 1pt solid #666; }
+  .ws-scale-cell { border: 1pt solid #999; }
+  .ws-table th { background: #333 !important; -webkit-print-color-adjust: exact; }
+  .ws-therapy-section { border: none; box-shadow: none; page-break-before: always; }
+  .ws-card { page-break-inside: avoid; }
+}

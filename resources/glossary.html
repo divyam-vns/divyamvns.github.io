@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autism Glossary — Terms Explained in Plain Language | Global Autism Hub</title>
+  <meta name="description" content="Plain-language definitions of 50+ autism terms — ABA, AAC, stimming, masking, echolalia, IEP, PDA, sensory processing, and more. A–Z searchable glossary for parents and educators.">
+  <meta name="keywords" content="autism glossary, autism terms explained, what is stimming, what is masking autism, autism acronyms, IEP meaning, AAC autism, echolalia meaning, autism vocabulary, PDA autism">
+  <meta property="og:title" content="Autism Glossary — 50+ Terms in Plain Language">
+  <meta property="og:description" content="Plain-language definitions of autism terms. Searchable A–Z glossary for parents, teachers, and families.">
+  <meta property="og:url" content="https://divyam-vns.github.io/divyamvns.github.io/glossary.html">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://divyam-vns.github.io/divyamvns.github.io/glossary.html">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .search-box{width:100%;padding:12px 16px;font-size:15px;border:1.5px solid var(--border2);border-radius:50px;outline:none;font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--text);margin-bottom:1.25rem}
+    .search-box:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,95,168,.1)}
+    .alpha-nav{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:1.5rem}
+    .alpha-btn{width:32px;height:32px;border-radius:6px;border:0.5px solid var(--border2);background:transparent;font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif}
+    .alpha-btn:hover{background:var(--blue-light);color:var(--blue);border-color:var(--blue)}
+    .alpha-btn.has{color:var(--blue);border-color:var(--blue-mid)}
+    .letter-group{margin-bottom:1.5rem}
+    .letter-head{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--blue);border-bottom:2px solid var(--blue-light);padding-bottom:4px;margin-bottom:.75rem}
+    .term-card{padding:12px 0;border-bottom:0.5px solid var(--border)}
+    .term-card:last-child{border-bottom:none}
+    .term-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px}
+    .term-abbr{font-size:12px;color:var(--text3);margin-left:6px;font-weight:400}
+    .term-tag{display:inline-block;padding:1px 7px;border-radius:4px;font-size:10px;font-weight:600;margin-right:4px;margin-bottom:5px}
+    .tag-therapy{background:#e0f5f1;color:#085041}
+    .tag-behaviour{background:#e8f1fc;color:#0C447C}
+    .tag-medical{background:#fdeaea;color:#791F1F}
+    .tag-education{background:#fdf2e0;color:#633806}
+    .tag-community{background:#f0eefa;color:#3C3489}
+    .tag-concept{background:#f1efe8;color:#444441}
+    .term-def{font-size:13px;color:var(--text2);line-height:1.7}
+    .no-results{text-align:center;padding:3rem;color:var(--text3);font-size:14px}
+    .result-count{font-size:13px;color:var(--text3);margin-bottom:1rem}
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span>🌍</span> Global Autism Hub</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Autism</a>
+      <a href="therapies.html">Therapies</a>
+      <a href="resources.html">Resources</a>
+      <a href="education.html">Education</a>
+      <a href="worksheets.html">Worksheets</a>
+      <a href="research.html">Research</a>
+      <a href="glossary.html" class="active">Glossary</a>
+      <a href="parent-guide.html">Parent Guide</a>
+      <a href="adults.html">Adults</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div style="background:#f0f4fa;border-top:1px solid var(--border);padding:5px 1.5rem;">
+    <div style="max-width:1100px;margin:0 auto;" class="nav-lang">
+      <a href="javascript:void(0)" onclick="doGTranslate('en|en')">English</a><a href="javascript:void(0)" onclick="doGTranslate('en|hi')">हिंदी</a><a href="javascript:void(0)" onclick="doGTranslate('en|ja')">日本語</a><a href="javascript:void(0)" onclick="doGTranslate('en|zh-CN')">中文</a><a href="javascript:void(0)" onclick="doGTranslate('en|ar')">العربية</a><a href="javascript:void(0)" onclick="doGTranslate('en|vi')">Tiếng Việt</a><a href="javascript:void(0)" onclick="doGTranslate('en|ur')">اردو</a><a href="javascript:void(0)" onclick="doGTranslate('en|es')">Español</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h2>Autism glossary</h2>
+    <p>Plain-language definitions of 50+ autism-related terms. Search by keyword or browse A–Z.</p>
+  </div>
+
+  <input type="text" class="search-box" id="termSearch" placeholder="Search terms, e.g. stimming, IEP, masking, echolalia..." oninput="filterTerms(this.value)">
+  <p class="result-count" id="resultCount"></p>
+
+  <div class="alpha-nav" id="alphNav"></div>
+  <div id="glossaryBody"></div>
+</div>
+
+<footer class="site-footer">
+  <p>© 2025 Global Autism Hub · Definitions are written in plain language for families and educators. For clinical definitions, consult the DSM-5 or a qualified professional.</p>
+</footer>
+
+<div id="google_translate_element" style="display:none"></div>
+<script>
+var TERMS = [
+  {term:"AAC",full:"Augmentative and Alternative Communication",tag:"therapy",def:"Any method of communication that supplements or replaces speech. Includes picture boards (PECS), speech-generating devices, apps like Proloquo2Go and LetMeTalk, sign language, and text-based communication. Used by non-speaking or minimally speaking autistic people."},
+  {term:"ABA",full:"Applied Behavior Analysis",tag:"therapy",def:"A therapy based on the science of learning and behavior. Uses reinforcement to teach skills and reduce challenging behaviors. Evidence-based for certain skill development but controversial in the autistic community due to concerns about historical methods. Quality varies greatly between providers. Person-centered, naturalistic ABA is considered more acceptable than older drill-based approaches."},
+  {term:"ASD",full:"Autism Spectrum Disorder",tag:"concept",def:"The current clinical term for autism, as defined by the DSM-5 (2013). 'Spectrum' refers to the wide variety of ways autism presents — not a linear scale from mild to severe, but a diverse set of characteristics that affect each person differently."},
+  {term:"Alexithymia",tag:"concept",def:"Difficulty identifying, describing, or understanding one's own emotions. Common in autistic people — not a universal feature, but affects a significant minority. Can make it harder to communicate emotional states or understand the emotional responses of others."},
+  {term:"Allistic",tag:"community",def:"A person who is not autistic. Used by the autistic community as a neutral, non-stigmatising term (similar to how 'hearing' is used in Deaf culture). Not a clinical term."},
+  {term:"Autism Burnout",tag:"concept",def:"A state of exhaustion — physical, mental, and emotional — resulting from sustained masking, sensory overload, or managing daily demands that exceed capacity. Can cause temporary loss of skills, increased sensitivity, and withdrawal. Distinct from clinical depression, though the two can overlap. Rest, reduced demands, and reduced masking are key to recovery."},
+  {term:"BCBA",full:"Board Certified Behavior Analyst",tag:"therapy",def:"A credentialed professional who designs and oversees ABA therapy programmes. Should be sought when pursuing ABA therapy. Check credentials at the Behavior Analyst Certification Board website."},
+  {term:"CARES Act",tag:"education",def:"Combating Autism Research, Education, and Services Act — US federal legislation that funds autism research, surveillance, and service provision through the IACC and CDC programmes."},
+  {term:"Dyspraxia",full:"Developmental Coordination Disorder (DCD)",tag:"medical",def:"Difficulty with motor coordination, movement planning, and execution. Often co-occurs with autism. Affects handwriting, sports, and self-care tasks. Occupational therapy is the primary support."},
+  {term:"Echolalia",tag:"behaviour",def:"Repeating words, phrases, or sentences heard previously — either immediately (immediate echolalia) or after a delay (delayed echolalia). A natural stage of language development that some autistic people use communicatively. Delayed echolalia (quoting TV shows or scripts) is often functional communication, not meaningless repetition."},
+  {term:"Executive Function",tag:"concept",def:"A set of mental skills including working memory, flexible thinking, planning, and impulse control. Many autistic people experience executive function differences — not deficits — which can affect organisation, task-switching, and starting/stopping tasks. Strategies like visual schedules and written reminders help significantly."},
+  {term:"FAPE",full:"Free Appropriate Public Education",tag:"education",def:"A legal right in the United States (under IDEA) guaranteeing that children with disabilities receive free special education services appropriate to their needs in the least restrictive environment. The foundation of IEP rights."},
+  {term:"IDEA",full:"Individuals with Disabilities Education Act",tag:"education",def:"US federal law that ensures students with disabilities receive free appropriate public education (FAPE) in the least restrictive environment. Governs IEP eligibility, parental rights, and school obligations. Last reauthorised in 2004."},
+  {term:"IEP",full:"Individualized Education Program",tag:"education",def:"A legally binding document (in the US) created for each child with a disability who qualifies for special education services. Outlines the child's current performance, annual goals, services provided, and accommodations. Parents are equal members of the IEP team and must consent to the plan."},
+  {term:"Interoception",tag:"concept",def:"The sense of the internal state of one's body — hunger, thirst, pain, temperature, heartbeat, bladder fullness. Many autistic people have differences in interoceptive awareness, which can mean difficulty detecting hunger, pain, or emotions (which are partly bodily sensations)."},
+  {term:"Masking",tag:"concept",def:"Camouflaging autistic traits to appear neurotypical — suppressing stimming, scripting conversations, mirroring others' social behaviour, and forcing eye contact. Common especially in autistic women and girls. Highly exhausting and linked to anxiety, depression, and late diagnosis. The long-term practice of masking contributes to autism burnout."},
+  {term:"Meltdown",tag:"behaviour",def:"An intense response to overwhelming sensory or emotional input — not a tantrum. A person having a meltdown has lost the ability to regulate themselves and cannot 'just stop'. Unlike a tantrum (which is goal-directed), a meltdown continues regardless of whether the person gets what they want. Recovery requires time, quiet, and low demands."},
+  {term:"Monotropism",tag:"concept",def:"A cognitive style characterised by intense focus on a narrow range of interests at a time. Proposed as a theory of autism — the tendency for attention to flow into a single tunnel, making task-switching difficult but enabling deep expertise in areas of interest. Contrasted with polytropic (wider, shallower attention distribution)."},
+  {term:"Neurodiversity",tag:"community",def:"The concept that neurological differences (autism, ADHD, dyslexia, etc.) are natural variations in the human genome, not deficits or disorders to be cured. Coined by autistic sociologist Judy Singer in 1998. Neurodiversity as a movement advocates for acceptance and accommodation rather than normalisation."},
+  {term:"Neurotypical",full:"NT",tag:"community",def:"A person whose neurological development and functioning are considered typical/standard. Used by the autistic and neurodivergent communities as a neutral descriptor, not a value judgement."},
+  {term:"Occupational Therapy",full:"OT",tag:"therapy",def:"Therapy focused on helping people participate in daily activities ('occupations') — including self-care, play, school, and work. For autistic children, OT often focuses on sensory processing, fine motor skills, handwriting, and daily living skills."},
+  {term:"PECS",full:"Picture Exchange Communication System",tag:"therapy",def:"A communication approach where a child exchanges a picture card for a desired item or action. Begins with physical exchange and progresses to building sentences on a communication strip. Evidence-based for developing requesting skills. Often used as a precursor to other AAC."},
+  {term:"PDA",full:"Pathological Demand Avoidance / Pervasive Drive for Autonomy",tag:"concept",def:"A profile on the autism spectrum characterised by an extreme avoidance of everyday demands and expectations, driven by high anxiety. People with PDA often experience demands as a threat to autonomy. Traditional approaches may not work well — low-demand, collaborative strategies tend to be more effective. Increasingly preferred term: 'Pervasive Drive for Autonomy'."},
+  {term:"Proprioception",tag:"concept",def:"The sense of body position and movement in space — knowing where your limbs are without looking. Many autistic people have differences in proprioceptive processing, contributing to motor coordination differences and a need for heavy physical input (pushing, pulling, jumping) to feel grounded."},
+  {term:"Scripting",tag:"behaviour",def:"Memorising and repeating language from scripts — TV shows, movies, books, conversations — to use in social situations. A form of delayed echolalia that serves many communicative functions: social engagement, emotional regulation, and expressing ideas that are hard to generate spontaneously. Should not be discouraged."},
+  {term:"Sensory Diet",tag:"therapy",def:"A personalised activity plan designed by an occupational therapist to provide the right type and amount of sensory input throughout the day. Not a food diet — a 'diet' of sensory experiences. Helps regulate the nervous system and reduce sensory overload or under-stimulation."},
+  {term:"Sensory Processing Disorder",full:"SPD",tag:"medical",def:"A condition where the brain has difficulty receiving and responding to information from the senses. While not a standalone diagnosis in DSM-5, sensory processing differences are part of the autism diagnostic criteria and are extremely common. Can manifest as over-sensitivity (hypersensitivity) or under-sensitivity (hyposensitivity)."},
+  {term:"Shutdown",tag:"behaviour",def:"An inward response to overwhelm — withdrawal, reduced communication, limited movement or response, appearing 'zoned out'. Contrasts with the outward expression of a meltdown. Like meltdowns, shutdowns require rest and reduced demands to recover from, not prompting or attempts to re-engage."},
+  {term:"Special Interest",full:"Spins / Deep Interests",tag:"concept",def:"An intense, sustained focus on a specific topic, activity, or subject area. Common in autistic people. Special interests bring joy, expertise, and a sense of identity — and can be a significant communication tool and anxiety reducer. Should be respected and encouraged, not dismissed."},
+  {term:"Speech-Language Therapy",full:"SLT / SLP",tag:"therapy",def:"Therapy provided by a speech-language therapist (UK) or speech-language pathologist (US) targeting communication — verbal language, AAC, pragmatics (social use of language), literacy, and swallowing. One of the most evidence-supported therapies for autism."},
+  {term:"Stimming",full:"Self-stimulatory behaviour",tag:"behaviour",def:"Repetitive movements or sounds used for sensory regulation, emotional expression, or enjoyment — hand-flapping, rocking, spinning, vocalising, finger-flicking. Stimming is functional and self-regulatory. Suppressing stimming (as some older therapies required) is harmful. Stimming should only be redirected if it causes physical harm."},
+  {term:"Theory of Mind",tag:"concept",def:"The ability to understand that others have thoughts, beliefs, and perspectives different from one's own. Early autism research claimed autistic people lack theory of mind ('mindblindness') — but this is now widely disputed. The 'double empathy problem' proposes that the difficulty is mutual, not one-sided."},
+  {term:"Twice-Exceptional",full:"2e",tag:"education",def:"A child who is both gifted (high intellectual ability) and has a disability (such as autism, ADHD, or dyslexia). Twice-exceptional children may have their giftedness mask their difficulties, or their difficulties mask their giftedness. Require differentiated education that addresses both."},
+  {term:"Visual Schedule",tag:"education",def:"A sequence of pictures, symbols, or written words showing the order of activities for the day or a specific task. Reduces anxiety by making the future predictable. Used in homes, schools, and therapy settings. Can be paper-based, a whiteboard, or an app (like Choiceworks)."},
+];
+
+TERMS.sort(function(a,b){return a.term.localeCompare(b.term)});
+
+var TAG_CLASS = {therapy:'tag-therapy',behaviour:'tag-behaviour',medical:'tag-medical',education:'tag-education',community:'tag-community',concept:'tag-concept'};
+var TAG_LABEL = {therapy:'Therapy',behaviour:'Behaviour',medical:'Medical',education:'Education',community:'Community',concept:'Concept'};
+
+function renderAll(terms){
+  var body = document.getElementById('glossaryBody');
+  document.getElementById('resultCount').textContent = terms.length + ' term' + (terms.length!==1?'s':'') + ' shown';
+  if(!terms.length){body.innerHTML='<div class="no-results">No terms match your search. Try a different word.</div>';return;}
+  var byLetter = {};
+  terms.forEach(function(t){
+    var l = t.term[0].toUpperCase();
+    if(!byLetter[l]) byLetter[l]=[];
+    byLetter[l].push(t);
+  });
+  var html = '';
+  Object.keys(byLetter).sort().forEach(function(letter){
+    html += '<div class="letter-group" id="letter-'+letter+'">';
+    html += '<div class="letter-head">'+letter+'</div>';
+    byLetter[letter].forEach(function(t){
+      html += '<div class="term-card">';
+      html += '<div class="term-name">'+t.term+(t.full?'<span class="term-abbr">'+t.full+'</span>':'')+'</div>';
+      if(t.tag) html += '<span class="term-tag '+TAG_CLASS[t.tag]+'">'+TAG_LABEL[t.tag]+'</span>';
+      html += '<div class="term-def">'+t.def+'</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  });
+  body.innerHTML = html;
+}
+
+function filterTerms(q){
+  if(!q.trim()){renderAll(TERMS);return;}
+  var ql = q.toLowerCase();
+  renderAll(TERMS.filter(function(t){ return (t.term+' '+(t.full||'')+' '+t.def).toLowerCase().indexOf(ql)>-1; }));
+}
+
+function buildAlphNav(){
+  var letters = [...new Set(TERMS.map(function(t){return t.term[0].toUpperCase()}))];
+  var nav = document.getElementById('alphNav');
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(function(l){
+    var btn = document.createElement('button');
+    btn.className = 'alpha-btn' + (letters.includes(l)?' has':'');
+    btn.textContent = l;
+    if(letters.includes(l)){
+      btn.onclick = function(){
+        document.getElementById('termSearch').value='';
+        renderAll(TERMS);
+        setTimeout(function(){ var el=document.getElementById('letter-'+l); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); },50);
+      };
+    }
+    nav.appendChild(btn);
+  });
+}
+
+function toggleNav(){ document.getElementById('navLinks').classList.toggle('open'); }
+function googleTranslateElementInit(){ new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'hi,ja,zh-CN,ar,vi,ur,es'},'google_translate_element'); }
+function doGTranslate(lang_pair){ var lang=lang_pair.split('|')[1]; var teCombo=document.querySelector('.goog-te-combo'); if(teCombo){teCombo.value=lang;teCombo.dispatchEvent(new Event('change'));} }
+
+buildAlphNav();
+renderAll(TERMS);
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
