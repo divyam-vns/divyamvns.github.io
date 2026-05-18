@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /node_modules/
+Disallow: /generate-worksheets.js
 
 Sitemap: https://divyam-vns.github.io/divyamvns.github.io/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
